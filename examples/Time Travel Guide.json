@@ -1,42 +1,73 @@
 {
-    "description": "A Chain that uses a ConversationSummaryMemory",
-    "name": "Summary Memory",
-    "id": "0",
+    "description": "A guide through time and history to suggest places and events to visit.",
+    "name": "Time Travel Guide",
+    "id": "21",
     "data": {
         "nodes": [
             {
                 "width": 384,
-                "height": 397,
-                "id": "dndnode_1",
+                "height": 543,
+                "id": "dndnode_195",
                 "type": "genericNode",
                 "position": {
-                    "x": 1118.1130602083322,
-                    "y": 280.37761107143024
+                    "x": 541.3525917059468,
+                    "y": 110.79979178441016
                 },
                 "data": {
-                    "type": "ConversationSummaryMemory",
+                    "type": "TimeTravelGuideChain",
                     "node": {
                         "template": {
-                            "human_prefix": {
+                            "memory": {
                                 "required": false,
                                 "placeholder": "",
-                                "show": false,
+                                "show": true,
                                 "multiline": false,
-                                "value": "Human",
+                                "value": {
+                                    "chat_memory": {
+                                        "messages": []
+                                    },
+                                    "output_key": null,
+                                    "input_key": null,
+                                    "return_messages": false,
+                                    "human_prefix": "Human",
+                                    "ai_prefix": "AI",
+                                    "memory_key": "history"
+                                },
                                 "password": false,
-                                "name": "human_prefix",
-                                "type": "str",
+                                "name": "memory",
+                                "type": "BaseMemory",
                                 "list": false
                             },
-                            "ai_prefix": {
+                            "verbose": {
                                 "required": false,
                                 "placeholder": "",
                                 "show": false,
                                 "multiline": false,
-                                "value": "AI",
                                 "password": false,
-                                "name": "ai_prefix",
-                                "type": "str",
+                                "name": "verbose",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "prompt": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": {
+                                    "input_variables": [
+                                        "history",
+                                        "input"
+                                    ],
+                                    "output_parser": null,
+                                    "partial_variables": {},
+                                    "template": "The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.\n\nCurrent conversation:\n{history}\nHuman: {input}\nAI:",
+                                    "template_format": "f-string",
+                                    "validate_template": true,
+                                    "_type": "prompt"
+                                },
+                                "password": false,
+                                "name": "prompt",
+                                "type": "BasePromptTemplate",
                                 "list": false
                             },
                             "llm": {
@@ -49,26 +80,83 @@
                                 "type": "BaseLanguageModel",
                                 "list": false
                             },
-                            "prompt": {
+                            "output_key": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "response",
+                                "password": false,
+                                "name": "output_key",
+                                "type": "str",
+                                "list": false
+                            },
+                            "input_key": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "input",
+                                "password": false,
+                                "name": "input_key",
+                                "type": "str",
+                                "list": false
+                            },
+                            "template": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": true,
+                                "value": "I want you to act as my time travel guide. You are helpful and creative. I will provide you with the historical period or future time I want to visit and you will suggest the best events, sights, or people to experience. Provide the suggestions and any necessary information.\n    Current conversation:\n    {history}\n    Human: {input}\n    AI:",
+                                "password": false,
+                                "name": "template",
+                                "type": "str",
+                                "list": false
+                            },
+                            "ai_prefix_value": {
                                 "required": false,
                                 "placeholder": "",
                                 "show": false,
                                 "multiline": false,
                                 "password": false,
-                                "name": "prompt",
-                                "type": "BasePromptTemplate",
+                                "name": "ai_prefix_value",
+                                "type": "str",
                                 "list": false
                             },
-                            "summary_message_cls": {
-                                "required": false,
-                                "placeholder": "",
-                                "show": false,
-                                "multiline": false,
-                                "password": false,
-                                "name": "summary_message_cls",
-                                "type": "Type[langchain.schema.BaseMessage]",
-                                "list": false
-                            },
+                            "_type": "TimeTravelGuideChain"
+                        },
+                        "description": "",
+                        "base_classes": [
+                            "TimeTravelGuideChain",
+                            "BaseCustomChain",
+                            "Chain",
+                            "LLMChain",
+                            "ConversationChain"
+                        ]
+                    },
+                    "id": "dndnode_195",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 541.3525917059468,
+                    "y": 110.79979178441016
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 357,
+                "id": "dndnode_197",
+                "type": "genericNode",
+                "position": {
+                    "x": 41.77285741205577,
+                    "y": 63.38205429210862
+                },
+                "data": {
+                    "type": "ConversationBufferMemory",
+                    "node": {
+                        "template": {
                             "chat_memory": {
                                 "required": false,
                                 "placeholder": "",
@@ -109,14 +197,25 @@
                                 "type": "bool",
                                 "list": false
                             },
-                            "buffer": {
+                            "human_prefix": {
                                 "required": false,
                                 "placeholder": "",
                                 "show": false,
                                 "multiline": false,
-                                "value": "",
+                                "value": "Human",
                                 "password": false,
-                                "name": "buffer",
+                                "name": "human_prefix",
+                                "type": "str",
+                                "list": false
+                            },
+                            "ai_prefix": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": "AI",
+                                "password": false,
+                                "name": "ai_prefix",
                                 "type": "str",
                                 "list": false
                             },
@@ -131,34 +230,33 @@
                                 "type": "str",
                                 "list": false
                             },
-                            "_type": "ConversationSummaryMemory"
+                            "_type": "ConversationBufferMemory"
                         },
-                        "description": "Conversation summarizer to memory.",
+                        "description": "Buffer for storing conversation memory.",
                         "base_classes": [
-                            "ConversationSummaryMemory",
                             "BaseChatMemory",
-                            "SummarizerMixin",
+                            "ConversationBufferMemory",
                             "BaseMemory"
                         ]
                     },
-                    "id": "dndnode_1",
+                    "id": "dndnode_197",
                     "value": null
                 },
                 "selected": false,
                 "positionAbsolute": {
-                    "x": 1118.1130602083322,
-                    "y": 280.37761107143024
+                    "x": 41.77285741205577,
+                    "y": 63.38205429210862
                 },
                 "dragging": false
             },
             {
                 "width": 384,
                 "height": 673,
-                "id": "dndnode_2",
+                "id": "dndnode_198",
                 "type": "genericNode",
                 "position": {
-                    "x": 593.8365713553318,
-                    "y": 483.01522765803907
+                    "x": 36.69238553788068,
+                    "y": 467.8198042261215
                 },
                 "data": {
                     "type": "ChatOpenAI",
@@ -292,187 +390,45 @@
                         },
                         "description": "Wrapper around OpenAI Chat large language models.",
                         "base_classes": [
-                            "BaseLanguageModel",
                             "ChatOpenAI",
-                            "BaseChatModel"
+                            "BaseChatModel",
+                            "BaseLanguageModel"
                         ]
                     },
-                    "id": "dndnode_2",
+                    "id": "dndnode_198",
                     "value": null
                 },
                 "selected": false,
                 "positionAbsolute": {
-                    "x": 593.8365713553318,
-                    "y": 483.01522765803907
-                },
-                "dragging": false
-            },
-            {
-                "width": 384,
-                "height": 583,
-                "id": "dndnode_3",
-                "type": "genericNode",
-                "position": {
-                    "x": 1591.8694239743472,
-                    "y": 665.1275441560489
-                },
-                "data": {
-                    "type": "ConversationChain",
-                    "node": {
-                        "template": {
-                            "memory": {
-                                "required": false,
-                                "placeholder": "",
-                                "show": true,
-                                "multiline": false,
-                                "password": false,
-                                "name": "memory",
-                                "type": "BaseMemory",
-                                "list": false
-                            },
-                            "verbose": {
-                                "required": false,
-                                "placeholder": "",
-                                "show": false,
-                                "multiline": false,
-                                "password": false,
-                                "name": "verbose",
-                                "type": "bool",
-                                "list": false
-                            },
-                            "prompt": {
-                                "required": false,
-                                "placeholder": "",
-                                "show": true,
-                                "multiline": false,
-                                "value": {
-                                    "input_variables": [
-                                        "history",
-                                        "input"
-                                    ],
-                                    "output_parser": null,
-                                    "partial_variables": {},
-                                    "template": "The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.\n\nCurrent conversation:\n{history}\nHuman: {input}\nAI:",
-                                    "template_format": "f-string",
-                                    "validate_template": true,
-                                    "_type": "prompt"
-                                },
-                                "password": false,
-                                "name": "prompt",
-                                "type": "BasePromptTemplate",
-                                "list": false
-                            },
-                            "llm": {
-                                "required": true,
-                                "placeholder": "",
-                                "show": true,
-                                "multiline": false,
-                                "password": false,
-                                "name": "llm",
-                                "type": "BaseLanguageModel",
-                                "list": false
-                            },
-                            "output_key": {
-                                "required": true,
-                                "placeholder": "",
-                                "show": true,
-                                "multiline": false,
-                                "value": "response",
-                                "password": false,
-                                "name": "output_key",
-                                "type": "str",
-                                "list": false
-                            },
-                            "input_key": {
-                                "required": true,
-                                "placeholder": "",
-                                "show": true,
-                                "multiline": false,
-                                "value": "input",
-                                "password": false,
-                                "name": "input_key",
-                                "type": "str",
-                                "list": false
-                            },
-                            "_type": "ConversationChain"
-                        },
-                        "description": "Chain to have a conversation and load context from memory.",
-                        "base_classes": [
-                            "LLMChain",
-                            "ConversationChain",
-                            "Chain"
-                        ]
-                    },
-                    "id": "dndnode_3",
-                    "value": null
-                },
-                "selected": false,
-                "positionAbsolute": {
-                    "x": 1591.8694239743472,
-                    "y": 665.1275441560489
+                    "x": 36.69238553788068,
+                    "y": 467.8198042261215
                 },
                 "dragging": false
             }
         ],
         "edges": [
             {
-                "source": "dndnode_2",
-                "sourceHandle": "ChatOpenAI|dndnode_2|BaseLanguageModel|ChatOpenAI|BaseChatModel",
-                "target": "dndnode_1",
-                "targetHandle": "BaseLanguageModel|llm|dndnode_1",
+                "source": "dndnode_197",
+                "sourceHandle": "ConversationBufferMemory|dndnode_197|BaseChatMemory|ConversationBufferMemory|BaseMemory",
+                "target": "dndnode_195",
+                "targetHandle": "BaseMemory|memory|dndnode_195",
                 "className": "animate-pulse",
-                "id": "reactflow__edge-dndnode_2ChatOpenAI|dndnode_2|BaseLanguageModel|ChatOpenAI|BaseChatModel-dndnode_1BaseLanguageModel|llm|dndnode_1"
+                "id": "reactflow__edge-dndnode_197ConversationBufferMemory|dndnode_197|BaseChatMemory|ConversationBufferMemory|BaseMemory-dndnode_195BaseMemory|memory|dndnode_195"
             },
             {
-                "source": "dndnode_1",
-                "sourceHandle": "ConversationSummaryMemory|dndnode_1|ConversationSummaryMemory|BaseChatMemory|SummarizerMixin|BaseMemory",
-                "target": "dndnode_3",
-                "targetHandle": "BaseMemory|memory|dndnode_3",
+                "source": "dndnode_198",
+                "sourceHandle": "ChatOpenAI|dndnode_198|ChatOpenAI|BaseChatModel|BaseLanguageModel",
+                "target": "dndnode_195",
+                "targetHandle": "BaseLanguageModel|llm|dndnode_195",
                 "className": "animate-pulse",
-                "id": "reactflow__edge-dndnode_1ConversationSummaryMemory|dndnode_1|ConversationSummaryMemory|BaseChatMemory|SummarizerMixin|BaseMemory-dndnode_3BaseMemory|memory|dndnode_3"
-            },
-            {
-                "source": "dndnode_2",
-                "sourceHandle": "ChatOpenAI|dndnode_2|BaseLanguageModel|ChatOpenAI|BaseChatModel",
-                "target": "dndnode_3",
-                "targetHandle": "BaseLanguageModel|llm|dndnode_3",
-                "className": "animate-pulse",
-                "id": "reactflow__edge-dndnode_2ChatOpenAI|dndnode_2|BaseLanguageModel|ChatOpenAI|BaseChatModel-dndnode_3BaseLanguageModel|llm|dndnode_3"
+                "id": "reactflow__edge-dndnode_198ChatOpenAI|dndnode_198|ChatOpenAI|BaseChatModel|BaseLanguageModel-dndnode_195BaseLanguageModel|llm|dndnode_195"
             }
         ],
         "viewport": {
-            "x": -228.12489837254475,
-            "y": -133.84121476342455,
-            "zoom": 0.697371833175203
+            "x": 194.99876190989892,
+            "y": -8.361977115260288,
+            "zoom": 0.5
         }
     },
-    "chat": [
-        {
-            "message": "Hi, my name is Carlos. I'm 32 years old and I've been working for Logspace one year.",
-            "isSend": true
-        },
-        {
-            "message": "Hello Carlos! It's nice to meet you. My programming indicates that you are a 32-year-old employee who has been working for Logspace for a year. That's great!\n\nIs there anything specific you would like to talk about or learn today? I'm eager to assist you in any way I can.",
-            "isSend": false,
-            "thought": "\u001b[1m> Entering new ConversationChain chain...\u001b[0m\nPrompt after formatting:\n\u001b[32;1m\u001b[1;3mThe following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.\n\nCurrent conversation:\n\nHuman: Hi, my name is Carlos. I'm 32 years old and I've been working for Logspace one year.\nAI:\u001b[0m\n\n\u001b[1m> Finished chain.\u001b[0m"
-        },
-        {
-            "message": "What is the name of the company that I've been working for a year?",
-            "isSend": true
-        },
-        {
-            "message": "You mentioned earlier that you have been working for Logspace for a year. Is that correct?",
-            "isSend": false,
-            "thought": "\u001b[1m> Entering new ConversationChain chain...\u001b[0m\nPrompt after formatting:\n\u001b[32;1m\u001b[1;3mThe following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.\n\nCurrent conversation:\nCarlos introduces himself to the AI and shares his age and work experience at Logspace. The AI greets Carlos and acknowledges the information it has about him. The AI asks if there is anything specific Carlos would like to talk about or learn and expresses eagerness to assist in any way possible.\nHuman: What is the name of the company that I've been working for a year?\nAI:\u001b[0m\n\n\u001b[1m> Finished chain.\u001b[0m"
-        },
-        {
-            "message": "Yes, and what is my name?",
-            "isSend": true
-        },
-        {
-            "message": "Your name is Carlos - you introduced yourself to me earlier.",
-            "isSend": false,
-            "thought": "\u001b[1m> Entering new ConversationChain chain...\u001b[0m\nPrompt after formatting:\n\u001b[32;1m\u001b[1;3mThe following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.\n\nCurrent conversation:\nCarlos introduces himself to the AI and shares his age and work experience at Logspace. The AI greets Carlos and acknowledges the information it has about him. The AI asks if there is anything specific Carlos would like to talk about or learn and expresses eagerness to assist in any way possible. Carlos asks the AI if it remembers the name of the company he has been working for a year, and the AI confirms that he mentioned it earlier - Logspace.\nHuman: Yes, and what is my name?\nAI:\u001b[0m\n\n\u001b[1m> Finished chain.\u001b[0m"
-        }
-    ]
+    "chat": []
 }

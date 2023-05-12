@@ -1,17 +1,157 @@
 {
-    "description": "An agent that can search the web and answer questions.",
-    "name": "SerpAPI Tool",
-    "id": "32",
+    "description": "Helps you generate a prompt based on your input to use in the MidJourney AI.",
+    "name": "MidJourney Prompt Chain",
+    "id": "3",
     "data": {
         "nodes": [
             {
                 "width": 384,
-                "height": 673,
-                "id": "dndnode_15",
+                "height": 583,
+                "id": "dndnode_28",
                 "type": "genericNode",
                 "position": {
-                    "x": 409.91106009433804,
-                    "y": 398.0988935763564
+                    "x": 1434.3856064919105,
+                    "y": 417.72471641888757
+                },
+                "data": {
+                    "type": "MidJourneyPromptChain",
+                    "node": {
+                        "template": {
+                            "memory": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": {
+                                    "chat_memory": {
+                                        "messages": []
+                                    },
+                                    "output_key": null,
+                                    "input_key": null,
+                                    "return_messages": false,
+                                    "human_prefix": "Human",
+                                    "ai_prefix": "AI",
+                                    "memory_key": "history"
+                                },
+                                "password": false,
+                                "name": "memory",
+                                "type": "BaseMemory",
+                                "list": false
+                            },
+                            "verbose": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "verbose",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "prompt": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": {
+                                    "input_variables": [
+                                        "history",
+                                        "input"
+                                    ],
+                                    "output_parser": null,
+                                    "partial_variables": {},
+                                    "template": "The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.\n\nCurrent conversation:\n{history}\nHuman: {input}\nAI:",
+                                    "template_format": "f-string",
+                                    "validate_template": true,
+                                    "_type": "prompt"
+                                },
+                                "password": false,
+                                "name": "prompt",
+                                "type": "BasePromptTemplate",
+                                "list": false
+                            },
+                            "llm": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "llm",
+                                "type": "BaseLanguageModel",
+                                "list": false
+                            },
+                            "output_key": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "response",
+                                "password": false,
+                                "name": "output_key",
+                                "type": "str",
+                                "list": false
+                            },
+                            "input_key": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "input",
+                                "password": false,
+                                "name": "input_key",
+                                "type": "str",
+                                "list": false
+                            },
+                            "template": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": true,
+                                "value": "I want you to act as a prompt generator for Midjourney's artificial intelligence program.\n    Your job is to provide detailed and creative descriptions that will inspire unique and interesting images from the AI.\n    Keep in mind that the AI is capable of understanding a wide range of language and can interpret abstract concepts, so feel free to be as imaginative and descriptive as possible.\n    For example, you could describe a scene from a futuristic city, or a surreal landscape filled with strange creatures.\n    The more detailed and imaginative your description, the more interesting the resulting image will be. Here is your first prompt:\n    \"A field of wildflowers stretches out as far as the eye can see, each one a different color and shape. In the distance, a massive tree towers over the landscape, its branches reaching up to the sky like tentacles.\"\n\n    Current conversation:\n    {history}\n    Human: {input}\n    AI:",
+                                "password": false,
+                                "name": "template",
+                                "type": "str",
+                                "list": false
+                            },
+                            "ai_prefix_value": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "ai_prefix_value",
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "MidJourneyPromptChain"
+                        },
+                        "description": "MidJourneyPromptChain is a chain you can use to generate new MidJourney prompts.",
+                        "base_classes": [
+                            "LLMChain",
+                            "ConversationChain",
+                            "Chain",
+                            "BaseCustomChain",
+                            "MidJourneyPromptChain"
+                        ]
+                    },
+                    "id": "dndnode_28",
+                    "value": null
+                },
+                "selected": true,
+                "positionAbsolute": {
+                    "x": 1434.3856064919105,
+                    "y": 417.72471641888757
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 673,
+                "id": "dndnode_29",
+                "type": "genericNode",
+                "position": {
+                    "x": 472.1073740469533,
+                    "y": 204.4345032163925
                 },
                 "data": {
                     "type": "OpenAI",
@@ -221,64 +361,55 @@
                         },
                         "description": "Generic OpenAI class that uses model name.",
                         "base_classes": [
-                            "OpenAI",
+                            "BaseLLM",
                             "BaseLanguageModel",
-                            "BaseOpenAI",
-                            "BaseLLM"
+                            "OpenAI",
+                            "BaseOpenAI"
                         ]
                     },
-                    "id": "dndnode_15",
+                    "id": "dndnode_29",
                     "value": null
                 },
                 "selected": false,
                 "positionAbsolute": {
-                    "x": 409.91106009433804,
-                    "y": 398.0988935763564
+                    "x": 472.1073740469533,
+                    "y": 204.4345032163925
                 },
                 "dragging": false
             },
             {
                 "width": 384,
-                "height": 477,
-                "id": "dndnode_20",
+                "height": 397,
+                "id": "dndnode_30",
                 "type": "genericNode",
                 "position": {
-                    "x": 1102.587789663576,
-                    "y": -36.47284786009436
+                    "x": 933.4064707632224,
+                    "y": 202.5337962102717
                 },
                 "data": {
-                    "type": "LLMChain",
+                    "type": "ConversationSummaryMemory",
                     "node": {
                         "template": {
-                            "memory": {
-                                "required": false,
-                                "placeholder": "",
-                                "show": true,
-                                "multiline": false,
-                                "password": false,
-                                "name": "memory",
-                                "type": "BaseMemory",
-                                "list": false
-                            },
-                            "verbose": {
+                            "human_prefix": {
                                 "required": false,
                                 "placeholder": "",
                                 "show": false,
                                 "multiline": false,
-                                "value": false,
+                                "value": "Human",
                                 "password": false,
-                                "name": "verbose",
-                                "type": "bool",
+                                "name": "human_prefix",
+                                "type": "str",
                                 "list": false
                             },
-                            "prompt": {
+                            "ai_prefix": {
                                 "required": false,
                                 "placeholder": "",
-                                "show": true,
+                                "show": false,
                                 "multiline": false,
+                                "value": "AI",
                                 "password": false,
-                                "name": "prompt",
-                                "type": "BasePromptTemplate",
+                                "name": "ai_prefix",
+                                "type": "str",
                                 "list": false
                             },
                             "llm": {
@@ -291,253 +422,150 @@
                                 "type": "BaseLanguageModel",
                                 "list": false
                             },
-                            "output_key": {
-                                "required": true,
+                            "prompt": {
+                                "required": false,
                                 "placeholder": "",
-                                "show": true,
+                                "show": false,
                                 "multiline": false,
-                                "value": "text",
+                                "password": false,
+                                "name": "prompt",
+                                "type": "BasePromptTemplate",
+                                "list": false
+                            },
+                            "summary_message_cls": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "summary_message_cls",
+                                "type": "Type[langchain.schema.BaseMessage]",
+                                "list": false
+                            },
+                            "chat_memory": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "chat_memory",
+                                "type": "BaseChatMessageHistory",
+                                "list": false
+                            },
+                            "output_key": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
                                 "password": false,
                                 "name": "output_key",
                                 "type": "str",
                                 "list": false
                             },
-                            "_type": "LLMChain"
-                        },
-                        "description": "Chain to run queries against LLMs.",
-                        "base_classes": [
-                            "Chain",
-                            "LLMChain"
-                        ]
-                    },
-                    "id": "dndnode_20",
-                    "value": null
-                },
-                "selected": false,
-                "positionAbsolute": {
-                    "x": 1102.587789663576,
-                    "y": -36.47284786009436
-                },
-                "dragging": false
-            },
-            {
-                "width": 384,
-                "height": 351,
-                "id": "dndnode_21",
-                "type": "genericNode",
-                "position": {
-                    "x": 1626.1098853758665,
-                    "y": 147.81903080153683
-                },
-                "data": {
-                    "type": "ZeroShotAgent",
-                    "node": {
-                        "template": {
-                            "llm_chain": {
-                                "required": true,
-                                "placeholder": "",
-                                "show": true,
-                                "multiline": false,
-                                "password": false,
-                                "name": "llm_chain",
-                                "type": "LLMChain",
-                                "list": false
-                            },
-                            "allowed_tools": {
-                                "required": false,
-                                "placeholder": "",
-                                "show": true,
-                                "multiline": false,
-                                "password": false,
-                                "name": "allowed_tools",
-                                "type": "Tool",
-                                "list": true
-                            },
-                            "_type": "ZeroShotAgent"
-                        },
-                        "description": "Agent for the MRKL chain.",
-                        "base_classes": [
-                            "Agent",
-                            "ZeroShotAgent",
-                            "BaseSingleActionAgent",
-                            "function"
-                        ]
-                    },
-                    "id": "dndnode_21",
-                    "value": null
-                },
-                "selected": false,
-                "positionAbsolute": {
-                    "x": 1626.1098853758665,
-                    "y": 147.81903080153683
-                },
-                "dragging": false
-            },
-            {
-                "width": 384,
-                "height": 443,
-                "id": "dndnode_23",
-                "type": "genericNode",
-                "position": {
-                    "x": 409.51524635315866,
-                    "y": -60.01939553731515
-                },
-                "data": {
-                    "type": "ZeroShotPrompt",
-                    "node": {
-                        "template": {
-                            "prefix": {
-                                "required": false,
-                                "placeholder": "",
-                                "show": true,
-                                "multiline": true,
-                                "value": "Answer the following questions as best you can. You have access to the following tools:",
-                                "password": false,
-                                "name": "prefix",
-                                "type": "str",
-                                "list": false
-                            },
-                            "suffix": {
-                                "required": true,
-                                "placeholder": "",
-                                "show": true,
-                                "multiline": true,
-                                "value": "Begin!\n\nQuestion: {input}\nThought:{agent_scratchpad}",
-                                "password": false,
-                                "name": "suffix",
-                                "type": "str",
-                                "list": false
-                            },
-                            "format_instructions": {
+                            "input_key": {
                                 "required": false,
                                 "placeholder": "",
                                 "show": false,
                                 "multiline": false,
-                                "value": "Use the following format:\n\nQuestion: the input question you must answer\nThought: you should always think about what to do\nAction: the action to take, should be one of [{tool_names}]\nAction Input: the input to the action\nObservation: the result of the action\n... (this Thought/Action/Action Input/Observation can repeat N times)\nThought: I now know the final answer\nFinal Answer: the final answer to the original input question",
                                 "password": false,
-                                "name": "format_instructions",
+                                "name": "input_key",
                                 "type": "str",
                                 "list": false
                             },
-                            "_type": "zero_shot"
-                        },
-                        "description": "Prompt template for Zero Shot Agent.",
-                        "base_classes": [
-                            "BasePromptTemplate"
-                        ]
-                    },
-                    "id": "dndnode_23",
-                    "value": null
-                },
-                "selected": false,
-                "positionAbsolute": {
-                    "x": 409.51524635315866,
-                    "y": -60.01939553731515
-                },
-                "dragging": false
-            },
-            {
-                "width": 384,
-                "height": 397,
-                "id": "dndnode_26",
-                "type": "genericNode",
-                "position": {
-                    "x": 1106.898395253473,
-                    "y": 555.2758360479884
-                },
-                "data": {
-                    "type": "Search",
-                    "node": {
-                        "template": {
-                            "serpapi_api_key": {
-                                "required": true,
+                            "return_messages": {
+                                "required": false,
                                 "placeholder": "",
-                                "show": true,
+                                "show": false,
                                 "multiline": false,
-                                "value": "",
-                                "password": true,
-                                "name": "serpapi_api_key",
-                                "type": "str",
+                                "password": false,
+                                "name": "return_messages",
+                                "type": "bool",
                                 "list": false
                             },
-                            "aiosession": {
+                            "buffer": {
                                 "required": false,
                                 "placeholder": "",
                                 "show": false,
                                 "multiline": false,
                                 "value": "",
                                 "password": false,
-                                "name": "aiosession",
+                                "name": "buffer",
                                 "type": "str",
                                 "list": false
                             },
-                            "_type": "Search"
+                            "memory_key": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "history",
+                                "password": false,
+                                "name": "memory_key",
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "ConversationSummaryMemory"
                         },
-                        "description": "A search engine. Useful for when you need to answer questions about current events. Input should be a search query.",
+                        "description": "Conversation summarizer to memory.",
                         "base_classes": [
-                            "Tool"
+                            "ConversationSummaryMemory",
+                            "BaseChatMemory",
+                            "SummarizerMixin",
+                            "BaseMemory"
                         ]
                     },
-                    "id": "dndnode_26",
+                    "id": "dndnode_30",
                     "value": null
                 },
-                "positionAbsolute": {
-                    "x": 1106.898395253473,
-                    "y": 555.2758360479884
-                },
                 "selected": false,
+                "positionAbsolute": {
+                    "x": 933.4064707632224,
+                    "y": 202.5337962102717
+                },
                 "dragging": false
             }
         ],
         "edges": [
             {
-                "source": "dndnode_15",
-                "sourceHandle": "OpenAI|dndnode_15|OpenAI|BaseLanguageModel|BaseOpenAI|BaseLLM",
-                "target": "dndnode_20",
-                "targetHandle": "BaseLanguageModel|llm|dndnode_20",
+                "source": "dndnode_29",
+                "sourceHandle": "OpenAI|dndnode_29|BaseLLM|BaseLanguageModel|OpenAI|BaseOpenAI",
+                "target": "dndnode_28",
+                "targetHandle": "BaseLanguageModel|llm|dndnode_28",
                 "className": "animate-pulse",
-                "id": "reactflow__edge-dndnode_15OpenAI|dndnode_15|OpenAI|BaseLanguageModel|BaseOpenAI|BaseLLM-dndnode_20BaseLanguageModel|llm|dndnode_20"
+                "id": "reactflow__edge-dndnode_29OpenAI|dndnode_29|BaseLLM|BaseLanguageModel|OpenAI|BaseOpenAI-dndnode_28BaseLanguageModel|llm|dndnode_28"
             },
             {
-                "source": "dndnode_20",
-                "sourceHandle": "LLMChain|dndnode_20|Chain|LLMChain",
-                "target": "dndnode_21",
-                "targetHandle": "LLMChain|llm_chain|dndnode_21",
+                "source": "dndnode_30",
+                "sourceHandle": "ConversationSummaryMemory|dndnode_30|ConversationSummaryMemory|BaseChatMemory|SummarizerMixin|BaseMemory",
+                "target": "dndnode_28",
+                "targetHandle": "BaseMemory|memory|dndnode_28",
                 "className": "animate-pulse",
-                "id": "reactflow__edge-dndnode_20LLMChain|dndnode_20|Chain|LLMChain-dndnode_21LLMChain|llm_chain|dndnode_21"
+                "id": "reactflow__edge-dndnode_30ConversationSummaryMemory|dndnode_30|ConversationSummaryMemory|BaseChatMemory|SummarizerMixin|BaseMemory-dndnode_28BaseMemory|memory|dndnode_28"
             },
             {
-                "source": "dndnode_23",
-                "sourceHandle": "ZeroShotPrompt|dndnode_23|BasePromptTemplate",
-                "target": "dndnode_20",
-                "targetHandle": "BasePromptTemplate|prompt|dndnode_20",
+                "source": "dndnode_29",
+                "sourceHandle": "OpenAI|dndnode_29|BaseLLM|BaseLanguageModel|OpenAI|BaseOpenAI",
+                "target": "dndnode_30",
+                "targetHandle": "BaseLanguageModel|llm|dndnode_30",
                 "className": "animate-pulse",
-                "id": "reactflow__edge-dndnode_23ZeroShotPrompt|dndnode_23|BasePromptTemplate-dndnode_20BasePromptTemplate|prompt|dndnode_20"
-            },
-            {
-                "source": "dndnode_26",
-                "sourceHandle": "Search|dndnode_26|Tool",
-                "target": "dndnode_21",
-                "targetHandle": "Tool|allowed_tools|dndnode_21",
-                "className": "animate-pulse",
-                "id": "reactflow__edge-dndnode_26Search|dndnode_26|Tool-dndnode_21Tool|allowed_tools|dndnode_21"
+                "id": "reactflow__edge-dndnode_29OpenAI|dndnode_29|BaseLLM|BaseLanguageModel|OpenAI|BaseOpenAI-dndnode_30BaseLanguageModel|llm|dndnode_30"
             }
         ],
         "viewport": {
-            "x": -153.21089429045423,
-            "y": 54.85854102587501,
-            "zoom": 0.697371833175203
+            "x": -355.21929209374366,
+            "y": -74.071721754092,
+            "zoom": 0.8235910172675737
         }
     },
     "chat": [
         {
-            "message": "Who is he? What is the hometown of the reigning men's U.S. Open champion of 2022?",
+            "message": "Dragon",
             "isSend": true
         },
         {
-            "message": "The reigning men’s U.S. Open champion of 2022 is Carlos Alcaraz and his hometown is El Palmar, Murcia.",
+            "message": " Imagine a mysterious forest, the trees are tall and ancient, their branches reaching up to the sky. Through the darkness, a dragon emerges from the shadows, its scales shimmering in the moonlight. Its wingspan is immense, and its eyes glow with a fierce intensity. It is a majestic and powerful creature, one that commands both respect and fear.",
             "isSend": false,
-            "thought": "\u001b[1m> Entering new AgentExecutor chain...\u001b[0m\n\u001b[32;1m\u001b[1;3m I should look for information about the U.S. Open champion from 2022.\nAction: Search\nAction Input: \"U.S. Open Men's Champion 2022\" \u001b[0m\nObservation: \u001b[36;1m\u001b[1;3mCarlos Alcaraz\u001b[0m\nThought:\u001b[32;1m\u001b[1;3m I should look for information about Carlos Alcaraz\nAction: Search\nAction Input: \"Carlos Alcaraz hometown\"\u001b[0m\nObservation: \u001b[36;1m\u001b[1;3mEl Palmar, Murcia\u001b[0m\nThought:\u001b[32;1m\u001b[1;3m I now know the final answer\nFinal Answer: The reigning men’s U.S. Open champion of 2022 is Carlos Alcaraz and his hometown is El Palmar, Murcia.\u001b[0m\n\n\u001b[1m> Finished chain.\u001b[0m"
+            "thought": "\u001b[1m> Entering new MidJourneyPromptChain chain...\u001b[0m\nPrompt after formatting:\n\u001b[32;1m\u001b[1;3mI want you to act as a prompt generator for Midjourney's artificial intelligence program.\n    Your job is to provide detailed and creative descriptions that will inspire unique and interesting images from the AI.\n    Keep in mind that the AI is capable of understanding a wide range of language and can interpret abstract concepts, so feel free to be as imaginative and descriptive as possible.\n    For example, you could describe a scene from a futuristic city, or a surreal landscape filled with strange creatures.\n    The more detailed and imaginative your description, the more interesting the resulting image will be. Here is your first prompt:\n    \"A field of wildflowers stretches out as far as the eye can see, each one a different color and shape. In the distance, a massive tree towers over the landscape, its branches reaching up to the sky like tentacles.\"\n\n    Current conversation:\n    \n    Human: Dragon\n    AI:\u001b[0m\n\n\u001b[1m> Finished chain.\u001b[0m"
         }
     ]
 }
