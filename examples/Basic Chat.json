@@ -1,38 +1,28 @@
 {
-  "description": "Talk to a Character from a Series",
-  "name": "Series Character",
-  "id": "f4806345-33e1-4926-b30e-a80bac169a56",
+  "description": "Simplest possible chat model",
+  "name": "Basic Chat",
+  "id": "64b0e4e3-2f4d-41b2-9c71-a214bd0e77bf",
   "data": {
     "nodes": [
       {
         "width": 384,
         "height": 597,
-        "id": "dndnode_32",
+        "id": "dndnode_24",
         "type": "genericNode",
         "position": {
-          "x": -109.87265436187772,
-          "y": -344.53540310479445
+          "x": 228.87326389541306,
+          "y": 465.8628482073749
         },
         "data": {
-          "type": "OpenAI",
+          "type": "ChatOpenAI",
           "node": {
             "template": {
-              "cache": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "cache",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
               "verbose": {
                 "required": false,
                 "placeholder": "",
                 "show": false,
                 "multiline": false,
+                "value": false,
                 "password": false,
                 "name": "verbose",
                 "advanced": false,
@@ -66,14 +56,12 @@
                 "placeholder": "",
                 "show": true,
                 "multiline": false,
-                "value": "text-davinci-003",
+                "value": "gpt-3.5-turbo",
                 "password": false,
                 "options": [
-                  "text-davinci-003",
-                  "text-davinci-002",
-                  "text-curie-001",
-                  "text-babbage-001",
-                  "text-ada-001"
+                  "gpt-3.5-turbo",
+                  "gpt-4",
+                  "gpt-4-32k"
                 ],
                 "name": "model_name",
                 "advanced": false,
@@ -90,78 +78,6 @@
                 "name": "temperature",
                 "advanced": false,
                 "type": "float",
-                "list": false
-              },
-              "max_tokens": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 256,
-                "password": true,
-                "name": "max_tokens",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "top_p": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "top_p",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "frequency_penalty": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 0,
-                "password": false,
-                "name": "frequency_penalty",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "presence_penalty": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 0,
-                "password": false,
-                "name": "presence_penalty",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "n": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "n",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "best_of": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "best_of",
-                "advanced": false,
-                "type": "int",
                 "list": false
               },
               "model_kwargs": {
@@ -225,18 +141,6 @@
                 "type": "str",
                 "list": false
               },
-              "batch_size": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 20,
-                "password": false,
-                "name": "batch_size",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
               "request_timeout": {
                 "required": false,
                 "placeholder": "",
@@ -246,18 +150,8 @@
                 "name": "request_timeout",
                 "advanced": false,
                 "type": "float",
-                "list": false
-              },
-              "logit_bias": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "logit_bias",
-                "advanced": false,
-                "type": "code",
-                "list": false
+                "list": false,
+                "value": 60
               },
               "max_retries": {
                 "required": false,
@@ -283,86 +177,116 @@
                 "type": "bool",
                 "list": false
               },
-              "allowed_special": {
+              "n": {
                 "required": false,
                 "placeholder": "",
                 "show": false,
                 "multiline": false,
-                "value": [],
+                "value": 1,
                 "password": false,
-                "name": "allowed_special",
+                "name": "n",
                 "advanced": false,
-                "type": "Literal'all'",
-                "list": true
-              },
-              "disallowed_special": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": "all",
-                "password": false,
-                "name": "disallowed_special",
-                "advanced": false,
-                "type": "Literal'all'",
+                "type": "int",
                 "list": false
               },
-              "_type": "OpenAI"
+              "max_tokens": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": true,
+                "name": "max_tokens",
+                "advanced": false,
+                "type": "int",
+                "list": false
+              },
+              "_type": "ChatOpenAI"
             },
-            "description": "Generic OpenAI class that uses model name.",
+            "description": "Wrapper around OpenAI Chat large language models.",
             "base_classes": [
-              "BaseOpenAI",
-              "OpenAI",
-              "BaseLanguageModel",
-              "BaseLLM"
+              "BaseChatModel",
+              "ChatOpenAI",
+              "BaseLanguageModel"
             ]
           },
-          "id": "dndnode_32",
+          "id": "dndnode_24",
           "value": null
         },
         "selected": false,
+        "dragging": false,
         "positionAbsolute": {
-          "x": -109.87265436187772,
-          "y": -344.53540310479445
-        },
-        "dragging": false
+          "x": 228.87326389541306,
+          "y": 465.8628482073749
+        }
       },
       {
         "width": 384,
-        "height": 419,
-        "id": "dndnode_39",
+        "height": 287,
+        "id": "dndnode_28",
         "type": "genericNode",
         "position": {
-          "x": 537.5705916932063,
-          "y": -223.79480207470036
+          "x": 806,
+          "y": 554
         },
         "data": {
-          "type": "SeriesCharacterChain",
+          "type": "ConversationChain",
           "node": {
             "template": {
-              "character": {
-                "required": true,
+              "memory": {
+                "required": false,
                 "placeholder": "",
                 "show": true,
                 "multiline": false,
                 "password": false,
-                "name": "character",
+                "name": "memory",
                 "advanced": false,
-                "type": "str",
-                "list": false,
-                "value": ""
+                "type": "BaseMemory",
+                "list": false
               },
-              "series": {
-                "required": true,
+              "callbacks": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "callbacks",
+                "advanced": false,
+                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                "list": true
+              },
+              "verbose": {
+                "required": false,
                 "placeholder": "",
                 "show": true,
                 "multiline": false,
                 "password": false,
-                "name": "series",
+                "name": "verbose",
+                "advanced": true,
+                "type": "bool",
+                "list": false
+              },
+              "prompt": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": {
+                  "input_variables": [
+                    "history",
+                    "input"
+                  ],
+                  "output_parser": null,
+                  "partial_variables": {},
+                  "template": "The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.\n\nCurrent conversation:\n{history}\nHuman: {input}\nAI:",
+                  "template_format": "f-string",
+                  "validate_template": true,
+                  "_type": "prompt"
+                },
+                "password": false,
+                "name": "prompt",
                 "advanced": false,
-                "type": "str",
-                "list": false,
-                "value": ""
+                "type": "BasePromptTemplate",
+                "list": false
               },
               "llm": {
                 "required": true,
@@ -371,48 +295,68 @@
                 "multiline": false,
                 "password": false,
                 "name": "llm",
-                "display_name": "LLM",
                 "advanced": false,
                 "type": "BaseLanguageModel",
                 "list": false
               },
-              "_type": "SeriesCharacterChain"
+              "output_key": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "response",
+                "password": false,
+                "name": "output_key",
+                "advanced": true,
+                "type": "str",
+                "list": false
+              },
+              "input_key": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "input",
+                "password": false,
+                "name": "input_key",
+                "advanced": true,
+                "type": "str",
+                "list": false
+              },
+              "_type": "ConversationChain"
             },
-            "description": "SeriesCharacterChain is a chain you can use to have a conversation with a character from a series.",
+            "description": "Chain to have a conversation and load context from memory.",
             "base_classes": [
-              "Chain",
-              "BaseCustomChain",
               "LLMChain",
-              "ConversationChain",
-              "SeriesCharacterChain"
+              "Chain",
+              "ConversationChain"
             ]
           },
-          "id": "dndnode_39",
+          "id": "dndnode_28",
           "value": null
         },
-        "selected": false,
+        "selected": true,
+        "dragging": false,
         "positionAbsolute": {
-          "x": 537.5705916932063,
-          "y": -223.79480207470036
-        },
-        "dragging": false
+          "x": 806,
+          "y": 554
+        }
       }
     ],
     "edges": [
       {
-        "source": "dndnode_32",
-        "sourceHandle": "OpenAI|dndnode_32|BaseOpenAI|OpenAI|BaseLanguageModel|BaseLLM",
-        "target": "dndnode_39",
-        "targetHandle": "BaseLanguageModel|llm|dndnode_39",
+        "source": "dndnode_24",
+        "sourceHandle": "ChatOpenAI|dndnode_24|BaseChatModel|ChatOpenAI|BaseLanguageModel",
+        "target": "dndnode_28",
+        "targetHandle": "BaseLanguageModel|llm|dndnode_28",
         "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_32OpenAI|dndnode_32|BaseOpenAI|OpenAI|BaseLanguageModel|BaseLLM-dndnode_39BaseLanguageModel|llm|dndnode_39",
-        "selected": false
+        "id": "reactflow__edge-dndnode_24ChatOpenAI|dndnode_24|BaseChatModel|ChatOpenAI|BaseLanguageModel-dndnode_28BaseLanguageModel|llm|dndnode_28"
       }
     ],
     "viewport": {
-      "x": 302.92537281970607,
-      "y": 429.7239204719036,
-      "zoom": 0.6973718331752029
+      "x": 389.9096775910921,
+      "y": 0.7671274465648139,
+      "zoom": 0.5
     }
   }
 }

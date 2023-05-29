@@ -1,17 +1,17 @@
 {
-  "description": "A Chain that uses a ConversationBufferMemory",
-  "name": "Buffer Memory",
-  "id": "5426219a-a85d-4d0c-96d8-f83fa40a8b5c",
+  "description": "Example of Conversational Chain Flow",
+  "name": "Conversation Chain",
+  "id": "94be5cec-a115-44a8-a0ae-81ebbb742a46",
   "data": {
     "nodes": [
       {
         "width": 384,
         "height": 273,
-        "id": "dndnode_48",
+        "id": "dndnode_197",
         "type": "genericNode",
         "position": {
-          "x": 739.8999754662251,
-          "y": 334.3621287703047
+          "x": 41.77285741205577,
+          "y": 63.38205429210862
         },
         "data": {
           "type": "ConversationBufferMemory",
@@ -101,152 +101,29 @@
             },
             "description": "Buffer for storing conversation memory.",
             "base_classes": [
-              "BaseMemory",
               "BaseChatMemory",
-              "ConversationBufferMemory"
+              "ConversationBufferMemory",
+              "BaseMemory"
             ]
           },
-          "id": "dndnode_48",
+          "id": "dndnode_197",
           "value": null
         },
         "selected": false,
         "positionAbsolute": {
-          "x": 739.8999754662251,
-          "y": 334.3621287703047
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 287,
-        "id": "dndnode_49",
-        "type": "genericNode",
-        "position": {
-          "x": 1364.824439016022,
-          "y": 466.4103762723428
-        },
-        "data": {
-          "type": "ConversationChain",
-          "node": {
-            "template": {
-              "memory": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "memory",
-                "advanced": false,
-                "type": "BaseMemory",
-                "list": false
-              },
-              "callbacks": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "callbacks",
-                "advanced": false,
-                "type": "langchain.callbacks.base.BaseCallbackHandler",
-                "list": true
-              },
-              "verbose": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "verbose",
-                "advanced": true,
-                "type": "bool",
-                "list": false
-              },
-              "prompt": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": {
-                  "input_variables": [
-                    "history",
-                    "input"
-                  ],
-                  "output_parser": null,
-                  "partial_variables": {},
-                  "template": "The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.\n\nCurrent conversation:\n{history}\nHuman: {input}\nAI:",
-                  "template_format": "f-string",
-                  "validate_template": true,
-                  "_type": "prompt"
-                },
-                "password": false,
-                "name": "prompt",
-                "advanced": false,
-                "type": "BasePromptTemplate",
-                "list": false
-              },
-              "llm": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "llm",
-                "advanced": false,
-                "type": "BaseLanguageModel",
-                "list": false
-              },
-              "output_key": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "response",
-                "password": false,
-                "name": "output_key",
-                "advanced": true,
-                "type": "str",
-                "list": false
-              },
-              "input_key": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "input",
-                "password": false,
-                "name": "input_key",
-                "advanced": true,
-                "type": "str",
-                "list": false
-              },
-              "_type": "ConversationChain"
-            },
-            "description": "Chain to have a conversation and load context from memory.",
-            "base_classes": [
-              "LLMChain",
-              "Chain",
-              "ConversationChain"
-            ]
-          },
-          "id": "dndnode_49",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1364.824439016022,
-          "y": 466.4103762723428
+          "x": 41.77285741205577,
+          "y": 63.38205429210862
         },
         "dragging": false
       },
       {
         "width": 384,
         "height": 597,
-        "id": "dndnode_50",
+        "id": "dndnode_198",
         "type": "genericNode",
         "position": {
-          "x": 735.8178700857987,
-          "y": 706.9245756642823
+          "x": 36.69238553788068,
+          "y": 467.8198042261215
         },
         "data": {
           "type": "ChatOpenAI",
@@ -291,7 +168,7 @@
                 "placeholder": "",
                 "show": true,
                 "multiline": false,
-                "value": "gpt-4",
+                "value": "gpt-3.5-turbo",
                 "password": false,
                 "options": [
                   "gpt-3.5-turbo",
@@ -439,46 +316,169 @@
             },
             "description": "Wrapper around OpenAI Chat large language models.",
             "base_classes": [
-              "BaseChatModel",
               "ChatOpenAI",
+              "BaseChatModel",
               "BaseLanguageModel"
             ]
           },
-          "id": "dndnode_50",
+          "id": "dndnode_198",
           "value": null
         },
         "selected": false,
         "positionAbsolute": {
-          "x": 735.8178700857987,
-          "y": 706.9245756642823
+          "x": 36.69238553788068,
+          "y": 467.8198042261215
+        },
+        "dragging": false
+      },
+      {
+        "width": 384,
+        "height": 287,
+        "id": "dndnode_199",
+        "type": "genericNode",
+        "position": {
+          "x": 621.9726549474123,
+          "y": 103.02734505258763
+        },
+        "data": {
+          "type": "ConversationChain",
+          "node": {
+            "template": {
+              "memory": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "memory",
+                "advanced": false,
+                "type": "BaseMemory",
+                "list": false
+              },
+              "callbacks": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "callbacks",
+                "advanced": false,
+                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                "list": true
+              },
+              "verbose": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "verbose",
+                "advanced": true,
+                "type": "bool",
+                "list": false
+              },
+              "prompt": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": {
+                  "input_variables": [
+                    "history",
+                    "input"
+                  ],
+                  "output_parser": null,
+                  "partial_variables": {},
+                  "template": "The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.\n\nCurrent conversation:\n{history}\nHuman: {input}\nAI:",
+                  "template_format": "f-string",
+                  "validate_template": true,
+                  "_type": "prompt"
+                },
+                "password": false,
+                "name": "prompt",
+                "advanced": false,
+                "type": "BasePromptTemplate",
+                "list": false
+              },
+              "llm": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "llm",
+                "advanced": false,
+                "type": "BaseLanguageModel",
+                "list": false
+              },
+              "output_key": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "response",
+                "password": false,
+                "name": "output_key",
+                "advanced": true,
+                "type": "str",
+                "list": false
+              },
+              "input_key": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "input",
+                "password": false,
+                "name": "input_key",
+                "advanced": true,
+                "type": "str",
+                "list": false
+              },
+              "_type": "ConversationChain"
+            },
+            "description": "Chain to have a conversation and load context from memory.",
+            "base_classes": [
+              "ConversationChain",
+              "LLMChain",
+              "Chain"
+            ]
+          },
+          "id": "dndnode_199",
+          "value": null
+        },
+        "selected": false,
+        "positionAbsolute": {
+          "x": 621.9726549474123,
+          "y": 103.02734505258763
         },
         "dragging": false
       }
     ],
     "edges": [
       {
-        "source": "dndnode_48",
-        "sourceHandle": "ConversationBufferMemory|dndnode_48|BaseMemory|BaseChatMemory|ConversationBufferMemory",
-        "target": "dndnode_49",
-        "targetHandle": "BaseMemory|memory|dndnode_49",
+        "source": "dndnode_197",
+        "sourceHandle": "ConversationBufferMemory|dndnode_197|BaseChatMemory|ConversationBufferMemory|BaseMemory",
+        "target": "dndnode_199",
+        "targetHandle": "BaseMemory|memory|dndnode_199",
         "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_48ConversationBufferMemory|dndnode_48|BaseMemory|BaseChatMemory|ConversationBufferMemory-dndnode_49BaseMemory|memory|dndnode_49",
+        "id": "reactflow__edge-dndnode_197ConversationBufferMemory|dndnode_197|BaseChatMemory|ConversationBufferMemory|BaseMemory-dndnode_199BaseMemory|memory|dndnode_199",
         "selected": false
       },
       {
-        "source": "dndnode_50",
-        "sourceHandle": "ChatOpenAI|dndnode_50|BaseChatModel|ChatOpenAI|BaseLanguageModel",
-        "target": "dndnode_49",
-        "targetHandle": "BaseLanguageModel|llm|dndnode_49",
+        "source": "dndnode_198",
+        "sourceHandle": "ChatOpenAI|dndnode_198|ChatOpenAI|BaseChatModel|BaseLanguageModel",
+        "target": "dndnode_199",
+        "targetHandle": "BaseLanguageModel|llm|dndnode_199",
         "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_50ChatOpenAI|dndnode_50|BaseChatModel|ChatOpenAI|BaseLanguageModel-dndnode_49BaseLanguageModel|llm|dndnode_49",
+        "id": "reactflow__edge-dndnode_198ChatOpenAI|dndnode_198|ChatOpenAI|BaseChatModel|BaseLanguageModel-dndnode_199BaseLanguageModel|llm|dndnode_199",
         "selected": false
       }
     ],
     "viewport": {
-      "x": -294.08439029367605,
-      "y": -256.02349752295527,
-      "zoom": 0.8235910172675734
+      "x": 184.01367252629387,
+      "y": 21.486327473706183,
+      "zoom": 0.5
     }
   }
 }
