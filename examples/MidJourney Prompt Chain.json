@@ -1,17 +1,85 @@
 {
-  "description": "An agent that can search the web and answer questions.",
-  "name": "SerpAPI Tool",
-  "id": "4405a500-b196-4e18-aef8-92131f74eaab",
+  "description": "Helps you generate a prompt based on your input to use in the MidJourney AI.",
+  "name": "MidJourney Prompt Chain",
+  "id": "9f2c3aef-a2f4-4fc6-8954-45f594ae64ee",
   "data": {
     "nodes": [
       {
         "width": 384,
-        "height": 597,
-        "id": "dndnode_15",
+        "height": 287,
+        "id": "dndnode_28",
         "type": "genericNode",
         "position": {
-          "x": 409.91106009433804,
-          "y": 398.0988935763564
+          "x": 1434.3856064919105,
+          "y": 417.72471641888757
+        },
+        "data": {
+          "type": "MidJourneyPromptChain",
+          "node": {
+            "template": {
+              "llm": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "llm",
+                "display_name": "LLM",
+                "advanced": false,
+                "type": "BaseLanguageModel",
+                "list": false
+              },
+              "memory": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "memory",
+                "advanced": false,
+                "type": "BaseChatMemory",
+                "list": false,
+                "value": {
+                  "chat_memory": {
+                    "messages": []
+                  },
+                  "output_key": null,
+                  "input_key": null,
+                  "return_messages": false,
+                  "human_prefix": "Human",
+                  "ai_prefix": "AI",
+                  "memory_key": "history"
+                }
+              },
+              "_type": "MidJourneyPromptChain"
+            },
+            "description": "MidJourneyPromptChain is a chain you can use to generate new MidJourney prompts.",
+            "base_classes": [
+              "LLMChain",
+              "ConversationChain",
+              "Chain",
+              "BaseCustomChain",
+              "MidJourneyPromptChain"
+            ]
+          },
+          "id": "dndnode_28",
+          "value": null
+        },
+        "selected": false,
+        "positionAbsolute": {
+          "x": 1434.3856064919105,
+          "y": 417.72471641888757
+        },
+        "dragging": false
+      },
+      {
+        "width": 384,
+        "height": 597,
+        "id": "dndnode_29",
+        "type": "genericNode",
+        "position": {
+          "x": 472.1073740469533,
+          "y": 204.4345032163925
         },
         "data": {
           "type": "OpenAI",
@@ -311,78 +379,57 @@
             },
             "description": "Generic OpenAI class that uses model name.",
             "base_classes": [
-              "OpenAI",
+              "BaseLLM",
               "BaseLanguageModel",
-              "BaseOpenAI",
-              "BaseLLM"
+              "OpenAI",
+              "BaseOpenAI"
             ]
           },
-          "id": "dndnode_15",
+          "id": "dndnode_29",
           "value": null
         },
         "selected": false,
         "positionAbsolute": {
-          "x": 409.91106009433804,
-          "y": 398.0988935763564
+          "x": 472.1073740469533,
+          "y": 204.4345032163925
         },
         "dragging": false
       },
       {
         "width": 384,
-        "height": 307,
-        "id": "dndnode_20",
+        "height": 313,
+        "id": "dndnode_ae42694e-8558-49d7-be41-6482559c292a",
         "type": "genericNode",
         "position": {
-          "x": 1102.587789663576,
-          "y": -36.47284786009436
+          "x": 970.4079759700535,
+          "y": 202.85762988089095
         },
         "data": {
-          "type": "LLMChain",
+          "type": "ConversationSummaryMemory",
           "node": {
             "template": {
-              "memory": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "memory",
-                "advanced": false,
-                "type": "BaseMemory",
-                "list": false
-              },
-              "callbacks": {
+              "human_prefix": {
                 "required": false,
                 "placeholder": "",
                 "show": false,
                 "multiline": false,
+                "value": "Human",
                 "password": false,
-                "name": "callbacks",
+                "name": "human_prefix",
                 "advanced": false,
-                "type": "langchain.callbacks.base.BaseCallbackHandler",
-                "list": true
-              },
-              "verbose": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": false,
-                "password": false,
-                "name": "verbose",
-                "advanced": true,
-                "type": "bool",
+                "type": "str",
                 "list": false
               },
-              "prompt": {
-                "required": true,
+              "ai_prefix": {
+                "required": false,
                 "placeholder": "",
-                "show": true,
+                "show": false,
                 "multiline": false,
+                "value": "AI",
                 "password": false,
-                "name": "prompt",
+                "name": "ai_prefix",
                 "advanced": false,
-                "type": "BasePromptTemplate",
+                "type": "str",
                 "list": false
               },
               "llm": {
@@ -396,268 +443,155 @@
                 "type": "BaseLanguageModel",
                 "list": false
               },
-              "output_key": {
-                "required": true,
+              "prompt": {
+                "required": false,
                 "placeholder": "",
-                "show": true,
+                "show": false,
                 "multiline": false,
-                "value": "text",
+                "password": false,
+                "name": "prompt",
+                "advanced": false,
+                "type": "BasePromptTemplate",
+                "list": false
+              },
+              "summary_message_cls": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "summary_message_cls",
+                "advanced": false,
+                "type": "Type[langchain.schema.BaseMessage]",
+                "list": false
+              },
+              "chat_memory": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "chat_memory",
+                "advanced": false,
+                "type": "BaseChatMessageHistory",
+                "list": false
+              },
+              "output_key": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
                 "password": false,
                 "name": "output_key",
-                "advanced": true,
+                "advanced": false,
                 "type": "str",
                 "list": false
               },
-              "_type": "LLMChain"
-            },
-            "description": "Chain to run queries against LLMs.",
-            "base_classes": [
-              "Chain",
-              "LLMChain"
-            ]
-          },
-          "id": "dndnode_20",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1102.587789663576,
-          "y": -36.47284786009436
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 267,
-        "id": "dndnode_21",
-        "type": "genericNode",
-        "position": {
-          "x": 1626.1098853758665,
-          "y": 147.81903080153683
-        },
-        "data": {
-          "type": "ZeroShotAgent",
-          "node": {
-            "template": {
-              "llm_chain": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "llm_chain",
-                "advanced": false,
-                "type": "LLMChain",
-                "list": false
-              },
-              "output_parser": {
+              "input_key": {
                 "required": false,
                 "placeholder": "",
                 "show": false,
                 "multiline": false,
                 "password": false,
-                "name": "output_parser",
-                "advanced": false,
-                "type": "AgentOutputParser",
-                "list": false
-              },
-              "allowed_tools": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "allowed_tools",
-                "advanced": false,
-                "type": "Tool",
-                "list": true
-              },
-              "_type": "ZeroShotAgent"
-            },
-            "description": "Agent for the MRKL chain.",
-            "base_classes": [
-              "Agent",
-              "ZeroShotAgent",
-              "BaseSingleActionAgent",
-              "function"
-            ]
-          },
-          "id": "dndnode_21",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1626.1098853758665,
-          "y": 147.81903080153683
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 359,
-        "id": "dndnode_23",
-        "type": "genericNode",
-        "position": {
-          "x": 409.51524635315866,
-          "y": -60.01939553731515
-        },
-        "data": {
-          "type": "ZeroShotPrompt",
-          "node": {
-            "template": {
-              "prefix": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": true,
-                "value": "Answer the following questions as best you can. You have access to the following tools:",
-                "password": false,
-                "name": "prefix",
+                "name": "input_key",
                 "advanced": false,
                 "type": "str",
                 "list": false
               },
-              "suffix": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": true,
-                "value": "Begin!\n\nQuestion: {input}\nThought:{agent_scratchpad}",
-                "password": false,
-                "name": "suffix",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "format_instructions": {
+              "return_messages": {
                 "required": false,
                 "placeholder": "",
                 "show": false,
                 "multiline": false,
-                "value": "Use the following format:\n\nQuestion: the input question you must answer\nThought: you should always think about what to do\nAction: the action to take, should be one of [{tool_names}]\nAction Input: the input to the action\nObservation: the result of the action\n... (this Thought/Action/Action Input/Observation can repeat N times)\nThought: I now know the final answer\nFinal Answer: the final answer to the original input question",
                 "password": false,
-                "name": "format_instructions",
+                "name": "return_messages",
                 "advanced": false,
-                "type": "str",
+                "type": "bool",
                 "list": false
               },
-              "_type": "zero_shot"
-            },
-            "description": "Prompt template for Zero Shot Agent.",
-            "base_classes": [
-              "BasePromptTemplate"
-            ]
-          },
-          "id": "dndnode_23",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 409.51524635315866,
-          "y": -60.01939553731515
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 313,
-        "id": "dndnode_b3a34830-07b0-4627-b909-5c13dea90c19",
-        "type": "genericNode",
-        "position": {
-          "x": 1147.466611387235,
-          "y": 592.426363268862
-        },
-        "data": {
-          "type": "Search",
-          "node": {
-            "template": {
-              "serpapi_api_key": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "",
-                "password": true,
-                "name": "serpapi_api_key",
-                "display_name": "Serpapi API Key",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "aiosession": {
+              "buffer": {
                 "required": false,
                 "placeholder": "",
                 "show": false,
                 "multiline": false,
                 "value": "",
                 "password": false,
-                "name": "aiosession",
+                "name": "buffer",
                 "advanced": false,
                 "type": "str",
                 "list": false
               },
-              "_type": "Search"
+              "memory_key": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "history",
+                "password": false,
+                "name": "memory_key",
+                "advanced": false,
+                "type": "str",
+                "list": false
+              },
+              "_type": "ConversationSummaryMemory"
             },
-            "description": "A search engine. Useful for when you need to answer questions about current events. Input should be a search query.",
+            "description": "Conversation summarizer to memory.",
             "base_classes": [
-              "Tool"
+              "SummarizerMixin",
+              "BaseMemory",
+              "BaseChatMemory",
+              "ConversationSummaryMemory"
             ]
           },
-          "id": "dndnode_b3a34830-07b0-4627-b909-5c13dea90c19",
+          "id": "dndnode_ae42694e-8558-49d7-be41-6482559c292a",
           "value": null
         },
         "selected": false,
         "positionAbsolute": {
-          "x": 1147.466611387235,
-          "y": 592.426363268862
+          "x": 970.4079759700535,
+          "y": 202.85762988089095
         },
         "dragging": false
       }
     ],
     "edges": [
       {
-        "source": "dndnode_15",
-        "sourceHandle": "OpenAI|dndnode_15|OpenAI|BaseLanguageModel|BaseOpenAI|BaseLLM",
-        "target": "dndnode_20",
-        "targetHandle": "BaseLanguageModel|llm|dndnode_20",
+        "source": "dndnode_29",
+        "sourceHandle": "OpenAI|dndnode_29|BaseLLM|BaseLanguageModel|OpenAI|BaseOpenAI",
+        "target": "dndnode_28",
+        "targetHandle": "BaseLanguageModel|llm|dndnode_28",
         "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_15OpenAI|dndnode_15|OpenAI|BaseLanguageModel|BaseOpenAI|BaseLLM-dndnode_20BaseLanguageModel|llm|dndnode_20",
+        "id": "reactflow__edge-dndnode_29OpenAI|dndnode_29|BaseLLM|BaseLanguageModel|OpenAI|BaseOpenAI-dndnode_28BaseLanguageModel|llm|dndnode_28",
         "selected": false
       },
       {
-        "source": "dndnode_20",
-        "sourceHandle": "LLMChain|dndnode_20|Chain|LLMChain",
-        "target": "dndnode_21",
-        "targetHandle": "LLMChain|llm_chain|dndnode_21",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_20LLMChain|dndnode_20|Chain|LLMChain-dndnode_21LLMChain|llm_chain|dndnode_21",
-        "selected": false
-      },
-      {
-        "source": "dndnode_23",
-        "sourceHandle": "ZeroShotPrompt|dndnode_23|BasePromptTemplate",
-        "target": "dndnode_20",
-        "targetHandle": "BasePromptTemplate|prompt|dndnode_20",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_23ZeroShotPrompt|dndnode_23|BasePromptTemplate-dndnode_20BasePromptTemplate|prompt|dndnode_20",
-        "selected": false
-      },
-      {
-        "source": "dndnode_b3a34830-07b0-4627-b909-5c13dea90c19",
-        "sourceHandle": "Search|dndnode_b3a34830-07b0-4627-b909-5c13dea90c19|Tool",
-        "target": "dndnode_21",
-        "targetHandle": "Tool|allowed_tools|dndnode_21",
+        "source": "dndnode_29",
+        "sourceHandle": "OpenAI|dndnode_29|BaseLLM|BaseLanguageModel|OpenAI|BaseOpenAI",
+        "target": "dndnode_ae42694e-8558-49d7-be41-6482559c292a",
+        "targetHandle": "BaseLanguageModel|llm|dndnode_ae42694e-8558-49d7-be41-6482559c292a",
         "style": {
           "stroke": "#222222"
         },
         "animated": false,
-        "id": "reactflow__edge-dndnode_b3a34830-07b0-4627-b909-5c13dea90c19Search|dndnode_b3a34830-07b0-4627-b909-5c13dea90c19|Tool-dndnode_21Tool|allowed_tools|dndnode_21"
+        "id": "reactflow__edge-dndnode_29OpenAI|dndnode_29|BaseLLM|BaseLanguageModel|OpenAI|BaseOpenAI-dndnode_ae42694e-8558-49d7-be41-6482559c292aBaseLanguageModel|llm|dndnode_ae42694e-8558-49d7-be41-6482559c292a",
+        "selected": false
+      },
+      {
+        "source": "dndnode_ae42694e-8558-49d7-be41-6482559c292a",
+        "sourceHandle": "ConversationSummaryMemory|dndnode_ae42694e-8558-49d7-be41-6482559c292a|SummarizerMixin|BaseMemory|BaseChatMemory|ConversationSummaryMemory",
+        "target": "dndnode_28",
+        "targetHandle": "BaseChatMemory|memory|dndnode_28",
+        "style": {
+          "stroke": "#222222"
+        },
+        "animated": false,
+        "id": "reactflow__edge-dndnode_ae42694e-8558-49d7-be41-6482559c292aConversationSummaryMemory|dndnode_ae42694e-8558-49d7-be41-6482559c292a|SummarizerMixin|BaseMemory|BaseChatMemory|ConversationSummaryMemory-dndnode_28BaseChatMemory|memory|dndnode_28"
       }
     ],
     "viewport": {
-      "x": -65.21089429045423,
-      "y": 95.85854102587501,
-      "zoom": 0.697371833175203
+      "x": -150.21929209374377,
+      "y": -40.071721754091925,
+      "zoom": 0.8235910172675737
     }
   }
 }
