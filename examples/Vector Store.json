@@ -661,7 +661,7 @@
                 "placeholder": "",
                 "show": true,
                 "multiline": false,
-                "value": 4000,
+                "value": 1000,
                 "password": false,
                 "name": "chunk_size",
                 "advanced": false,
