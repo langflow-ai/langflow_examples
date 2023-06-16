@@ -1,669 +1,414 @@
 {
-  "description": "Agent that can do math using Python as the calculator.",
-  "name": "PAL-Math Tool",
-  "id": "297a67ac-8671-4078-9b25-55609c8ec265",
-  "data": {
-    "nodes": [
-      {
-        "width": 384,
-        "height": 267,
-        "id": "dndnode_21",
-        "type": "genericNode",
-        "position": {
-          "x": 1670.5624980643572,
-          "y": 233.85634568248645
-        },
-        "data": {
-          "type": "ZeroShotAgent",
-          "node": {
-            "template": {
-              "llm_chain": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "llm_chain",
-                "advanced": false,
-                "type": "LLMChain",
-                "list": false
-              },
-              "output_parser": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "output_parser",
-                "advanced": false,
-                "type": "AgentOutputParser",
-                "list": false
-              },
-              "allowed_tools": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "allowed_tools",
-                "advanced": false,
-                "type": "Tool",
-                "list": true
-              },
-              "_type": "ZeroShotAgent"
+    "name": "PAL-Math Tool",
+    "description": "Agent that can do math using Python as the calculator.",
+    "data": {
+        "nodes": [
+            {
+                "width": 384,
+                "height": 267,
+                "id": "PAL-MATH-c1cVS",
+                "type": "genericNode",
+                "position": {
+                    "x": 1010.2946637653781,
+                    "y": 489.9545691531438
+                },
+                "data": {
+                    "type": "PAL-MATH",
+                    "node": {
+                        "template": {
+                            "llm": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "llm",
+                                "advanced": false,
+                                "type": "BaseLanguageModel",
+                                "list": false
+                            },
+                            "_type": "PAL-MATH"
+                        },
+                        "description": "A language model that is really good at solving complex word math problems. Input should be a fully worded hard word math problem.",
+                        "base_classes": [
+                            "Tool"
+                        ]
+                    },
+                    "id": "PAL-MATH-c1cVS",
+                    "value": null
+                },
+                "selected": true,
+                "positionAbsolute": {
+                    "x": 1010.2946637653781,
+                    "y": 489.9545691531438
+                },
+                "dragging": false
             },
-            "description": "Agent for the MRKL chain.",
-            "base_classes": [
-              "Agent",
-              "ZeroShotAgent",
-              "BaseSingleActionAgent",
-              "function"
-            ]
-          },
-          "id": "dndnode_21",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1670.5624980643572,
-          "y": 233.85634568248645
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 359,
-        "id": "dndnode_23",
-        "type": "genericNode",
-        "position": {
-          "x": 409.51524635315866,
-          "y": -60.01939553731515
-        },
-        "data": {
-          "type": "ZeroShotPrompt",
-          "node": {
-            "template": {
-              "prefix": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": true,
-                "value": "Answer the following questions as best you can. You have access to the following tools:",
-                "password": false,
-                "name": "prefix",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "suffix": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": true,
-                "value": "Begin!\n\nQuestion: {input}\nThought:{agent_scratchpad}",
-                "password": false,
-                "name": "suffix",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "format_instructions": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": "Use the following format:\n\nQuestion: the input question you must answer\nThought: you should always think about what to do\nAction: the action to take, should be one of [{tool_names}]\nAction Input: the input to the action\nObservation: the result of the action\n... (this Thought/Action/Action Input/Observation can repeat N times)\nThought: I now know the final answer\nFinal Answer: the final answer to the original input question",
-                "password": false,
-                "name": "format_instructions",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "_type": "zero_shot"
+            {
+                "width": 384,
+                "height": 611,
+                "id": "ChatOpenAI-o9nf4",
+                "type": "genericNode",
+                "position": {
+                    "x": 402.24327814345384,
+                    "y": 427.253125629099
+                },
+                "data": {
+                    "type": "ChatOpenAI",
+                    "node": {
+                        "template": {
+                            "lc_kwargs": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "lc_kwargs",
+                                "advanced": true,
+                                "type": "code",
+                                "list": false
+                            },
+                            "verbose": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "verbose",
+                                "advanced": false,
+                                "type": "bool",
+                                "list": false
+                            },
+                            "callbacks": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "callbacks",
+                                "advanced": false,
+                                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                                "list": true
+                            },
+                            "client": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "client",
+                                "advanced": false,
+                                "type": "Any",
+                                "list": false
+                            },
+                            "model_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "gpt-3.5-turbo-0613",
+                                "password": false,
+                                "options": [
+                                    "gpt-3.5-turbo-0613",
+                                    "gpt-3.5-turbo",
+                                    "gpt-3.5-turbo-16k-0613",
+                                    "gpt-3.5-turbo-16k",
+                                    "gpt-4-0613",
+                                    "gpt-4-32k-0613",
+                                    "gpt-4",
+                                    "gpt-4-32k"
+                                ],
+                                "name": "model_name",
+                                "advanced": false,
+                                "type": "str",
+                                "list": true
+                            },
+                            "temperature": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": 0.7,
+                                "password": false,
+                                "name": "temperature",
+                                "advanced": false,
+                                "type": "float",
+                                "list": false
+                            },
+                            "model_kwargs": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "model_kwargs",
+                                "advanced": true,
+                                "type": "code",
+                                "list": false
+                            },
+                            "openai_api_key": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "",
+                                "password": true,
+                                "name": "openai_api_key",
+                                "display_name": "OpenAI API Key",
+                                "advanced": false,
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_api_base": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_api_base",
+                                "display_name": "OpenAI API Base",
+                                "advanced": false,
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_organization": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_organization",
+                                "display_name": "OpenAI Organization",
+                                "advanced": false,
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_proxy": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_proxy",
+                                "display_name": "OpenAI Proxy",
+                                "advanced": false,
+                                "type": "str",
+                                "list": false
+                            },
+                            "request_timeout": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "request_timeout",
+                                "advanced": false,
+                                "type": "float",
+                                "list": false
+                            },
+                            "max_retries": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 6,
+                                "password": false,
+                                "name": "max_retries",
+                                "advanced": false,
+                                "type": "int",
+                                "list": false
+                            },
+                            "streaming": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "streaming",
+                                "advanced": false,
+                                "type": "bool",
+                                "list": false
+                            },
+                            "n": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 1,
+                                "password": false,
+                                "name": "n",
+                                "advanced": false,
+                                "type": "int",
+                                "list": false
+                            },
+                            "max_tokens": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": true,
+                                "name": "max_tokens",
+                                "advanced": false,
+                                "type": "int",
+                                "list": false,
+                                "value": ""
+                            },
+                            "_type": "ChatOpenAI"
+                        },
+                        "description": "Wrapper around OpenAI Chat large language models.",
+                        "base_classes": [
+                            "Serializable",
+                            "BaseLanguageModel",
+                            "ChatOpenAI",
+                            "BaseChatModel"
+                        ],
+                        "display_name": "ChatOpenAI"
+                    },
+                    "id": "ChatOpenAI-o9nf4",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 402.24327814345384,
+                    "y": 427.253125629099
+                },
+                "dragging": false
             },
-            "description": "Prompt template for Zero Shot Agent.",
-            "base_classes": [
-              "BasePromptTemplate"
-            ]
-          },
-          "id": "dndnode_23",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 409.51524635315866,
-          "y": -60.01939553731515
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 267,
-        "id": "dndnode_35ff1d4a-ee6b-4011-84d7-7ca0540d816d",
-        "type": "genericNode",
-        "position": {
-          "x": 1098.2946637653781,
-          "y": 659.9545691531438
-        },
-        "data": {
-          "type": "PAL-MATH",
-          "node": {
-            "template": {
-              "llm": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "llm",
-                "advanced": false,
-                "type": "BaseLanguageModel",
-                "list": false
-              },
-              "_type": "PAL-MATH"
+            {
+                "width": 384,
+                "height": 387,
+                "id": "AgentInitializer-VMWEl",
+                "type": "genericNode",
+                "position": {
+                    "x": 1635.32985960896,
+                    "y": 625.0980591412003
+                },
+                "data": {
+                    "type": "AgentInitializer",
+                    "node": {
+                        "template": {
+                            "agent": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "openai-functions",
+                                "password": false,
+                                "options": [
+                                    "zero-shot-react-description",
+                                    "react-docstore",
+                                    "self-ask-with-search",
+                                    "conversational-react-description",
+                                    "openai-functions"
+                                ],
+                                "name": "agent",
+                                "advanced": false,
+                                "type": "str",
+                                "list": true
+                            },
+                            "memory": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "memory",
+                                "advanced": false,
+                                "type": "BaseChatMemory",
+                                "list": false
+                            },
+                            "tools": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tools",
+                                "advanced": false,
+                                "type": "Tool",
+                                "list": true
+                            },
+                            "llm": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "llm",
+                                "display_name": "LLM",
+                                "advanced": false,
+                                "type": "BaseLanguageModel",
+                                "list": false
+                            },
+                            "_type": "initialize_agent"
+                        },
+                        "description": "Construct a zero shot agent from an LLM and tools.",
+                        "base_classes": [
+                            "AgentExecutor",
+                            "function"
+                        ],
+                        "display_name": "AgentInitializer"
+                    },
+                    "id": "AgentInitializer-VMWEl",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 1635.32985960896,
+                    "y": 625.0980591412003
+                },
+                "dragging": false
+            }
+        ],
+        "edges": [
+            {
+                "source": "ChatOpenAI-o9nf4",
+                "sourceHandle": "ChatOpenAI|ChatOpenAI-o9nf4|Serializable|BaseLanguageModel|ChatOpenAI|BaseChatModel",
+                "target": "PAL-MATH-c1cVS",
+                "targetHandle": "BaseLanguageModel|llm|PAL-MATH-c1cVS",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-ChatOpenAI-o9nf4ChatOpenAI|ChatOpenAI-o9nf4|BaseChatModel|Serializable|ChatOpenAI|BaseLanguageModel-PAL-MATH-c1cVSBaseLanguageModel|llm|PAL-MATH-c1cVS",
+                "selected": false
             },
-            "description": "A language model that is really good at solving complex word math problems. Input should be a fully worded hard word math problem.",
-            "base_classes": [
-              "Tool"
-            ]
-          },
-          "id": "dndnode_35ff1d4a-ee6b-4011-84d7-7ca0540d816d",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1098.2946637653781,
-          "y": 659.9545691531438
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 597,
-        "id": "dndnode_7d30ad68-54a1-4ee2-a9cb-847bb9deaa87",
-        "type": "genericNode",
-        "position": {
-          "x": 397.0905474856386,
-          "y": 371.7295643019625
-        },
-        "data": {
-          "type": "OpenAI",
-          "node": {
-            "template": {
-              "cache": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "cache",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "verbose": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "verbose",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "callbacks": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "callbacks",
-                "advanced": false,
-                "type": "langchain.callbacks.base.BaseCallbackHandler",
-                "list": true
-              },
-              "client": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "client",
-                "advanced": false,
-                "type": "Any",
-                "list": false
-              },
-              "model_name": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "text-davinci-003",
-                "password": false,
-                "options": [
-                  "text-davinci-003",
-                  "text-davinci-002",
-                  "text-curie-001",
-                  "text-babbage-001",
-                  "text-ada-001"
-                ],
-                "name": "model_name",
-                "advanced": false,
-                "type": "str",
-                "list": true
-              },
-              "temperature": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 0.7,
-                "password": false,
-                "name": "temperature",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "max_tokens": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 256,
-                "password": true,
-                "name": "max_tokens",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "top_p": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "top_p",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "frequency_penalty": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 0,
-                "password": false,
-                "name": "frequency_penalty",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "presence_penalty": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 0,
-                "password": false,
-                "name": "presence_penalty",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "n": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "n",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "best_of": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "best_of",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "model_kwargs": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "model_kwargs",
-                "advanced": true,
-                "type": "code",
-                "list": false
-              },
-              "openai_api_key": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "",
-                "password": true,
-                "name": "openai_api_key",
-                "display_name": "OpenAI API Key",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "openai_api_base": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": true,
-                "name": "openai_api_base",
-                "display_name": "OpenAI API Base",
-                "advanced": false,
-                "type": "str",
-                "list": false,
-                "value": ""
-              },
-              "openai_organization": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "openai_organization",
-                "display_name": "OpenAI Organization",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "openai_proxy": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "openai_proxy",
-                "display_name": "OpenAI Proxy",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "batch_size": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 20,
-                "password": false,
-                "name": "batch_size",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "request_timeout": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "request_timeout",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "logit_bias": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "logit_bias",
-                "advanced": false,
-                "type": "code",
-                "list": false
-              },
-              "max_retries": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 6,
-                "password": false,
-                "name": "max_retries",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "streaming": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": false,
-                "password": false,
-                "name": "streaming",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "allowed_special": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": [],
-                "password": false,
-                "name": "allowed_special",
-                "advanced": false,
-                "type": "Literal'all'",
-                "list": true
-              },
-              "disallowed_special": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": "all",
-                "password": false,
-                "name": "disallowed_special",
-                "advanced": false,
-                "type": "Literal'all'",
-                "list": false
-              },
-              "_type": "OpenAI"
+            {
+                "source": "PAL-MATH-c1cVS",
+                "sourceHandle": "PAL-MATH|PAL-MATH-c1cVS|Tool",
+                "target": "AgentInitializer-VMWEl",
+                "targetHandle": "Tool|tools|AgentInitializer-VMWEl",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-PAL-MATH-c1cVSPAL-MATH|PAL-MATH-c1cVS|Tool-AgentInitializer-VMWElTool|tools|AgentInitializer-VMWEl",
+                "selected": false
             },
-            "description": "Wrapper around OpenAI large language models.",
-            "base_classes": [
-              "BaseLLM",
-              "OpenAI",
-              "BaseLanguageModel",
-              "BaseOpenAI"
-            ]
-          },
-          "id": "dndnode_7d30ad68-54a1-4ee2-a9cb-847bb9deaa87",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 397.0905474856386,
-          "y": 371.7295643019625
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 307,
-        "id": "dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077a",
-        "type": "genericNode",
-        "position": {
-          "x": 1105.4644400054572,
-          "y": -64.1928310948488
-        },
-        "data": {
-          "type": "LLMChain",
-          "node": {
-            "template": {
-              "memory": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "memory",
-                "advanced": false,
-                "type": "BaseMemory",
-                "list": false
-              },
-              "callbacks": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "callbacks",
-                "advanced": false,
-                "type": "langchain.callbacks.base.BaseCallbackHandler",
-                "list": true
-              },
-              "verbose": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": false,
-                "password": false,
-                "name": "verbose",
-                "advanced": true,
-                "type": "bool",
-                "list": false
-              },
-              "prompt": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "prompt",
-                "advanced": false,
-                "type": "BasePromptTemplate",
-                "list": false
-              },
-              "llm": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "llm",
-                "advanced": false,
-                "type": "BaseLanguageModel",
-                "list": false
-              },
-              "output_key": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "text",
-                "password": false,
-                "name": "output_key",
-                "advanced": true,
-                "type": "str",
-                "list": false
-              },
-              "_type": "LLMChain"
-            },
-            "description": "Chain to run queries against LLMs.",
-            "base_classes": [
-              "LLMChain",
-              "Chain",
-              "function"
-            ]
-          },
-          "id": "dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077a",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1105.4644400054572,
-          "y": -64.1928310948488
-        },
-        "dragging": false
-      }
-    ],
-    "edges": [
-      {
-        "source": "dndnode_35ff1d4a-ee6b-4011-84d7-7ca0540d816d",
-        "sourceHandle": "PAL-MATH|dndnode_35ff1d4a-ee6b-4011-84d7-7ca0540d816d|Tool",
-        "target": "dndnode_21",
-        "targetHandle": "Tool|allowed_tools|dndnode_21",
-        "style": {
-          "stroke": "#222222"
-        },
-        "animated": false,
-        "id": "reactflow__edge-dndnode_35ff1d4a-ee6b-4011-84d7-7ca0540d816dPAL-MATH|dndnode_35ff1d4a-ee6b-4011-84d7-7ca0540d816d|Tool-dndnode_21Tool|allowed_tools|dndnode_21",
-        "selected": false
-      },
-      {
-        "source": "dndnode_7d30ad68-54a1-4ee2-a9cb-847bb9deaa87",
-        "sourceHandle": "OpenAI|dndnode_7d30ad68-54a1-4ee2-a9cb-847bb9deaa87|BaseLLM|OpenAI|BaseLanguageModel|BaseOpenAI",
-        "target": "dndnode_35ff1d4a-ee6b-4011-84d7-7ca0540d816d",
-        "targetHandle": "BaseLanguageModel|llm|dndnode_35ff1d4a-ee6b-4011-84d7-7ca0540d816d",
-        "style": {
-          "stroke": "#222222"
-        },
-        "animated": false,
-        "id": "reactflow__edge-dndnode_7d30ad68-54a1-4ee2-a9cb-847bb9deaa87OpenAI|dndnode_7d30ad68-54a1-4ee2-a9cb-847bb9deaa87|BaseLLM|OpenAI|BaseLanguageModel|BaseOpenAI-dndnode_35ff1d4a-ee6b-4011-84d7-7ca0540d816dBaseLanguageModel|llm|dndnode_35ff1d4a-ee6b-4011-84d7-7ca0540d816d",
-        "selected": false
-      },
-      {
-        "source": "dndnode_23",
-        "sourceHandle": "ZeroShotPrompt|dndnode_23|BasePromptTemplate",
-        "target": "dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077a",
-        "targetHandle": "BasePromptTemplate|prompt|dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077a",
-        "style": {
-          "stroke": "#222222"
-        },
-        "animated": false,
-        "id": "reactflow__edge-dndnode_23ZeroShotPrompt|dndnode_23|BasePromptTemplate-dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077aBasePromptTemplate|prompt|dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077a"
-      },
-      {
-        "source": "dndnode_7d30ad68-54a1-4ee2-a9cb-847bb9deaa87",
-        "sourceHandle": "OpenAI|dndnode_7d30ad68-54a1-4ee2-a9cb-847bb9deaa87|BaseLLM|OpenAI|BaseLanguageModel|BaseOpenAI",
-        "target": "dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077a",
-        "targetHandle": "BaseLanguageModel|llm|dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077a",
-        "style": {
-          "stroke": "#222222"
-        },
-        "animated": false,
-        "id": "reactflow__edge-dndnode_7d30ad68-54a1-4ee2-a9cb-847bb9deaa87OpenAI|dndnode_7d30ad68-54a1-4ee2-a9cb-847bb9deaa87|BaseLLM|OpenAI|BaseLanguageModel|BaseOpenAI-dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077aBaseLanguageModel|llm|dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077a"
-      },
-      {
-        "source": "dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077a",
-        "sourceHandle": "LLMChain|dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077a|LLMChain|Chain|function",
-        "target": "dndnode_21",
-        "targetHandle": "LLMChain|llm_chain|dndnode_21",
-        "style": {
-          "stroke": "#222222"
-        },
-        "animated": false,
-        "id": "reactflow__edge-dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077aLLMChain|dndnode_8d98bce0-d09b-4970-a375-1dedfdf9077a|LLMChain|Chain|function-dndnode_21LLMChain|llm_chain|dndnode_21"
-      }
-    ],
-    "viewport": {
-      "x": -80.91976303660476,
-      "y": 155.76627229732088,
-      "zoom": 0.697371833175203
-    }
-  }
+            {
+                "source": "ChatOpenAI-o9nf4",
+                "sourceHandle": "ChatOpenAI|ChatOpenAI-o9nf4|Serializable|BaseLanguageModel|ChatOpenAI|BaseChatModel",
+                "target": "AgentInitializer-VMWEl",
+                "targetHandle": "BaseLanguageModel|llm|AgentInitializer-VMWEl",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-ChatOpenAI-o9nf4ChatOpenAI|ChatOpenAI-o9nf4|BaseChatModel|Serializable|ChatOpenAI|BaseLanguageModel-AgentInitializer-VMWElBaseLanguageModel|llm|AgentInitializer-VMWEl",
+                "selected": false
+            }
+        ],
+        "viewport": {
+            "x": 12.69735672241805,
+            "y": -38.64835046424753,
+            "zoom": 0.5
+        }
+    },
+    "id": "bc476807-c267-4655-94c7-0a0a03134e93",
+    "style": null
 }
