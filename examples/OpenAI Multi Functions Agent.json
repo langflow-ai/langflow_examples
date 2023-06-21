@@ -1,0 +1,416 @@
+{
+    "description": "An Agent that can use tools multiple times to answer a query.\nTry \"What is the weather in LA and SF?\"",
+    "name": "OpenAI Multi Functions Agent",
+    "data": {
+        "nodes": [
+            {
+                "width": 384,
+                "height": 387,
+                "id": "AgentInitializer-bCB22",
+                "type": "genericNode",
+                "position": {
+                    "x": 1186,
+                    "y": 330.84375
+                },
+                "data": {
+                    "type": "AgentInitializer",
+                    "node": {
+                        "template": {
+                            "agent": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "openai-multi-functions",
+                                "password": false,
+                                "options": [
+                                    "zero-shot-react-description",
+                                    "react-docstore",
+                                    "self-ask-with-search",
+                                    "conversational-react-description",
+                                    "openai-functions",
+                                    "openai-multi-functions"
+                                ],
+                                "name": "agent",
+                                "advanced": false,
+                                "type": "str",
+                                "list": true
+                            },
+                            "memory": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "memory",
+                                "advanced": false,
+                                "type": "BaseChatMemory",
+                                "list": false
+                            },
+                            "tools": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tools",
+                                "advanced": false,
+                                "type": "Tool",
+                                "list": true
+                            },
+                            "llm": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "llm",
+                                "display_name": "LLM",
+                                "advanced": false,
+                                "type": "BaseLanguageModel",
+                                "list": false
+                            },
+                            "_type": "initialize_agent"
+                        },
+                        "description": "Construct a zero shot agent from an LLM and tools.",
+                        "base_classes": [
+                            "AgentExecutor",
+                            "function"
+                        ],
+                        "display_name": "AgentInitializer"
+                    },
+                    "id": "AgentInitializer-bCB22",
+                    "value": null
+                },
+                "selected": false,
+                "dragging": false,
+                "positionAbsolute": {
+                    "x": 1186,
+                    "y": 330.84375
+                }
+            },
+            {
+                "width": 384,
+                "height": 631,
+                "id": "ChatOpenAI-kkb3M",
+                "type": "genericNode",
+                "position": {
+                    "x": 388,
+                    "y": -11.15625
+                },
+                "data": {
+                    "type": "ChatOpenAI",
+                    "node": {
+                        "template": {
+                            "verbose": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "verbose",
+                                "advanced": false,
+                                "type": "bool",
+                                "list": false
+                            },
+                            "callbacks": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "callbacks",
+                                "advanced": false,
+                                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                                "list": true
+                            },
+                            "tags": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tags",
+                                "advanced": false,
+                                "type": "str",
+                                "list": true
+                            },
+                            "client": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "client",
+                                "advanced": false,
+                                "type": "Any",
+                                "list": false
+                            },
+                            "model_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "gpt-3.5-turbo-0613",
+                                "password": false,
+                                "options": [
+                                    "gpt-3.5-turbo-0613",
+                                    "gpt-3.5-turbo",
+                                    "gpt-3.5-turbo-16k-0613",
+                                    "gpt-3.5-turbo-16k",
+                                    "gpt-4-0613",
+                                    "gpt-4-32k-0613",
+                                    "gpt-4",
+                                    "gpt-4-32k"
+                                ],
+                                "name": "model_name",
+                                "advanced": false,
+                                "type": "str",
+                                "list": true
+                            },
+                            "temperature": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "0.1",
+                                "password": false,
+                                "name": "temperature",
+                                "advanced": false,
+                                "type": "float",
+                                "list": false
+                            },
+                            "model_kwargs": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "model_kwargs",
+                                "advanced": true,
+                                "type": "code",
+                                "list": false
+                            },
+                            "openai_api_key": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "",
+                                "password": true,
+                                "name": "openai_api_key",
+                                "display_name": "OpenAI API Key",
+                                "advanced": false,
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_api_base": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_api_base",
+                                "display_name": "OpenAI API Base",
+                                "advanced": false,
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_organization": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_organization",
+                                "display_name": "OpenAI Organization",
+                                "advanced": false,
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_proxy": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_proxy",
+                                "display_name": "OpenAI Proxy",
+                                "advanced": false,
+                                "type": "str",
+                                "list": false
+                            },
+                            "request_timeout": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "request_timeout",
+                                "advanced": false,
+                                "type": "float",
+                                "list": false
+                            },
+                            "max_retries": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 6,
+                                "password": false,
+                                "name": "max_retries",
+                                "advanced": false,
+                                "type": "int",
+                                "list": false
+                            },
+                            "streaming": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "streaming",
+                                "advanced": false,
+                                "type": "bool",
+                                "list": false
+                            },
+                            "n": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 1,
+                                "password": false,
+                                "name": "n",
+                                "advanced": false,
+                                "type": "int",
+                                "list": false
+                            },
+                            "max_tokens": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": true,
+                                "name": "max_tokens",
+                                "advanced": false,
+                                "type": "int",
+                                "list": false,
+                                "value": ""
+                            },
+                            "_type": "ChatOpenAI"
+                        },
+                        "description": "Wrapper around OpenAI Chat large language models.",
+                        "base_classes": [
+                            "ChatOpenAI",
+                            "BaseLanguageModel",
+                            "BaseChatModel",
+                            "Serializable"
+                        ],
+                        "display_name": "ChatOpenAI"
+                    },
+                    "id": "ChatOpenAI-kkb3M",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 388,
+                    "y": -11.15625
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 313,
+                "id": "Search-KDPHH",
+                "type": "genericNode",
+                "position": {
+                    "x": 403.1280757027523,
+                    "y": 672.019562359947
+                },
+                "data": {
+                    "type": "Search",
+                    "node": {
+                        "template": {
+                            "serpapi_api_key": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "",
+                                "password": true,
+                                "name": "serpapi_api_key",
+                                "display_name": "Serpapi API Key",
+                                "advanced": false,
+                                "type": "str",
+                                "list": false
+                            },
+                            "aiosession": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": "",
+                                "password": false,
+                                "name": "aiosession",
+                                "advanced": false,
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "Search"
+                        },
+                        "description": "A search engine. Useful for when you need to answer questions about current events. Input should be a search query.",
+                        "base_classes": [
+                            "Tool"
+                        ],
+                        "display_name": "Search"
+                    },
+                    "id": "Search-KDPHH",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 403.1280757027523,
+                    "y": 672.019562359947
+                },
+                "dragging": false
+            }
+        ],
+        "edges": [
+            {
+                "source": "Search-KDPHH",
+                "sourceHandle": "Search|Search-KDPHH|Tool",
+                "target": "AgentInitializer-bCB22",
+                "targetHandle": "Tool|tools|AgentInitializer-bCB22",
+                "style": {
+                    "stroke": "inherit"
+                },
+                "className": "stroke-gray-900 dark:stroke-gray-200",
+                "animated": false,
+                "id": "reactflow__edge-Search-KDPHHSearch|Search-KDPHH|Tool-AgentInitializer-bCB22Tool|tools|AgentInitializer-bCB22",
+                "selected": false
+            },
+            {
+                "source": "ChatOpenAI-kkb3M",
+                "sourceHandle": "ChatOpenAI|ChatOpenAI-kkb3M|ChatOpenAI|BaseLanguageModel|BaseChatModel|Serializable",
+                "target": "AgentInitializer-bCB22",
+                "targetHandle": "BaseLanguageModel|llm|AgentInitializer-bCB22",
+                "style": {
+                    "stroke": "inherit"
+                },
+                "className": "stroke-gray-900 dark:stroke-gray-200",
+                "animated": false,
+                "id": "reactflow__edge-ChatOpenAI-kkb3MChatOpenAI|ChatOpenAI-kkb3M|ChatOpenAI|BaseLanguageModel|BaseChatModel|Serializable-AgentInitializer-bCB22BaseLanguageModel|llm|AgentInitializer-bCB22",
+                "selected": false
+            }
+        ],
+        "viewport": {
+            "x": -181.9068191631394,
+            "y": 67.7726925095734,
+            "zoom": 0.6597539553864481
+        }
+    },
+    "id": "97c686d2-52a6-464d-a0e5-6889432a5b9f"
+}
