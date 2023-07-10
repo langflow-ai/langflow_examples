@@ -1,0 +1,991 @@
+{
+    "name": "SystemMessage Example",
+    "description": "This example showcases the use of SystemMessage and HumanMessage components to build a ChatPromptTemplate. A WebBaseLoader is used to pass a random word to a SystemMessage variable.",
+    "data": {
+        "nodes": [
+            {
+                "width": 384,
+                "height": 425,
+                "id": "SystemMessagePromptTemplate-kIj8J",
+                "type": "genericNode",
+                "position": {
+                    "x": 481.58711153746583,
+                    "y": 370.2294992017135
+                },
+                "data": {
+                    "type": "SystemMessagePromptTemplate",
+                    "node": {
+                        "template": {
+                            "additional_kwargs": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "additional_kwargs",
+                                "advanced": false,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "prompt": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "value": "\nYou are a {type_of_assistant} that {behavior}\n",
+                                "password": false,
+                                "name": "prompt",
+                                "advanced": false,
+                                "info": "",
+                                "type": "prompt",
+                                "list": false
+                            },
+                            "_type": "SystemMessagePromptTemplate",
+                            "type_of_assistant": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "value": "",
+                                "password": false,
+                                "name": "type_of_assistant",
+                                "display_name": "type_of_assistant",
+                                "advanced": false,
+                                "input_types": [
+                                    "Document",
+                                    "BaseOutputParser"
+                                ],
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "behavior": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "value": "",
+                                "password": false,
+                                "name": "behavior",
+                                "display_name": "behavior",
+                                "advanced": false,
+                                "input_types": [
+                                    "Document",
+                                    "BaseOutputParser"
+                                ],
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            }
+                        },
+                        "description": "",
+                        "base_classes": [
+                            "BaseStringMessagePromptTemplate",
+                            "SystemMessagePromptTemplate",
+                            "BaseMessagePromptTemplate"
+                        ],
+                        "name": "",
+                        "display_name": "SystemMessagePromptTemplate",
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/models/chat/how_to/prompts",
+                        "custom_fields": {
+                            "prompt": [
+                                "type_of_assistant",
+                                "behavior"
+                            ],
+                            "": [
+                                "type_of_assistant",
+                                "behavior"
+                            ]
+                        },
+                        "output_types": [],
+                        "field_formatters": {
+                            "formatters": {
+                                "openai_api_key": {}
+                            },
+                            "base_formatters": {
+                                "kwargs": {},
+                                "optional": {},
+                                "list": {},
+                                "dict": {},
+                                "union": {},
+                                "multiline": {},
+                                "show": {},
+                                "password": {},
+                                "default": {},
+                                "headers": {},
+                                "dict_code_file": {},
+                                "model_fields": {
+                                    "MODEL_DICT": {
+                                        "OpenAI": [
+                                            "text-davinci-003",
+                                            "text-davinci-002",
+                                            "text-curie-001",
+                                            "text-babbage-001",
+                                            "text-ada-001"
+                                        ],
+                                        "ChatOpenAI": [
+                                            "gpt-3.5-turbo-0613",
+                                            "gpt-3.5-turbo",
+                                            "gpt-3.5-turbo-16k-0613",
+                                            "gpt-3.5-turbo-16k",
+                                            "gpt-4-0613",
+                                            "gpt-4-32k-0613",
+                                            "gpt-4",
+                                            "gpt-4-32k"
+                                        ],
+                                        "Anthropic": [
+                                            "claude-v1",
+                                            "claude-v1-100k",
+                                            "claude-instant-v1",
+                                            "claude-instant-v1-100k",
+                                            "claude-v1.3",
+                                            "claude-v1.3-100k",
+                                            "claude-v1.2",
+                                            "claude-v1.0",
+                                            "claude-instant-v1.1",
+                                            "claude-instant-v1.1-100k",
+                                            "claude-instant-v1.0"
+                                        ],
+                                        "ChatAnthropic": [
+                                            "claude-v1",
+                                            "claude-v1-100k",
+                                            "claude-instant-v1",
+                                            "claude-instant-v1-100k",
+                                            "claude-v1.3",
+                                            "claude-v1.3-100k",
+                                            "claude-v1.2",
+                                            "claude-v1.0",
+                                            "claude-instant-v1.1",
+                                            "claude-instant-v1.1-100k",
+                                            "claude-instant-v1.0"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "id": "SystemMessagePromptTemplate-kIj8J",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 481.58711153746583,
+                    "y": 370.2294992017135
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 253,
+                "id": "HumanMessagePromptTemplate-mMv6B",
+                "type": "genericNode",
+                "position": {
+                    "x": 467.9464914249562,
+                    "y": 828.1160630276088
+                },
+                "data": {
+                    "type": "HumanMessagePromptTemplate",
+                    "node": {
+                        "template": {
+                            "additional_kwargs": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "additional_kwargs",
+                                "advanced": false,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "prompt": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "value": "Human: {input}\nAssistant:",
+                                "password": false,
+                                "name": "prompt",
+                                "advanced": false,
+                                "info": "",
+                                "type": "prompt",
+                                "list": false
+                            },
+                            "_type": "HumanMessagePromptTemplate"
+                        },
+                        "description": "",
+                        "base_classes": [
+                            "BaseStringMessagePromptTemplate",
+                            "HumanMessagePromptTemplate",
+                            "BaseMessagePromptTemplate"
+                        ],
+                        "name": "",
+                        "display_name": "HumanMessagePromptTemplate",
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/models/chat/how_to/prompts",
+                        "custom_fields": {
+                            "prompt": [],
+                            "": [
+                                "input"
+                            ]
+                        },
+                        "output_types": [],
+                        "field_formatters": {
+                            "formatters": {
+                                "openai_api_key": {}
+                            },
+                            "base_formatters": {
+                                "kwargs": {},
+                                "optional": {},
+                                "list": {},
+                                "dict": {},
+                                "union": {},
+                                "multiline": {},
+                                "show": {},
+                                "password": {},
+                                "default": {},
+                                "headers": {},
+                                "dict_code_file": {},
+                                "model_fields": {
+                                    "MODEL_DICT": {
+                                        "OpenAI": [
+                                            "text-davinci-003",
+                                            "text-davinci-002",
+                                            "text-curie-001",
+                                            "text-babbage-001",
+                                            "text-ada-001"
+                                        ],
+                                        "ChatOpenAI": [
+                                            "gpt-3.5-turbo-0613",
+                                            "gpt-3.5-turbo",
+                                            "gpt-3.5-turbo-16k-0613",
+                                            "gpt-3.5-turbo-16k",
+                                            "gpt-4-0613",
+                                            "gpt-4-32k-0613",
+                                            "gpt-4",
+                                            "gpt-4-32k"
+                                        ],
+                                        "Anthropic": [
+                                            "claude-v1",
+                                            "claude-v1-100k",
+                                            "claude-instant-v1",
+                                            "claude-instant-v1-100k",
+                                            "claude-v1.3",
+                                            "claude-v1.3-100k",
+                                            "claude-v1.2",
+                                            "claude-v1.0",
+                                            "claude-instant-v1.1",
+                                            "claude-instant-v1.1-100k",
+                                            "claude-instant-v1.0"
+                                        ],
+                                        "ChatAnthropic": [
+                                            "claude-v1",
+                                            "claude-v1-100k",
+                                            "claude-instant-v1",
+                                            "claude-instant-v1-100k",
+                                            "claude-v1.3",
+                                            "claude-v1.3-100k",
+                                            "claude-v1.2",
+                                            "claude-v1.0",
+                                            "claude-instant-v1.1",
+                                            "claude-instant-v1.1-100k",
+                                            "claude-instant-v1.0"
+                                        ]
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "id": "HumanMessagePromptTemplate-mMv6B",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 467.9464914249562,
+                    "y": 828.1160630276088
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 207,
+                "id": "ChatPromptTemplate-PZUD8",
+                "type": "genericNode",
+                "position": {
+                    "x": 921.018231417185,
+                    "y": 598.9805680311384
+                },
+                "data": {
+                    "type": "ChatPromptTemplate",
+                    "node": {
+                        "template": {
+                            "messages": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "messages",
+                                "advanced": false,
+                                "info": "",
+                                "type": "BaseMessagePromptTemplate",
+                                "list": true
+                            },
+                            "output_parser": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "output_parser",
+                                "advanced": false,
+                                "info": "",
+                                "type": "BaseOutputParser",
+                                "list": false
+                            },
+                            "input_variables": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "input_variables",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "partial_variables": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "partial_variables",
+                                "advanced": false,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "_type": "ChatPromptTemplate"
+                        },
+                        "description": "",
+                        "base_classes": [
+                            "ChatPromptTemplate",
+                            "BaseChatPromptTemplate",
+                            "BasePromptTemplate"
+                        ],
+                        "display_name": "ChatPromptTemplate",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/models/chat/how_to/prompts"
+                    },
+                    "id": "ChatPromptTemplate-PZUD8",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 921.018231417185,
+                    "y": 598.9805680311384
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 307,
+                "id": "LLMChain-bcX6V",
+                "type": "genericNode",
+                "position": {
+                    "x": 1421.0914439092537,
+                    "y": 507.58787747224306
+                },
+                "data": {
+                    "type": "LLMChain",
+                    "node": {
+                        "template": {
+                            "callbacks": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "callbacks",
+                                "advanced": false,
+                                "info": "",
+                                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                                "list": true
+                            },
+                            "llm": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "llm",
+                                "advanced": false,
+                                "info": "",
+                                "type": "BaseLanguageModel",
+                                "list": false
+                            },
+                            "memory": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "memory",
+                                "advanced": false,
+                                "info": "",
+                                "type": "BaseMemory",
+                                "list": false
+                            },
+                            "output_parser": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "output_parser",
+                                "advanced": false,
+                                "info": "",
+                                "type": "BaseLLMOutputParser",
+                                "list": false
+                            },
+                            "prompt": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "prompt",
+                                "advanced": false,
+                                "info": "",
+                                "type": "BasePromptTemplate",
+                                "list": false
+                            },
+                            "llm_kwargs": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "llm_kwargs",
+                                "advanced": false,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "metadata": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "metadata",
+                                "advanced": false,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "output_key": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "text",
+                                "password": false,
+                                "name": "output_key",
+                                "advanced": true,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "return_final_only": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": true,
+                                "password": false,
+                                "name": "return_final_only",
+                                "advanced": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "tags": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tags",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "verbose": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "verbose",
+                                "advanced": true,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "_type": "LLMChain"
+                        },
+                        "description": "Chain to run queries against LLMs.",
+                        "base_classes": [
+                            "LLMChain",
+                            "Chain",
+                            "function"
+                        ],
+                        "display_name": "LLMChain",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/chains/foundational/llm_chain"
+                    },
+                    "id": "LLMChain-bcX6V",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 1421.0914439092537,
+                    "y": 507.58787747224306
+                }
+            },
+            {
+                "width": 384,
+                "height": 641,
+                "id": "ChatOpenAI-uItND",
+                "type": "genericNode",
+                "position": {
+                    "x": 894.4553556077062,
+                    "y": 1222.7148725684212
+                },
+                "data": {
+                    "type": "ChatOpenAI",
+                    "node": {
+                        "template": {
+                            "callbacks": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "callbacks",
+                                "advanced": false,
+                                "info": "",
+                                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                                "list": true
+                            },
+                            "cache": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "cache",
+                                "advanced": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "client": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "client",
+                                "advanced": false,
+                                "info": "",
+                                "type": "Any",
+                                "list": false
+                            },
+                            "max_retries": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 6,
+                                "password": false,
+                                "name": "max_retries",
+                                "advanced": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "max_tokens": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": true,
+                                "name": "max_tokens",
+                                "advanced": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false,
+                                "value": ""
+                            },
+                            "metadata": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "metadata",
+                                "advanced": false,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "model_kwargs": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "model_kwargs",
+                                "advanced": true,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "model_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "gpt-3.5-turbo-0613",
+                                "password": false,
+                                "options": [
+                                    "gpt-3.5-turbo-0613",
+                                    "gpt-3.5-turbo",
+                                    "gpt-3.5-turbo-16k-0613",
+                                    "gpt-3.5-turbo-16k",
+                                    "gpt-4-0613",
+                                    "gpt-4-32k-0613",
+                                    "gpt-4",
+                                    "gpt-4-32k"
+                                ],
+                                "name": "model_name",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "n": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 1,
+                                "password": false,
+                                "name": "n",
+                                "advanced": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "openai_api_base": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_api_base",
+                                "display_name": "OpenAI API Base",
+                                "advanced": false,
+                                "info": "\nThe base URL of the OpenAI API. Defaults to https://api.openai.com/v1.\n\nYou can change this to use other APIs like JinaChat, LocalAI and Prem.\n",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_api_key": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "",
+                                "password": true,
+                                "name": "openai_api_key",
+                                "display_name": "OpenAI API Key",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_organization": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_organization",
+                                "display_name": "OpenAI Organization",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_proxy": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_proxy",
+                                "display_name": "OpenAI Proxy",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "request_timeout": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "request_timeout",
+                                "advanced": false,
+                                "info": "",
+                                "type": "float",
+                                "list": false
+                            },
+                            "streaming": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "streaming",
+                                "advanced": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "tags": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tags",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "temperature": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": 0.7,
+                                "password": false,
+                                "name": "temperature",
+                                "advanced": false,
+                                "info": "",
+                                "type": "float",
+                                "list": false
+                            },
+                            "tiktoken_model_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tiktoken_model_name",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "verbose": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "verbose",
+                                "advanced": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "_type": "ChatOpenAI"
+                        },
+                        "description": "Wrapper around OpenAI Chat large language models.",
+                        "base_classes": [
+                            "BaseLanguageModel",
+                            "ChatOpenAI",
+                            "BaseChatModel",
+                            "BaseLLM"
+                        ],
+                        "display_name": "ChatOpenAI",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/openai"
+                    },
+                    "id": "ChatOpenAI-uItND",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 894.4553556077062,
+                    "y": 1222.7148725684212
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 379,
+                "id": "WebBaseLoader-opJSn",
+                "type": "genericNode",
+                "position": {
+                    "x": -128.07242459332258,
+                    "y": 402.7212726799363
+                },
+                "data": {
+                    "type": "WebBaseLoader",
+                    "node": {
+                        "template": {
+                            "metadata": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "{}",
+                                "password": false,
+                                "name": "metadata",
+                                "display_name": "Metadata",
+                                "advanced": false,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "web_path": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "https://random-word-api.herokuapp.com/word",
+                                "password": false,
+                                "name": "web_path",
+                                "display_name": "Web Page",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "WebBaseLoader"
+                        },
+                        "description": "Loader that uses urllib and beautiful soup to load webpages.",
+                        "base_classes": [
+                            "Document"
+                        ],
+                        "display_name": "WebBaseLoader",
+                        "custom_fields": {},
+                        "output_types": [
+                            "Document"
+                        ],
+                        "documentation": "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/web_base"
+                    },
+                    "id": "WebBaseLoader-opJSn",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": -128.07242459332258,
+                    "y": 402.7212726799363
+                },
+                "dragging": false
+            }
+        ],
+        "edges": [
+            {
+                "source": "HumanMessagePromptTemplate-mMv6B",
+                "sourceHandle": "HumanMessagePromptTemplate|HumanMessagePromptTemplate-mMv6B|BaseStringMessagePromptTemplate|HumanMessagePromptTemplate|BaseMessagePromptTemplate",
+                "target": "ChatPromptTemplate-PZUD8",
+                "targetHandle": "BaseMessagePromptTemplate|messages|ChatPromptTemplate-PZUD8",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-HumanMessagePromptTemplate-mMv6BHumanMessagePromptTemplate|HumanMessagePromptTemplate-mMv6B|BaseMessagePromptTemplate|BaseStringMessagePromptTemplate|HumanMessagePromptTemplate-ChatPromptTemplate-PZUD8BaseMessagePromptTemplate|messages|ChatPromptTemplate-PZUD8",
+                "selected": false
+            },
+            {
+                "source": "SystemMessagePromptTemplate-kIj8J",
+                "sourceHandle": "SystemMessagePromptTemplate|SystemMessagePromptTemplate-kIj8J|BaseStringMessagePromptTemplate|SystemMessagePromptTemplate|BaseMessagePromptTemplate",
+                "target": "ChatPromptTemplate-PZUD8",
+                "targetHandle": "BaseMessagePromptTemplate|messages|ChatPromptTemplate-PZUD8",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-SystemMessagePromptTemplate-kIj8JSystemMessagePromptTemplate|SystemMessagePromptTemplate-kIj8J|SystemMessagePromptTemplate|BaseMessagePromptTemplate|BaseStringMessagePromptTemplate-ChatPromptTemplate-PZUD8BaseMessagePromptTemplate|messages|ChatPromptTemplate-PZUD8",
+                "selected": false
+            },
+            {
+                "source": "ChatPromptTemplate-PZUD8",
+                "sourceHandle": "ChatPromptTemplate|ChatPromptTemplate-PZUD8|ChatPromptTemplate|BaseChatPromptTemplate|BasePromptTemplate",
+                "target": "LLMChain-bcX6V",
+                "targetHandle": "BasePromptTemplate|prompt|LLMChain-bcX6V",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-ChatPromptTemplate-PZUD8ChatPromptTemplate|ChatPromptTemplate-PZUD8|ChatPromptTemplate|BaseChatPromptTemplate|BasePromptTemplate-LLMChain-bcX6VBasePromptTemplate|prompt|LLMChain-bcX6V",
+                "selected": false
+            },
+            {
+                "source": "ChatOpenAI-uItND",
+                "sourceHandle": "ChatOpenAI|ChatOpenAI-uItND|BaseLanguageModel|ChatOpenAI|BaseChatModel|BaseLLM",
+                "target": "LLMChain-bcX6V",
+                "targetHandle": "BaseLanguageModel|llm|LLMChain-bcX6V",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-ChatOpenAI-uItNDChatOpenAI|ChatOpenAI-uItND|BaseLanguageModel|BaseChatModel|ChatOpenAI|BaseLLM-LLMChain-bcX6VBaseLanguageModel|llm|LLMChain-bcX6V",
+                "selected": false
+            },
+            {
+                "source": "WebBaseLoader-opJSn",
+                "sourceHandle": "WebBaseLoader|WebBaseLoader-opJSn|Document",
+                "target": "SystemMessagePromptTemplate-kIj8J",
+                "targetHandle": "Document;BaseOutputParser|type_of_assistant|SystemMessagePromptTemplate-kIj8J",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-WebBaseLoader-opJSnWebBaseLoader|WebBaseLoader-opJSn|Document-SystemMessagePromptTemplate-kIj8JDocument;BaseOutputParser|type_of_assistant|SystemMessagePromptTemplate-kIj8J",
+                "selected": false
+            }
+        ],
+        "viewport": {
+            "x": 120.56985618341992,
+            "y": -181.38675798627423,
+            "zoom": 0.6776803408627091
+        }
+    },
+    "id": "24bf6330-1d24-43bb-a93f-2da64badfb67",
+    "style": null
+}
