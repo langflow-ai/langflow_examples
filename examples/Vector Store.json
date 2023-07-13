@@ -1,998 +1,1102 @@
 {
-  "description": "An agent that can query a Vector Store.",
-  "name": "Vector Store",
-  "id": "9b7e06cf-2540-4d0e-a9f0-ea2c65bbecf3",
-  "data": {
-    "nodes": [
-      {
-        "width": 384,
-        "height": 267,
-        "id": "dndnode_8",
-        "type": "genericNode",
-        "position": {
-          "x": 2115.5183674856203,
-          "y": -1277.6284872455249
-        },
-        "data": {
-          "type": "VectorStoreAgent",
-          "node": {
-            "template": {
-              "vectorstoreinfo": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "vectorstoreinfo",
-                "display_name": "Vector Store Info",
-                "advanced": false,
-                "type": "VectorStoreInfo",
-                "list": false
-              },
-              "llm": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "llm",
-                "display_name": "LLM",
-                "advanced": false,
-                "type": "BaseLanguageModel",
-                "list": false
-              },
-              "_type": "vectorstore_agent"
+    "name": "Vector Store",
+    "description": "An agent that can query a Vector Store.\nTry asking \"How do I upload examples to Langflow?\"\n\n\n\n",
+    "data": {
+        "nodes": [
+            {
+                "width": 384,
+                "height": 267,
+                "id": "VectorStoreAgent-yqM7p",
+                "type": "genericNode",
+                "position": {
+                    "x": 2115.5183674856203,
+                    "y": -1277.6284872455249
+                },
+                "data": {
+                    "type": "VectorStoreAgent",
+                    "node": {
+                        "template": {
+                            "llm": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "llm",
+                                "display_name": "LLM",
+                                "advanced": false,
+                                "info": "",
+                                "type": "BaseLanguageModel",
+                                "list": false
+                            },
+                            "vectorstoreinfo": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "vectorstoreinfo",
+                                "display_name": "Vector Store Info",
+                                "advanced": false,
+                                "info": "",
+                                "type": "VectorStoreInfo",
+                                "list": false
+                            },
+                            "_type": "vectorstore_agent"
+                        },
+                        "description": "Construct an agent from a Vector Store.",
+                        "base_classes": [
+                            "AgentExecutor"
+                        ],
+                        "display_name": "VectorStoreAgent",
+                        "documentation": ""
+                    },
+                    "id": "VectorStoreAgent-yqM7p",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 2115.5183674856203,
+                    "y": -1277.6284872455249
+                },
+                "dragging": false
             },
-            "description": "Construct an agent from a Vector Store.",
-            "base_classes": [
-              "AgentExecutor"
-            ]
-          },
-          "id": "dndnode_8",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 2115.5183674856203,
-          "y": -1277.6284872455249
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 597,
-        "id": "dndnode_9",
-        "type": "genericNode",
-        "position": {
-          "x": 1542.2354862784034,
-          "y": -821.3862458563868
-        },
-        "data": {
-          "type": "OpenAI",
-          "node": {
-            "template": {
-              "cache": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "cache",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "verbose": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "verbose",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "callbacks": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "callbacks",
-                "advanced": false,
-                "type": "langchain.callbacks.base.BaseCallbackHandler",
-                "list": true
-              },
-              "client": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "client",
-                "advanced": false,
-                "type": "Any",
-                "list": false
-              },
-              "model_name": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "text-davinci-003",
-                "password": false,
-                "options": [
-                  "text-davinci-003",
-                  "text-davinci-002",
-                  "text-curie-001",
-                  "text-babbage-001",
-                  "text-ada-001"
-                ],
-                "name": "model_name",
-                "advanced": false,
-                "type": "str",
-                "list": true
-              },
-              "temperature": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 0.7,
-                "password": false,
-                "name": "temperature",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "max_tokens": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 256,
-                "password": true,
-                "name": "max_tokens",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "top_p": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "top_p",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "frequency_penalty": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 0,
-                "password": false,
-                "name": "frequency_penalty",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "presence_penalty": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 0,
-                "password": false,
-                "name": "presence_penalty",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "n": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "n",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "best_of": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "best_of",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "model_kwargs": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "model_kwargs",
-                "advanced": true,
-                "type": "code",
-                "list": false
-              },
-              "openai_api_key": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "",
-                "password": true,
-                "name": "openai_api_key",
-                "display_name": "OpenAI API Key",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "openai_api_base": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": true,
-                "name": "openai_api_base",
-                "display_name": "OpenAI API Base",
-                "advanced": false,
-                "type": "str",
-                "list": false,
-                "value": ""
-              },
-              "openai_organization": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "openai_organization",
-                "display_name": "OpenAI Organization",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "openai_proxy": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "openai_proxy",
-                "display_name": "OpenAI Proxy",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "batch_size": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 20,
-                "password": false,
-                "name": "batch_size",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "request_timeout": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "request_timeout",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "logit_bias": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "logit_bias",
-                "advanced": false,
-                "type": "code",
-                "list": false
-              },
-              "max_retries": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 6,
-                "password": false,
-                "name": "max_retries",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "streaming": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": false,
-                "password": false,
-                "name": "streaming",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "allowed_special": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": [],
-                "password": false,
-                "name": "allowed_special",
-                "advanced": false,
-                "type": "Literal'all'",
-                "list": true
-              },
-              "disallowed_special": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": "all",
-                "password": false,
-                "name": "disallowed_special",
-                "advanced": false,
-                "type": "Literal'all'",
-                "list": false
-              },
-              "_type": "OpenAI"
+            {
+                "width": 384,
+                "height": 399,
+                "id": "VectorStoreInfo-jLZmI",
+                "type": "genericNode",
+                "position": {
+                    "x": 1553.2875394928135,
+                    "y": -1319.2113273706286
+                },
+                "data": {
+                    "type": "VectorStoreInfo",
+                    "node": {
+                        "template": {
+                            "vectorstore": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "vectorstore",
+                                "advanced": false,
+                                "info": "",
+                                "type": "VectorStore",
+                                "list": false
+                            },
+                            "description": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "password": false,
+                                "name": "description",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": "Instructions to upload examples to Langflow Community Examples"
+                            },
+                            "name": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "name",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": "UploadExamples"
+                            },
+                            "_type": "VectorStoreInfo"
+                        },
+                        "description": "Information about a vectorstore.",
+                        "base_classes": [
+                            "VectorStoreInfo"
+                        ],
+                        "display_name": "VectorStoreInfo",
+                        "documentation": ""
+                    },
+                    "id": "VectorStoreInfo-jLZmI",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 1553.2875394928135,
+                    "y": -1319.2113273706286
+                },
+                "dragging": false
             },
-            "description": "Generic OpenAI class that uses model name.",
-            "base_classes": [
-              "BaseOpenAI",
-              "BaseLLM",
-              "OpenAI",
-              "BaseLanguageModel"
-            ]
-          },
-          "id": "dndnode_9",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1542.2354862784034,
-          "y": -821.3862458563868
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 399,
-        "id": "dndnode_10",
-        "type": "genericNode",
-        "position": {
-          "x": 1553.2875394928135,
-          "y": -1319.2113273706286
-        },
-        "data": {
-          "type": "VectorStoreInfo",
-          "node": {
-            "template": {
-              "vectorstore": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "vectorstore",
-                "advanced": false,
-                "type": "VectorStore",
-                "list": false
-              },
-              "name": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "name",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "description": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": true,
-                "password": false,
-                "name": "description",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "_type": "VectorStoreInfo"
+            {
+                "width": 384,
+                "height": 359,
+                "id": "OpenAIEmbeddings-ole1p",
+                "type": "genericNode",
+                "position": {
+                    "x": 677.2699276778915,
+                    "y": -734.4639958173494
+                },
+                "data": {
+                    "type": "OpenAIEmbeddings",
+                    "node": {
+                        "template": {
+                            "allowed_special": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": [],
+                                "password": false,
+                                "name": "allowed_special",
+                                "advanced": true,
+                                "info": "",
+                                "type": "Literal'all'",
+                                "list": true
+                            },
+                            "disallowed_special": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "all",
+                                "password": false,
+                                "name": "disallowed_special",
+                                "advanced": true,
+                                "info": "",
+                                "type": "Literal'all'",
+                                "list": true
+                            },
+                            "chunk_size": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": 1000,
+                                "password": false,
+                                "name": "chunk_size",
+                                "advanced": true,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "client": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "client",
+                                "advanced": true,
+                                "info": "",
+                                "type": "Any",
+                                "list": false
+                            },
+                            "deployment": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "text-embedding-ada-002",
+                                "password": false,
+                                "name": "deployment",
+                                "advanced": true,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "embedding_ctx_length": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": 8191,
+                                "password": false,
+                                "name": "embedding_ctx_length",
+                                "advanced": true,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "headers": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": true,
+                                "value": "{'Authorization':\n            'Bearer <token>'}",
+                                "password": false,
+                                "name": "headers",
+                                "advanced": true,
+                                "info": "",
+                                "type": "Any",
+                                "list": false
+                            },
+                            "max_retries": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": 6,
+                                "password": false,
+                                "name": "max_retries",
+                                "advanced": true,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "model": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "text-embedding-ada-002",
+                                "password": false,
+                                "name": "model",
+                                "advanced": true,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_api_base": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": true,
+                                "name": "openai_api_base",
+                                "display_name": "OpenAI API Base",
+                                "advanced": true,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": ""
+                            },
+                            "openai_api_key": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "",
+                                "password": true,
+                                "name": "openai_api_key",
+                                "display_name": "OpenAI API Key",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_api_type": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": true,
+                                "name": "openai_api_type",
+                                "display_name": "OpenAI API Type",
+                                "advanced": true,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": ""
+                            },
+                            "openai_api_version": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": true,
+                                "name": "openai_api_version",
+                                "display_name": "OpenAI API Version",
+                                "advanced": true,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": ""
+                            },
+                            "openai_organization": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_organization",
+                                "display_name": "OpenAI Organization",
+                                "advanced": true,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_proxy": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_proxy",
+                                "display_name": "OpenAI Proxy",
+                                "advanced": true,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "request_timeout": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "request_timeout",
+                                "advanced": true,
+                                "info": "",
+                                "type": "float",
+                                "list": false
+                            },
+                            "tiktoken_model_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": true,
+                                "name": "tiktoken_model_name",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": ""
+                            },
+                            "_type": "OpenAIEmbeddings"
+                        },
+                        "description": "Wrapper around OpenAI embedding models.",
+                        "base_classes": [
+                            "Embeddings",
+                            "OpenAIEmbeddings"
+                        ],
+                        "display_name": "OpenAIEmbeddings",
+                        "documentation": "https://python.langchain.com/docs/modules/data_connection/text_embedding/integrations/openai"
+                    },
+                    "id": "OpenAIEmbeddings-ole1p",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 677.2699276778915,
+                    "y": -734.4639958173494
+                },
+                "dragging": false
             },
-            "description": "Information about a vectorstore.",
-            "base_classes": [
-              "VectorStoreInfo"
-            ]
-          },
-          "id": "dndnode_10",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1553.2875394928135,
-          "y": -1319.2113273706286
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 393,
-        "id": "dndnode_11",
-        "type": "genericNode",
-        "position": {
-          "x": 1108.0629902306098,
-          "y": -1230.2020414057615
-        },
-        "data": {
-          "type": "Chroma",
-          "node": {
-            "template": {
-              "documents": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "documents",
-                "display_name": "Text Splitter",
-                "advanced": false,
-                "type": "TextSplitter",
-                "list": true
-              },
-              "embedding": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "embedding",
-                "display_name": "Embedding",
-                "advanced": false,
-                "type": "Embeddings",
-                "list": false
-              },
-              "metadatas": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "metadatas",
-                "advanced": false,
-                "type": "code",
-                "list": true
-              },
-              "ids": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "ids",
-                "advanced": false,
-                "type": "str",
-                "list": true
-              },
-              "collection_name": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "langchain",
-                "password": false,
-                "name": "collection_name",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "persist_directory": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "persist_directory",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "client_settings": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "client_settings",
-                "advanced": false,
-                "type": "chromadb.config.Setting",
-                "list": true
-              },
-              "client": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "client",
-                "advanced": false,
-                "type": "chromadb.Client",
-                "list": false
-              },
-              "kwargs": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "kwargs",
-                "advanced": true,
-                "type": "Any",
-                "list": false
-              },
-              "_type": "Chroma"
+            {
+                "width": 384,
+                "height": 515,
+                "id": "Chroma-k31aj",
+                "type": "genericNode",
+                "position": {
+                    "x": 1138.12587416446,
+                    "y": -1289.1517285671812
+                },
+                "data": {
+                    "type": "Chroma",
+                    "node": {
+                        "template": {
+                            "client": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "client",
+                                "advanced": false,
+                                "info": "",
+                                "type": "chromadb.Client",
+                                "list": false
+                            },
+                            "client_settings": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "client_settings",
+                                "advanced": false,
+                                "info": "",
+                                "type": "chromadb.config.Setting",
+                                "list": true
+                            },
+                            "documents": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "documents",
+                                "display_name": "Documents",
+                                "advanced": false,
+                                "info": "",
+                                "type": "Document",
+                                "list": true
+                            },
+                            "embedding": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "embedding",
+                                "display_name": "Embedding",
+                                "advanced": false,
+                                "info": "",
+                                "type": "Embeddings",
+                                "list": false
+                            },
+                            "collection_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "langflow",
+                                "password": false,
+                                "name": "collection_name",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "ids": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "ids",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "metadatas": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "metadatas",
+                                "advanced": false,
+                                "info": "",
+                                "type": "code",
+                                "list": true
+                            },
+                            "persist": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "persist",
+                                "display_name": "Persist",
+                                "advanced": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "persist_directory": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "persist_directory",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "search_kwargs": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "{}",
+                                "password": false,
+                                "name": "search_kwargs",
+                                "advanced": true,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "_type": "Chroma"
+                        },
+                        "description": "Create a Chroma vectorstore from a raw documents.",
+                        "base_classes": [
+                            "Chroma",
+                            "VectorStore",
+                            "BaseRetriever",
+                            "VectorStoreRetriever"
+                        ],
+                        "display_name": "Chroma",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/data_connection/vectorstores/integrations/chroma"
+                    },
+                    "id": "Chroma-k31aj",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 1138.12587416446,
+                    "y": -1289.1517285671812
+                },
+                "dragging": false
             },
-            "description": "Wrapper around ChromaDB embeddings platform.To use, you should have the ``chromadb`` python package installed.",
-            "base_classes": [
-              "Chroma",
-              "VectorStore"
-            ]
-          },
-          "id": "dndnode_11",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1108.0629902306098,
-          "y": -1230.2020414057615
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 293,
-        "id": "dndnode_12",
-        "type": "genericNode",
-        "position": {
-          "x": 227.56835609516543,
-          "y": -1139.8720072426718
-        },
-        "data": {
-          "type": "WebBaseLoader",
-          "node": {
-            "template": {
-              "web_path": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "",
-                "password": false,
-                "name": "web_path",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "_type": "WebBaseLoader"
+            {
+                "width": 384,
+                "height": 595,
+                "id": "RecursiveCharacterTextSplitter-bnner",
+                "type": "genericNode",
+                "position": {
+                    "x": 607.3861456929772,
+                    "y": -1343.8126308350086
+                },
+                "data": {
+                    "type": "RecursiveCharacterTextSplitter",
+                    "node": {
+                        "template": {
+                            "documents": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "documents",
+                                "advanced": false,
+                                "info": "",
+                                "type": "Document",
+                                "list": false
+                            },
+                            "chunk_overlap": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": 200,
+                                "password": false,
+                                "name": "chunk_overlap",
+                                "display_name": "Chunk Overlap",
+                                "advanced": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "chunk_size": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": 1000,
+                                "password": false,
+                                "name": "chunk_size",
+                                "display_name": "Chunk Size",
+                                "advanced": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "separator_type": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "Text",
+                                "password": false,
+                                "options": [
+                                    "Text",
+                                    "cpp",
+                                    "go",
+                                    "html",
+                                    "java",
+                                    "js",
+                                    "latex",
+                                    "markdown",
+                                    "php",
+                                    "proto",
+                                    "python",
+                                    "rst",
+                                    "ruby",
+                                    "rust",
+                                    "scala",
+                                    "sol",
+                                    "swift"
+                                ],
+                                "name": "separator_type",
+                                "display_name": "Separator Type",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "separators": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": ".",
+                                "password": false,
+                                "name": "separators",
+                                "display_name": "Separator",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "RecursiveCharacterTextSplitter"
+                        },
+                        "description": "Implementation of splitting text that looks at characters.",
+                        "base_classes": [
+                            "Document"
+                        ],
+                        "display_name": "RecursiveCharacterTextSplitter",
+                        "custom_fields": {},
+                        "output_types": [
+                            "Document"
+                        ],
+                        "documentation": "https://python.langchain.com/docs/modules/data_connection/document_transformers/text_splitters/recursive_text_splitter"
+                    },
+                    "id": "RecursiveCharacterTextSplitter-bnner",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 607.3861456929772,
+                    "y": -1343.8126308350086
+                }
             },
-            "description": "Loader that uses urllib and beautiful soup to load webpages.",
-            "base_classes": [
-              "WebBaseLoader",
-              "BaseLoader"
-            ]
-          },
-          "id": "dndnode_12",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 227.56835609516543,
-          "y": -1139.8720072426718
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 489,
-        "id": "dndnode_6c3bfa74-e586-4e8d-82b1-80c86587e6ff",
-        "type": "genericNode",
-        "position": {
-          "x": 665.798285693765,
-          "y": -1326.6875132478858
-        },
-        "data": {
-          "type": "CharacterTextSplitter",
-          "node": {
-            "template": {
-              "documents": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "documents",
-                "advanced": false,
-                "type": "BaseLoader",
-                "list": false
-              },
-              "separator": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": ".",
-                "password": false,
-                "name": "separator",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "chunk_size": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 1000,
-                "password": false,
-                "name": "chunk_size",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "chunk_overlap": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 200,
-                "password": false,
-                "name": "chunk_overlap",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "_type": "CharacterTextSplitter"
+            {
+                "width": 384,
+                "height": 379,
+                "id": "WebBaseLoader-0Kh49",
+                "type": "genericNode",
+                "position": {
+                    "x": 60.77712301470575,
+                    "y": -1345.575885746874
+                },
+                "data": {
+                    "type": "WebBaseLoader",
+                    "node": {
+                        "template": {
+                            "metadata": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "{}",
+                                "password": false,
+                                "name": "metadata",
+                                "display_name": "Metadata",
+                                "advanced": false,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "web_path": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "https://langflow.org/how-upload-examples",
+                                "password": false,
+                                "name": "web_path",
+                                "display_name": "Web Page",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "WebBaseLoader"
+                        },
+                        "description": "Loader that uses urllib and beautiful soup to load webpages.",
+                        "base_classes": [
+                            "Document"
+                        ],
+                        "display_name": "WebBaseLoader",
+                        "custom_fields": {},
+                        "output_types": [
+                            "Document"
+                        ],
+                        "documentation": "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/web_base"
+                    },
+                    "id": "WebBaseLoader-0Kh49",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 60.77712301470575,
+                    "y": -1345.575885746874
+                },
+                "dragging": false
             },
-            "description": "Implementation of splitting text that looks at characters.",
-            "base_classes": [
-              "BaseDocumentTransformer",
-              "TextSplitter",
-              "CharacterTextSplitter"
-            ]
-          },
-          "id": "dndnode_6c3bfa74-e586-4e8d-82b1-80c86587e6ff",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 665.798285693765,
-          "y": -1326.6875132478858
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 273,
-        "id": "dndnode_87851e6a-5579-4de3-9a84-0e7e3874f508",
-        "type": "genericNode",
-        "position": {
-          "x": 677.2699276778915,
-          "y": -734.4639958173494
-        },
-        "data": {
-          "type": "OpenAIEmbeddings",
-          "node": {
-            "template": {
-              "client": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "client",
-                "advanced": true,
-                "type": "Any",
-                "list": false
-              },
-              "model": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "text-embedding-ada-002",
-                "password": false,
-                "name": "model",
-                "advanced": true,
-                "type": "str",
-                "list": false
-              },
-              "deployment": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "text-embedding-ada-002",
-                "password": false,
-                "name": "deployment",
-                "advanced": true,
-                "type": "str",
-                "list": false
-              },
-              "openai_api_version": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": true,
-                "name": "openai_api_version",
-                "display_name": "OpenAI API Version",
-                "advanced": true,
-                "type": "str",
-                "list": false,
-                "value": ""
-              },
-              "openai_api_base": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": true,
-                "name": "openai_api_base",
-                "display_name": "OpenAI API Base",
-                "advanced": true,
-                "type": "str",
-                "list": false,
-                "value": ""
-              },
-              "openai_api_type": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": true,
-                "name": "openai_api_type",
-                "display_name": "OpenAI API Type",
-                "advanced": true,
-                "type": "str",
-                "list": false,
-                "value": ""
-              },
-              "openai_proxy": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "openai_proxy",
-                "display_name": "OpenAI Proxy",
-                "advanced": true,
-                "type": "str",
-                "list": false
-              },
-              "embedding_ctx_length": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 8191,
-                "password": false,
-                "name": "embedding_ctx_length",
-                "advanced": true,
-                "type": "int",
-                "list": false
-              },
-              "openai_api_key": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "",
-                "password": true,
-                "name": "openai_api_key",
-                "display_name": "OpenAI API Key",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "openai_organization": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "openai_organization",
-                "display_name": "OpenAI Organization",
-                "advanced": true,
-                "type": "str",
-                "list": false
-              },
-              "allowed_special": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": [],
-                "password": false,
-                "name": "allowed_special",
-                "advanced": true,
-                "type": "Literal'all'",
-                "list": true
-              },
-              "disallowed_special": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "all",
-                "password": false,
-                "name": "disallowed_special",
-                "advanced": true,
-                "type": "Literal'all'",
-                "list": true
-              },
-              "chunk_size": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 1000,
-                "password": false,
-                "name": "chunk_size",
-                "advanced": true,
-                "type": "int",
-                "list": false
-              },
-              "max_retries": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 6,
-                "password": false,
-                "name": "max_retries",
-                "advanced": true,
-                "type": "int",
-                "list": false
-              },
-              "request_timeout": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "request_timeout",
-                "advanced": true,
-                "type": "float",
-                "list": false
-              },
-              "headers": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": true,
-                "value": "{'Authorization':\n            'Bearer <token>'}",
-                "password": false,
-                "name": "headers",
-                "advanced": true,
-                "type": "Any",
-                "list": false
-              },
-              "_type": "OpenAIEmbeddings"
+            {
+                "width": 384,
+                "height": 641,
+                "id": "ChatOpenAI-a6jbk",
+                "type": "genericNode",
+                "position": {
+                    "x": 1557.7805431884235,
+                    "y": -897.7091381330642
+                },
+                "data": {
+                    "type": "ChatOpenAI",
+                    "node": {
+                        "template": {
+                            "callbacks": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "callbacks",
+                                "advanced": false,
+                                "info": "",
+                                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                                "list": true
+                            },
+                            "cache": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "cache",
+                                "advanced": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "client": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "client",
+                                "advanced": false,
+                                "info": "",
+                                "type": "Any",
+                                "list": false
+                            },
+                            "max_retries": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 6,
+                                "password": false,
+                                "name": "max_retries",
+                                "advanced": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "max_tokens": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": true,
+                                "name": "max_tokens",
+                                "advanced": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false,
+                                "value": ""
+                            },
+                            "model_kwargs": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "model_kwargs",
+                                "advanced": true,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "model_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "gpt-3.5-turbo-0613",
+                                "password": false,
+                                "options": [
+                                    "gpt-3.5-turbo-0613",
+                                    "gpt-3.5-turbo",
+                                    "gpt-3.5-turbo-16k-0613",
+                                    "gpt-3.5-turbo-16k",
+                                    "gpt-4-0613",
+                                    "gpt-4-32k-0613",
+                                    "gpt-4",
+                                    "gpt-4-32k"
+                                ],
+                                "name": "model_name",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "n": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 1,
+                                "password": false,
+                                "name": "n",
+                                "advanced": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "openai_api_base": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_api_base",
+                                "display_name": "OpenAI API Base",
+                                "advanced": false,
+                                "info": "\nThe base URL of the OpenAI API. Defaults to https://api.openai.com/v1.\n\nYou can change this to use other APIs like JinaChat, LocalAI and Prem.\n",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_api_key": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "",
+                                "password": true,
+                                "name": "openai_api_key",
+                                "display_name": "OpenAI API Key",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_organization": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_organization",
+                                "display_name": "OpenAI Organization",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_proxy": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_proxy",
+                                "display_name": "OpenAI Proxy",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "request_timeout": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "request_timeout",
+                                "advanced": false,
+                                "info": "",
+                                "type": "float",
+                                "list": false
+                            },
+                            "streaming": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "streaming",
+                                "advanced": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "tags": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tags",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "temperature": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "0.2",
+                                "password": false,
+                                "name": "temperature",
+                                "advanced": false,
+                                "info": "",
+                                "type": "float",
+                                "list": false
+                            },
+                            "tiktoken_model_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tiktoken_model_name",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "verbose": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "verbose",
+                                "advanced": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "_type": "ChatOpenAI"
+                        },
+                        "description": "Wrapper around OpenAI Chat large language models.",
+                        "base_classes": [
+                            "BaseChatModel",
+                            "ChatOpenAI",
+                            "BaseLanguageModel",
+                            "BaseLLM"
+                        ],
+                        "display_name": "ChatOpenAI",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/openai"
+                    },
+                    "id": "ChatOpenAI-a6jbk",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 1557.7805431884235,
+                    "y": -897.7091381330642
+                },
+                "dragging": false
+            }
+        ],
+        "edges": [
+            {
+                "source": "VectorStoreInfo-jLZmI",
+                "sourceHandle": "VectorStoreInfo|VectorStoreInfo-jLZmI|VectorStoreInfo",
+                "target": "VectorStoreAgent-yqM7p",
+                "targetHandle": "VectorStoreInfo|vectorstoreinfo|VectorStoreAgent-yqM7p",
+                "className": "",
+                "id": "reactflow__edge-VectorStoreInfo-jLZmIVectorStoreInfo|VectorStoreInfo-jLZmI|VectorStoreInfo-VectorStoreAgent-yqM7pVectorStoreInfo|vectorstoreinfo|VectorStoreAgent-yqM7p",
+                "selected": false,
+                "style": {
+                    "stroke": "#555555"
+                },
+                "animated": false
             },
-            "description": "Wrapper around OpenAI embedding models.",
-            "base_classes": [
-              "OpenAIEmbeddings",
-              "Embeddings"
-            ]
-          },
-          "id": "dndnode_87851e6a-5579-4de3-9a84-0e7e3874f508",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 677.2699276778915,
-          "y": -734.4639958173494
-        },
-        "dragging": false
-      }
-    ],
-    "edges": [
-      {
-        "source": "dndnode_9",
-        "sourceHandle": "OpenAI|dndnode_9|BaseOpenAI|BaseLLM|OpenAI|BaseLanguageModel",
-        "target": "dndnode_8",
-        "targetHandle": "BaseLanguageModel|llm|dndnode_8",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_9OpenAI|dndnode_9|BaseOpenAI|BaseLLM|OpenAI|BaseLanguageModel-dndnode_8BaseLanguageModel|llm|dndnode_8",
-        "selected": false
-      },
-      {
-        "source": "dndnode_10",
-        "sourceHandle": "VectorStoreInfo|dndnode_10|VectorStoreInfo",
-        "target": "dndnode_8",
-        "targetHandle": "VectorStoreInfo|vectorstoreinfo|dndnode_8",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_10VectorStoreInfo|dndnode_10|VectorStoreInfo-dndnode_8VectorStoreInfo|vectorstoreinfo|dndnode_8",
-        "selected": false
-      },
-      {
-        "source": "dndnode_11",
-        "sourceHandle": "Chroma|dndnode_11|Chroma|VectorStore",
-        "target": "dndnode_10",
-        "targetHandle": "VectorStore|vectorstore|dndnode_10",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_11Chroma|dndnode_11|Chroma|VectorStore-dndnode_10VectorStore|vectorstore|dndnode_10",
-        "selected": false
-      },
-      {
-        "source": "dndnode_12",
-        "sourceHandle": "WebBaseLoader|dndnode_12|WebBaseLoader|BaseLoader",
-        "target": "dndnode_6c3bfa74-e586-4e8d-82b1-80c86587e6ff",
-        "targetHandle": "BaseLoader|documents|dndnode_6c3bfa74-e586-4e8d-82b1-80c86587e6ff",
-        "style": {
-          "stroke": "#222222"
-        },
-        "animated": false,
-        "id": "reactflow__edge-dndnode_12WebBaseLoader|dndnode_12|WebBaseLoader|BaseLoader-dndnode_6c3bfa74-e586-4e8d-82b1-80c86587e6ffBaseLoader|documents|dndnode_6c3bfa74-e586-4e8d-82b1-80c86587e6ff",
-        "selected": false
-      },
-      {
-        "source": "dndnode_6c3bfa74-e586-4e8d-82b1-80c86587e6ff",
-        "sourceHandle": "CharacterTextSplitter|dndnode_6c3bfa74-e586-4e8d-82b1-80c86587e6ff|BaseDocumentTransformer|TextSplitter|CharacterTextSplitter",
-        "target": "dndnode_11",
-        "targetHandle": "TextSplitter|documents|dndnode_11",
-        "style": {
-          "stroke": "#222222"
-        },
-        "animated": false,
-        "id": "reactflow__edge-dndnode_6c3bfa74-e586-4e8d-82b1-80c86587e6ffCharacterTextSplitter|dndnode_6c3bfa74-e586-4e8d-82b1-80c86587e6ff|BaseDocumentTransformer|TextSplitter|CharacterTextSplitter-dndnode_11TextSplitter|documents|dndnode_11",
-        "selected": false
-      },
-      {
-        "source": "dndnode_87851e6a-5579-4de3-9a84-0e7e3874f508",
-        "sourceHandle": "OpenAIEmbeddings|dndnode_87851e6a-5579-4de3-9a84-0e7e3874f508|OpenAIEmbeddings|Embeddings",
-        "target": "dndnode_11",
-        "targetHandle": "Embeddings|embedding|dndnode_11",
-        "style": {
-          "stroke": "#222222"
-        },
-        "animated": false,
-        "id": "reactflow__edge-dndnode_87851e6a-5579-4de3-9a84-0e7e3874f508OpenAIEmbeddings|dndnode_87851e6a-5579-4de3-9a84-0e7e3874f508|OpenAIEmbeddings|Embeddings-dndnode_11Embeddings|embedding|dndnode_11"
-      }
-    ],
-    "viewport": {
-      "x": -133.30897101916833,
-      "y": 966.1945031643296,
-      "zoom": 0.697371833175203
-    }
-  }
+            {
+                "source": "Chroma-k31aj",
+                "sourceHandle": "Chroma|Chroma-k31aj|Chroma|VectorStore|BaseRetriever|VectorStoreRetriever",
+                "target": "VectorStoreInfo-jLZmI",
+                "targetHandle": "VectorStore|vectorstore|VectorStoreInfo-jLZmI",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-Chroma-k31ajChroma|Chroma-k31aj|Chroma|VectorStore|BaseRetriever|VectorStoreRetriever-VectorStoreInfo-jLZmIVectorStore|vectorstore|VectorStoreInfo-jLZmI",
+                "selected": false
+            },
+            {
+                "source": "WebBaseLoader-0Kh49",
+                "sourceHandle": "WebBaseLoader|WebBaseLoader-0Kh49|Document",
+                "target": "RecursiveCharacterTextSplitter-bnner",
+                "targetHandle": "Document|documents|RecursiveCharacterTextSplitter-bnner",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-WebBaseLoader-0Kh49WebBaseLoader|WebBaseLoader-0Kh49|Document-RecursiveCharacterTextSplitter-bnnerDocument|documents|RecursiveCharacterTextSplitter-bnner",
+                "selected": false
+            },
+            {
+                "source": "RecursiveCharacterTextSplitter-bnner",
+                "sourceHandle": "RecursiveCharacterTextSplitter|RecursiveCharacterTextSplitter-bnner|Document",
+                "target": "Chroma-k31aj",
+                "targetHandle": "Document|documents|Chroma-k31aj",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-RecursiveCharacterTextSplitter-bnnerRecursiveCharacterTextSplitter|RecursiveCharacterTextSplitter-bnner|Document-Chroma-k31ajDocument|documents|Chroma-k31aj",
+                "selected": false
+            },
+            {
+                "source": "ChatOpenAI-a6jbk",
+                "sourceHandle": "ChatOpenAI|ChatOpenAI-a6jbk|BaseChatModel|ChatOpenAI|BaseLanguageModel|BaseLLM",
+                "target": "VectorStoreAgent-yqM7p",
+                "targetHandle": "BaseLanguageModel|llm|VectorStoreAgent-yqM7p",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-ChatOpenAI-a6jbkChatOpenAI|ChatOpenAI-a6jbk|BaseLanguageModel|BaseChatModel|ChatOpenAI|BaseLLM-VectorStoreAgent-yqM7pBaseLanguageModel|llm|VectorStoreAgent-yqM7p",
+                "selected": false
+            },
+            {
+                "source": "OpenAIEmbeddings-ole1p",
+                "sourceHandle": "OpenAIEmbeddings|OpenAIEmbeddings-ole1p|Embeddings|OpenAIEmbeddings",
+                "target": "Chroma-k31aj",
+                "targetHandle": "Embeddings|embedding|Chroma-k31aj",
+                "style": {
+                    "stroke": "#555555"
+                },
+                "className": "",
+                "animated": false,
+                "id": "reactflow__edge-OpenAIEmbeddings-ole1pOpenAIEmbeddings|OpenAIEmbeddings-ole1p|Embeddings|OpenAIEmbeddings-Chroma-k31ajEmbeddings|embedding|Chroma-k31aj"
+            }
+        ],
+        "viewport": {
+            "x": 25.124083679325963,
+            "y": 748.1038508118047,
+            "zoom": 0.41079314342572926
+        }
+    },
+    "id": "ee684ffb-0985-4e03-8614-868829d7a76f",
+    "style": null
 }

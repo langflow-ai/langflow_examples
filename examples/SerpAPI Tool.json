@@ -1,663 +1,514 @@
 {
-  "description": "An agent that can search the web and answer questions.",
-  "name": "SerpAPI Tool",
-  "id": "4405a500-b196-4e18-aef8-92131f74eaab",
-  "data": {
-    "nodes": [
-      {
-        "width": 384,
-        "height": 597,
-        "id": "dndnode_15",
-        "type": "genericNode",
-        "position": {
-          "x": 409.91106009433804,
-          "y": 398.0988935763564
-        },
-        "data": {
-          "type": "OpenAI",
-          "node": {
-            "template": {
-              "cache": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "cache",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "verbose": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "verbose",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "callbacks": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "callbacks",
-                "advanced": false,
-                "type": "langchain.callbacks.base.BaseCallbackHandler",
-                "list": true
-              },
-              "client": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "client",
-                "advanced": false,
-                "type": "Any",
-                "list": false
-              },
-              "model_name": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "text-davinci-003",
-                "password": false,
-                "options": [
-                  "text-davinci-003",
-                  "text-davinci-002",
-                  "text-curie-001",
-                  "text-babbage-001",
-                  "text-ada-001"
-                ],
-                "name": "model_name",
-                "advanced": false,
-                "type": "str",
-                "list": true
-              },
-              "temperature": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 0.7,
-                "password": false,
-                "name": "temperature",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "max_tokens": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 256,
-                "password": true,
-                "name": "max_tokens",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "top_p": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "top_p",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "frequency_penalty": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 0,
-                "password": false,
-                "name": "frequency_penalty",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "presence_penalty": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 0,
-                "password": false,
-                "name": "presence_penalty",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "n": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "n",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "best_of": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "best_of",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "model_kwargs": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "model_kwargs",
-                "advanced": true,
-                "type": "code",
-                "list": false
-              },
-              "openai_api_key": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "",
-                "password": true,
-                "name": "openai_api_key",
-                "display_name": "OpenAI API Key",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "openai_api_base": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": true,
-                "name": "openai_api_base",
-                "display_name": "OpenAI API Base",
-                "advanced": false,
-                "type": "str",
-                "list": false,
-                "value": ""
-              },
-              "openai_organization": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "openai_organization",
-                "display_name": "OpenAI Organization",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "openai_proxy": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "openai_proxy",
-                "display_name": "OpenAI Proxy",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "batch_size": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 20,
-                "password": false,
-                "name": "batch_size",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "request_timeout": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "request_timeout",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "logit_bias": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "logit_bias",
-                "advanced": false,
-                "type": "code",
-                "list": false
-              },
-              "max_retries": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 6,
-                "password": false,
-                "name": "max_retries",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "streaming": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": false,
-                "password": false,
-                "name": "streaming",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "allowed_special": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": [],
-                "password": false,
-                "name": "allowed_special",
-                "advanced": false,
-                "type": "Literal'all'",
-                "list": true
-              },
-              "disallowed_special": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": "all",
-                "password": false,
-                "name": "disallowed_special",
-                "advanced": false,
-                "type": "Literal'all'",
-                "list": false
-              },
-              "_type": "OpenAI"
+    "description": "An agent that can search the web and answer questions.",
+    "name": "SerpAPI Tool",
+    "data": {
+        "nodes": [
+            {
+                "width": 384,
+                "height": 439,
+                "id": "ZeroShotAgent-DwZJd",
+                "type": "genericNode",
+                "position": {
+                    "x": 578.4118869058104,
+                    "y": 414.3276647153982
+                },
+                "data": {
+                    "type": "ZeroShotAgent",
+                    "node": {
+                        "template": {
+                            "callback_manager": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "callback_manager",
+                                "advanced": false,
+                                "info": "",
+                                "type": "BaseCallbackManager",
+                                "list": false
+                            },
+                            "llm": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "llm",
+                                "advanced": false,
+                                "info": "",
+                                "type": "BaseLanguageModel",
+                                "list": false
+                            },
+                            "output_parser": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "output_parser",
+                                "advanced": false,
+                                "info": "",
+                                "type": "AgentOutputParser",
+                                "list": false
+                            },
+                            "tools": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tools",
+                                "advanced": false,
+                                "info": "",
+                                "type": "BaseTool",
+                                "list": true
+                            },
+                            "format_instructions": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": true,
+                                "value": "Use the following format:\n\nQuestion: the input question you must answer\nThought: you should always think about what to do\nAction: the action to take, should be one of [{tool_names}]\nAction Input: the input to the action\nObservation: the result of the action\n... (this Thought/Action/Action Input/Observation can repeat N times)\nThought: I now know the final answer\nFinal Answer: the final answer to the original input question",
+                                "password": false,
+                                "name": "format_instructions",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "input_variables": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "input_variables",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "prefix": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "value": "Answer the following questions as best you can. You have access to the following tools:",
+                                "password": false,
+                                "name": "prefix",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "suffix": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "value": "Begin!\n\nQuestion: {input}\nThought:{agent_scratchpad}",
+                                "password": false,
+                                "name": "suffix",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "ZeroShotAgent"
+                        },
+                        "description": "Construct an agent from an LLM and tools.",
+                        "base_classes": [
+                            "BaseSingleActionAgent",
+                            "Agent",
+                            "ZeroShotAgent",
+                            "function"
+                        ],
+                        "display_name": "ZeroShotAgent",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/agents/how_to/custom_mrkl_agent"
+                    },
+                    "id": "ZeroShotAgent-DwZJd",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 578.4118869058104,
+                    "y": 414.3276647153982
+                },
+                "dragging": false
             },
-            "description": "Generic OpenAI class that uses model name.",
-            "base_classes": [
-              "OpenAI",
-              "BaseLanguageModel",
-              "BaseOpenAI",
-              "BaseLLM"
-            ]
-          },
-          "id": "dndnode_15",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 409.91106009433804,
-          "y": 398.0988935763564
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 307,
-        "id": "dndnode_20",
-        "type": "genericNode",
-        "position": {
-          "x": 1102.587789663576,
-          "y": -36.47284786009436
-        },
-        "data": {
-          "type": "LLMChain",
-          "node": {
-            "template": {
-              "memory": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "memory",
-                "advanced": false,
-                "type": "BaseMemory",
-                "list": false
-              },
-              "callbacks": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "callbacks",
-                "advanced": false,
-                "type": "langchain.callbacks.base.BaseCallbackHandler",
-                "list": true
-              },
-              "verbose": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": false,
-                "password": false,
-                "name": "verbose",
-                "advanced": true,
-                "type": "bool",
-                "list": false
-              },
-              "prompt": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "prompt",
-                "advanced": false,
-                "type": "BasePromptTemplate",
-                "list": false
-              },
-              "llm": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "llm",
-                "advanced": false,
-                "type": "BaseLanguageModel",
-                "list": false
-              },
-              "output_key": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "text",
-                "password": false,
-                "name": "output_key",
-                "advanced": true,
-                "type": "str",
-                "list": false
-              },
-              "_type": "LLMChain"
+            {
+                "width": 384,
+                "height": 641,
+                "id": "ChatOpenAI-yaIOP",
+                "type": "genericNode",
+                "position": {
+                    "x": 88.7049047535154,
+                    "y": -38.092531785531776
+                },
+                "data": {
+                    "type": "ChatOpenAI",
+                    "node": {
+                        "template": {
+                            "callbacks": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "callbacks",
+                                "advanced": false,
+                                "info": "",
+                                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                                "list": true
+                            },
+                            "cache": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "cache",
+                                "advanced": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "client": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "client",
+                                "advanced": false,
+                                "info": "",
+                                "type": "Any",
+                                "list": false
+                            },
+                            "max_retries": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 6,
+                                "password": false,
+                                "name": "max_retries",
+                                "advanced": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "max_tokens": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": true,
+                                "name": "max_tokens",
+                                "advanced": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false,
+                                "value": ""
+                            },
+                            "model_kwargs": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "model_kwargs",
+                                "advanced": true,
+                                "info": "",
+                                "type": "code",
+                                "list": false
+                            },
+                            "model_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "gpt-3.5-turbo-0613",
+                                "password": false,
+                                "options": [
+                                    "gpt-3.5-turbo-0613",
+                                    "gpt-3.5-turbo",
+                                    "gpt-3.5-turbo-16k-0613",
+                                    "gpt-3.5-turbo-16k",
+                                    "gpt-4-0613",
+                                    "gpt-4-32k-0613",
+                                    "gpt-4",
+                                    "gpt-4-32k"
+                                ],
+                                "name": "model_name",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "n": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 1,
+                                "password": false,
+                                "name": "n",
+                                "advanced": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "openai_api_base": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_api_base",
+                                "display_name": "OpenAI API Base",
+                                "advanced": false,
+                                "info": "\nThe base URL of the OpenAI API. Defaults to https://api.openai.com/v1.\n\nYou can change this to use other APIs like JinaChat, LocalAI and Prem.\n",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_api_key": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "",
+                                "password": true,
+                                "name": "openai_api_key",
+                                "display_name": "OpenAI API Key",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_organization": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_organization",
+                                "display_name": "OpenAI Organization",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_proxy": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_proxy",
+                                "display_name": "OpenAI Proxy",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "request_timeout": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "request_timeout",
+                                "advanced": false,
+                                "info": "",
+                                "type": "float",
+                                "list": false
+                            },
+                            "streaming": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "streaming",
+                                "advanced": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "tags": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tags",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "temperature": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": 0.7,
+                                "password": false,
+                                "name": "temperature",
+                                "advanced": false,
+                                "info": "",
+                                "type": "float",
+                                "list": false
+                            },
+                            "tiktoken_model_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tiktoken_model_name",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "verbose": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "verbose",
+                                "advanced": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "_type": "ChatOpenAI"
+                        },
+                        "description": "Wrapper around OpenAI Chat large language models.",
+                        "base_classes": [
+                            "BaseLanguageModel",
+                            "BaseChatModel",
+                            "ChatOpenAI",
+                            "BaseLLM"
+                        ],
+                        "display_name": "ChatOpenAI",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/openai"
+                    },
+                    "id": "ChatOpenAI-yaIOP",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 88.7049047535154,
+                    "y": -38.092531785531776
+                },
+                "dragging": false
             },
-            "description": "Chain to run queries against LLMs.",
-            "base_classes": [
-              "Chain",
-              "LLMChain"
-            ]
-          },
-          "id": "dndnode_20",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1102.587789663576,
-          "y": -36.47284786009436
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 267,
-        "id": "dndnode_21",
-        "type": "genericNode",
-        "position": {
-          "x": 1626.1098853758665,
-          "y": 147.81903080153683
-        },
-        "data": {
-          "type": "ZeroShotAgent",
-          "node": {
-            "template": {
-              "llm_chain": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "llm_chain",
-                "advanced": false,
-                "type": "LLMChain",
-                "list": false
-              },
-              "output_parser": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "output_parser",
-                "advanced": false,
-                "type": "AgentOutputParser",
-                "list": false
-              },
-              "allowed_tools": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "allowed_tools",
-                "advanced": false,
-                "type": "Tool",
-                "list": true
-              },
-              "_type": "ZeroShotAgent"
+            {
+                "width": 384,
+                "height": 313,
+                "id": "Search-atmt8",
+                "type": "genericNode",
+                "position": {
+                    "x": 87.33090970142325,
+                    "y": 625.2389554027602
+                },
+                "data": {
+                    "type": "Search",
+                    "node": {
+                        "template": {
+                            "aiosession": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": "",
+                                "password": false,
+                                "name": "aiosession",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "serpapi_api_key": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "",
+                                "password": true,
+                                "name": "serpapi_api_key",
+                                "advanced": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "Search"
+                        },
+                        "description": "A search engine. Useful for when you need to answer questions about current events. Input should be a search query.",
+                        "base_classes": [
+                            "Tool",
+                            "BaseTool"
+                        ],
+                        "display_name": "Search",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": ""
+                    },
+                    "id": "Search-atmt8",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 87.33090970142325,
+                    "y": 625.2389554027602
+                },
+                "dragging": false
+            }
+        ],
+        "edges": [
+            {
+                "source": "ChatOpenAI-yaIOP",
+                "sourceHandle": "ChatOpenAI|ChatOpenAI-yaIOP|BaseLanguageModel|BaseChatModel|ChatOpenAI|BaseLLM",
+                "target": "ZeroShotAgent-DwZJd",
+                "targetHandle": "BaseLanguageModel|llm|ZeroShotAgent-DwZJd",
+                "style": {
+                    "stroke": "inherit"
+                },
+                "className": "stroke-foreground ",
+                "animated": false,
+                "id": "reactflow__edge-ChatOpenAI-yaIOPChatOpenAI|ChatOpenAI-yaIOP|BaseLanguageModel|BaseChatModel|ChatOpenAI|BaseLLM-ZeroShotAgent-DwZJdBaseLanguageModel|llm|ZeroShotAgent-DwZJd",
+                "selected": false
             },
-            "description": "Agent for the MRKL chain.",
-            "base_classes": [
-              "Agent",
-              "ZeroShotAgent",
-              "BaseSingleActionAgent",
-              "function"
-            ]
-          },
-          "id": "dndnode_21",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1626.1098853758665,
-          "y": 147.81903080153683
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 359,
-        "id": "dndnode_23",
-        "type": "genericNode",
-        "position": {
-          "x": 409.51524635315866,
-          "y": -60.01939553731515
-        },
-        "data": {
-          "type": "ZeroShotPrompt",
-          "node": {
-            "template": {
-              "prefix": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": true,
-                "value": "Answer the following questions as best you can. You have access to the following tools:",
-                "password": false,
-                "name": "prefix",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "suffix": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": true,
-                "value": "Begin!\n\nQuestion: {input}\nThought:{agent_scratchpad}",
-                "password": false,
-                "name": "suffix",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "format_instructions": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": "Use the following format:\n\nQuestion: the input question you must answer\nThought: you should always think about what to do\nAction: the action to take, should be one of [{tool_names}]\nAction Input: the input to the action\nObservation: the result of the action\n... (this Thought/Action/Action Input/Observation can repeat N times)\nThought: I now know the final answer\nFinal Answer: the final answer to the original input question",
-                "password": false,
-                "name": "format_instructions",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "_type": "zero_shot"
-            },
-            "description": "Prompt template for Zero Shot Agent.",
-            "base_classes": [
-              "BasePromptTemplate"
-            ]
-          },
-          "id": "dndnode_23",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 409.51524635315866,
-          "y": -60.01939553731515
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 313,
-        "id": "dndnode_b3a34830-07b0-4627-b909-5c13dea90c19",
-        "type": "genericNode",
-        "position": {
-          "x": 1147.466611387235,
-          "y": 592.426363268862
-        },
-        "data": {
-          "type": "Search",
-          "node": {
-            "template": {
-              "serpapi_api_key": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "",
-                "password": true,
-                "name": "serpapi_api_key",
-                "display_name": "Serpapi API Key",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "aiosession": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": "",
-                "password": false,
-                "name": "aiosession",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "_type": "Search"
-            },
-            "description": "A search engine. Useful for when you need to answer questions about current events. Input should be a search query.",
-            "base_classes": [
-              "Tool"
-            ]
-          },
-          "id": "dndnode_b3a34830-07b0-4627-b909-5c13dea90c19",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1147.466611387235,
-          "y": 592.426363268862
-        },
-        "dragging": false
-      }
-    ],
-    "edges": [
-      {
-        "source": "dndnode_15",
-        "sourceHandle": "OpenAI|dndnode_15|OpenAI|BaseLanguageModel|BaseOpenAI|BaseLLM",
-        "target": "dndnode_20",
-        "targetHandle": "BaseLanguageModel|llm|dndnode_20",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_15OpenAI|dndnode_15|OpenAI|BaseLanguageModel|BaseOpenAI|BaseLLM-dndnode_20BaseLanguageModel|llm|dndnode_20",
-        "selected": false
-      },
-      {
-        "source": "dndnode_20",
-        "sourceHandle": "LLMChain|dndnode_20|Chain|LLMChain",
-        "target": "dndnode_21",
-        "targetHandle": "LLMChain|llm_chain|dndnode_21",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_20LLMChain|dndnode_20|Chain|LLMChain-dndnode_21LLMChain|llm_chain|dndnode_21",
-        "selected": false
-      },
-      {
-        "source": "dndnode_23",
-        "sourceHandle": "ZeroShotPrompt|dndnode_23|BasePromptTemplate",
-        "target": "dndnode_20",
-        "targetHandle": "BasePromptTemplate|prompt|dndnode_20",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_23ZeroShotPrompt|dndnode_23|BasePromptTemplate-dndnode_20BasePromptTemplate|prompt|dndnode_20",
-        "selected": false
-      },
-      {
-        "source": "dndnode_b3a34830-07b0-4627-b909-5c13dea90c19",
-        "sourceHandle": "Search|dndnode_b3a34830-07b0-4627-b909-5c13dea90c19|Tool",
-        "target": "dndnode_21",
-        "targetHandle": "Tool|allowed_tools|dndnode_21",
-        "style": {
-          "stroke": "#222222"
-        },
-        "animated": false,
-        "id": "reactflow__edge-dndnode_b3a34830-07b0-4627-b909-5c13dea90c19Search|dndnode_b3a34830-07b0-4627-b909-5c13dea90c19|Tool-dndnode_21Tool|allowed_tools|dndnode_21"
-      }
-    ],
-    "viewport": {
-      "x": -65.21089429045423,
-      "y": 95.85854102587501,
-      "zoom": 0.697371833175203
-    }
-  }
+            {
+                "source": "Search-atmt8",
+                "sourceHandle": "Search|Search-atmt8|Tool|BaseTool",
+                "target": "ZeroShotAgent-DwZJd",
+                "targetHandle": "BaseTool|tools|ZeroShotAgent-DwZJd",
+                "style": {
+                    "stroke": "inherit"
+                },
+                "className": "stroke-foreground ",
+                "animated": false,
+                "id": "reactflow__edge-Search-atmt8Search|Search-atmt8|Tool|BaseTool-ZeroShotAgent-DwZJdBaseTool|tools|ZeroShotAgent-DwZJd",
+                "selected": false
+            }
+        ],
+        "viewport": {
+            "x": 130.23064493329827,
+            "y": 97.89082483560372,
+            "zoom": 0.6374917229717034
+        }
+    },
+    "id": "b4018dd3-aea0-49d8-a475-e621c1c8d027"
 }
