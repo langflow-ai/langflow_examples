@@ -704,7 +704,7 @@
                                 "placeholder": "",
                                 "show": true,
                                 "multiline": false,
-                                "value": "https://langflow.org/how-upload-examples",
+                                "value": "http://docs.langflow.org/examples/how-upload-examples",
                                 "password": false,
                                 "name": "web_path",
                                 "display_name": "Web Page",
