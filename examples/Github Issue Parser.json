@@ -1,1 +1,1187 @@
-{"name":"Github Issue Parser","description":"Gets Issues from Langflow repo and output them as JSON objects.","data":{"nodes":[{"width":384,"height":339,"id":"LLMChain-hPAAZ","type":"genericNode","position":{"x":2186,"y":544.28125},"data":{"type":"LLMChain","node":{"template":{"callbacks":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"callbacks","advanced":false,"dynamic":false,"info":"","type":"langchain.callbacks.base.BaseCallbackHandler","list":true},"llm":{"required":true,"placeholder":"","show":true,"multiline":false,"password":false,"name":"llm","advanced":false,"dynamic":false,"info":"","type":"BaseLanguageModel","list":false},"memory":{"required":false,"placeholder":"","show":true,"multiline":false,"password":false,"name":"memory","advanced":false,"dynamic":false,"info":"","type":"BaseMemory","list":false},"output_parser":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"output_parser","advanced":false,"dynamic":false,"info":"","type":"BaseLLMOutputParser","list":false},"prompt":{"required":true,"placeholder":"","show":true,"multiline":false,"password":false,"name":"prompt","advanced":false,"dynamic":false,"info":"","type":"BasePromptTemplate","list":false},"llm_kwargs":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"llm_kwargs","advanced":false,"dynamic":false,"info":"","type":"dict","list":false},"metadata":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"metadata","advanced":false,"dynamic":false,"info":"","type":"dict","list":false},"output_key":{"required":true,"placeholder":"","show":true,"multiline":false,"value":"text","password":false,"name":"output_key","advanced":true,"dynamic":false,"info":"","type":"str","list":false},"return_final_only":{"required":false,"placeholder":"","show":false,"multiline":false,"value":true,"password":false,"name":"return_final_only","advanced":false,"dynamic":false,"info":"","type":"bool","list":false},"tags":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"tags","advanced":false,"dynamic":false,"info":"","type":"str","list":true},"verbose":{"required":false,"placeholder":"","show":false,"multiline":false,"value":false,"password":false,"name":"verbose","advanced":true,"dynamic":false,"info":"","type":"bool","list":false},"_type":"LLMChain"},"description":"Chain to run queries against LLMs.","base_classes":["LLMChain","Chain","function"],"display_name":"LLMChain","custom_fields":{},"output_types":[],"documentation":"https://python.langchain.com/docs/modules/chains/foundational/llm_chain"},"id":"LLMChain-hPAAZ","value":null},"selected":false,"positionAbsolute":{"x":2186,"y":544.28125},"dragging":false},{"width":384,"height":658,"id":"PromptTemplate-pq4uZ","type":"genericNode","position":{"x":1528.325062605035,"y":-90.85276748266875},"data":{"type":"PromptTemplate","node":{"template":{"output_parser":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"output_parser","advanced":false,"dynamic":false,"info":"","type":"BaseOutputParser","list":false},"input_variables":{"required":true,"placeholder":"","show":false,"multiline":false,"password":false,"name":"input_variables","advanced":false,"dynamic":false,"info":"","type":"str","list":true,"value":["repo_url","number_of_issues","issues","format_instructions"]},"partial_variables":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"partial_variables","advanced":false,"dynamic":false,"info":"","type":"dict","list":false},"template":{"required":true,"placeholder":"","show":true,"multiline":true,"password":false,"name":"template","advanced":false,"dynamic":false,"info":"","type":"prompt","list":false,"value":"In the text below, there will be a list of issues from the Langflow repo({repo_url}).\nThe task is to extract the title, author and last_updated for {number_of_issues} issues.\n\n{issues}\n\n{format_instructions}\n\n- If you can't find one of the information, just pass an empty string like ''. \n- If there's more than one issue, create a list of JSON objects.\n"},"template_format":{"required":false,"placeholder":"","show":false,"multiline":false,"value":"f-string","password":false,"name":"template_format","advanced":false,"dynamic":false,"info":"","type":"str","list":false},"validate_template":{"required":false,"placeholder":"","show":false,"multiline":false,"value":true,"password":false,"name":"validate_template","advanced":false,"dynamic":false,"info":"","type":"bool","list":false},"_type":"PromptTemplate","repo_url":{"required":false,"placeholder":"","show":true,"multiline":true,"value":"","password":false,"name":"repo_url","display_name":"repo_url","advanced":false,"input_types":["Document","BaseOutputParser"],"dynamic":false,"info":"","type":"str","list":false},"number_of_issues":{"required":false,"placeholder":"","show":true,"multiline":true,"value":"","password":false,"name":"number_of_issues","display_name":"number_of_issues","advanced":false,"input_types":["Document","BaseOutputParser"],"dynamic":false,"info":"","type":"str","list":false},"issues":{"required":false,"placeholder":"","show":true,"multiline":true,"value":"","password":false,"name":"issues","display_name":"issues","advanced":false,"input_types":["Document","BaseOutputParser"],"dynamic":false,"info":"","type":"str","list":false},"format_instructions":{"required":false,"placeholder":"","show":true,"multiline":true,"value":"","password":false,"name":"format_instructions","display_name":"format_instructions","advanced":false,"input_types":["Document","BaseOutputParser"],"dynamic":false,"info":"","type":"str","list":false}},"description":"A prompt template for a language model.","base_classes":["StringPromptTemplate","PromptTemplate","BasePromptTemplate"],"name":"","display_name":"PromptTemplate","documentation":"https://python.langchain.com/docs/modules/model_io/prompts/prompt_templates/","custom_fields":{"":["repo_url","number_of_issues","issues","format_instructions"],"template":["repo_url","number_of_issues","issues","format_instructions"]},"output_types":[],"field_formatters":{"formatters":{"openai_api_key":{}},"base_formatters":{"kwargs":{},"optional":{},"list":{},"dict":{},"union":{},"multiline":{},"show":{},"password":{},"default":{},"headers":{},"dict_code_file":{},"model_fields":{"MODEL_DICT":{"OpenAI":["text-davinci-003","text-davinci-002","text-curie-001","text-babbage-001","text-ada-001"],"ChatOpenAI":["gpt-3.5-turbo-0613","gpt-3.5-turbo","gpt-3.5-turbo-16k-0613","gpt-3.5-turbo-16k","gpt-4-0613","gpt-4-32k-0613","gpt-4","gpt-4-32k"],"Anthropic":["claude-v1","claude-v1-100k","claude-instant-v1","claude-instant-v1-100k","claude-v1.3","claude-v1.3-100k","claude-v1.2","claude-v1.0","claude-instant-v1.1","claude-instant-v1.1-100k","claude-instant-v1.0"],"ChatAnthropic":["claude-v1","claude-v1-100k","claude-instant-v1","claude-instant-v1-100k","claude-v1.3","claude-v1.3-100k","claude-v1.2","claude-v1.0","claude-instant-v1.1","claude-instant-v1.1-100k","claude-instant-v1.0"]}}}},"beta":false,"error":null},"id":"PromptTemplate-pq4uZ","value":null},"selected":true,"dragging":false,"positionAbsolute":{"x":1528.325062605035,"y":-90.85276748266875}},{"width":384,"height":630,"id":"ChatOpenAI-cqGLq","type":"genericNode","position":{"x":1498.7361464926273,"y":691.9153700634232},"data":{"type":"ChatOpenAI","node":{"template":{"callbacks":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"callbacks","advanced":false,"dynamic":false,"info":"","type":"langchain.callbacks.base.BaseCallbackHandler","list":true},"cache":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"cache","advanced":false,"dynamic":false,"info":"","type":"bool","list":false},"client":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"client","advanced":false,"dynamic":false,"info":"","type":"Any","list":false},"max_retries":{"required":false,"placeholder":"","show":false,"multiline":false,"value":6,"password":false,"name":"max_retries","advanced":false,"dynamic":false,"info":"","type":"int","list":false},"max_tokens":{"required":false,"placeholder":"","show":true,"multiline":false,"password":true,"name":"max_tokens","advanced":false,"dynamic":false,"info":"","type":"int","list":false,"value":""},"metadata":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"metadata","advanced":false,"dynamic":false,"info":"","type":"dict","list":false},"model_kwargs":{"required":false,"placeholder":"","show":true,"multiline":false,"password":false,"name":"model_kwargs","advanced":true,"dynamic":false,"info":"","type":"dict","list":false},"model_name":{"required":false,"placeholder":"","show":true,"multiline":false,"value":"gpt-3.5-turbo-0613","password":false,"options":["gpt-3.5-turbo-0613","gpt-3.5-turbo","gpt-3.5-turbo-16k-0613","gpt-3.5-turbo-16k","gpt-4-0613","gpt-4-32k-0613","gpt-4","gpt-4-32k"],"name":"model_name","advanced":false,"dynamic":false,"info":"","type":"str","list":true},"n":{"required":false,"placeholder":"","show":false,"multiline":false,"value":1,"password":false,"name":"n","advanced":false,"dynamic":false,"info":"","type":"int","list":false},"openai_api_base":{"required":false,"placeholder":"","show":true,"multiline":false,"password":false,"name":"openai_api_base","display_name":"OpenAI API Base","advanced":false,"dynamic":false,"info":"\nThe base URL of the OpenAI API. Defaults to https://api.openai.com/v1.\n\nYou can change this to use other APIs like JinaChat, LocalAI and Prem.\n","type":"str","list":false},"openai_api_key":{"required":false,"placeholder":"","show":true,"multiline":false,"value":"","password":true,"name":"openai_api_key","display_name":"OpenAI API Key","advanced":false,"dynamic":false,"info":"","type":"str","list":false},"openai_organization":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"openai_organization","display_name":"OpenAI Organization","advanced":false,"dynamic":false,"info":"","type":"str","list":false},"openai_proxy":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"openai_proxy","display_name":"OpenAI Proxy","advanced":false,"dynamic":false,"info":"","type":"str","list":false},"request_timeout":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"request_timeout","advanced":false,"dynamic":false,"info":"","type":"float","list":false},"streaming":{"required":false,"placeholder":"","show":false,"multiline":false,"value":false,"password":false,"name":"streaming","advanced":false,"dynamic":false,"info":"","type":"bool","list":false},"tags":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"tags","advanced":false,"dynamic":false,"info":"","type":"str","list":true},"temperature":{"required":false,"placeholder":"","show":true,"multiline":false,"value":0.7,"password":false,"name":"temperature","advanced":false,"dynamic":false,"info":"","type":"float","list":false},"tiktoken_model_name":{"required":false,"placeholder":"","show":false,"multiline":false,"password":false,"name":"tiktoken_model_name","advanced":false,"dynamic":false,"info":"","type":"str","list":false},"verbose":{"required":false,"placeholder":"","show":false,"multiline":false,"value":false,"password":false,"name":"verbose","advanced":false,"dynamic":false,"info":"","type":"bool","list":false},"_type":"ChatOpenAI"},"description":"`OpenAI` Chat large language models API.","base_classes":["BaseLanguageModel","BaseChatModel","ChatOpenAI","BaseLLM"],"display_name":"ChatOpenAI","custom_fields":{},"output_types":[],"documentation":"https://python.langchain.com/docs/modules/model_io/models/chat/integrations/openai"},"id":"ChatOpenAI-cqGLq","value":null},"selected":false,"positionAbsolute":{"x":1498.7361464926273,"y":691.9153700634232},"dragging":false},{"width":384,"height":388,"id":"WebBaseLoader-UVsKp","type":"genericNode","position":{"x":769.255740690712,"y":-66.92435295205902},"data":{"type":"WebBaseLoader","node":{"template":{"metadata":{"required":false,"placeholder":"","show":true,"multiline":false,"value":[{"":""}],"password":false,"name":"metadata","display_name":"Metadata","advanced":false,"dynamic":false,"info":"","type":"dict","list":false},"web_path":{"required":true,"placeholder":"","show":true,"multiline":false,"value":"https://github.com/logspace-ai/langflow/issues?q=is:issue+is:open+sort:updated-desc","password":false,"name":"web_path","display_name":"Web Page","advanced":false,"dynamic":false,"info":"","type":"str","list":false},"_type":"WebBaseLoader"},"description":"Load HTML pages using `urllib` and parse them with `BeautifulSoup'.","base_classes":["Document"],"display_name":"WebBaseLoader","custom_fields":{},"output_types":["Document"],"documentation":"https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/web_base"},"id":"WebBaseLoader-UVsKp","value":null},"selected":false,"positionAbsolute":{"x":769.255740690712,"y":-66.92435295205902},"dragging":false},{"width":384,"height":191,"id":"StructuredOutputParser-CTrMG","type":"genericNode","position":{"x":784.4425371799673,"y":369.3130308646057},"data":{"type":"StructuredOutputParser","node":{"template":{"response_schemas":{"required":true,"placeholder":"","show":true,"multiline":false,"password":false,"name":"response_schemas","advanced":false,"dynamic":false,"info":"","type":"ResponseSchema","list":true},"_type":"StructuredOutputParser"},"description":"","base_classes":["StructuredOutputParser","BaseLLMOutputParser","BaseOutputParser"],"display_name":"StructuredOutputParser","custom_fields":{},"output_types":[],"documentation":"https://python.langchain.com/docs/modules/model_io/output_parsers/structured"},"id":"StructuredOutputParser-CTrMG","value":null},"selected":false,"positionAbsolute":{"x":784.4425371799673,"y":369.3130308646057},"dragging":false},{"width":384,"height":474,"id":"ResponseSchema-YysF7","type":"genericNode","position":{"x":216.1189209515943,"y":204.9292111664579},"data":{"type":"ResponseSchema","node":{"template":{"description":{"required":true,"placeholder":"","show":true,"multiline":true,"password":false,"name":"description","advanced":false,"dynamic":false,"info":"","type":"str","list":false,"value":"tittle of the issue"},"name":{"required":true,"placeholder":"","show":true,"multiline":false,"password":false,"name":"name","advanced":false,"dynamic":false,"info":"","type":"str","list":false,"value":"title"},"type":{"required":false,"placeholder":"","show":true,"multiline":false,"value":"string","password":false,"name":"type","advanced":false,"dynamic":false,"info":"","type":"str","list":false},"_type":"ResponseSchema"},"description":"A schema for a response from a structured output parser.","base_classes":["ResponseSchema"],"display_name":"ResponseSchema","custom_fields":{},"output_types":[],"documentation":"https://python.langchain.com/docs/modules/model_io/output_parsers/structured"},"id":"ResponseSchema-YysF7","value":null},"selected":false,"positionAbsolute":{"x":216.1189209515943,"y":204.9292111664579},"dragging":false},{"width":384,"height":474,"id":"ResponseSchema-ZeO3d","type":"genericNode","position":{"x":202.35985494557065,"y":672.782962772499},"data":{"type":"ResponseSchema","node":{"template":{"description":{"required":true,"placeholder":"","show":true,"multiline":true,"password":false,"name":"description","advanced":false,"dynamic":false,"info":"","type":"str","list":false,"value":"author of the issue"},"name":{"required":true,"placeholder":"","show":true,"multiline":false,"password":false,"name":"name","advanced":false,"dynamic":false,"info":"","type":"str","list":false,"value":"author"},"type":{"required":false,"placeholder":"","show":true,"multiline":false,"value":"string","password":false,"name":"type","advanced":false,"dynamic":false,"info":"","type":"str","list":false},"_type":"ResponseSchema"},"description":"A schema for a response from a structured output parser.","base_classes":["ResponseSchema"],"display_name":"ResponseSchema","custom_fields":{},"output_types":[],"documentation":"https://python.langchain.com/docs/modules/model_io/output_parsers/structured"},"id":"ResponseSchema-ZeO3d","value":null},"selected":false,"positionAbsolute":{"x":202.35985494557065,"y":672.782962772499},"dragging":false},{"width":384,"height":474,"id":"ResponseSchema-5h2c8","type":"genericNode","position":{"x":208.95930511608958,"y":1143.2299735204035},"data":{"type":"ResponseSchema","node":{"template":{"description":{"required":true,"placeholder":"","show":true,"multiline":true,"password":false,"name":"description","advanced":false,"dynamic":false,"info":"","type":"str","list":false,"value":"last updated date"},"name":{"required":true,"placeholder":"","show":true,"multiline":false,"password":false,"name":"name","advanced":false,"dynamic":false,"info":"","type":"str","list":false,"value":"last_updated"},"type":{"required":false,"placeholder":"","show":true,"multiline":false,"value":"string","password":false,"name":"type","advanced":false,"dynamic":false,"info":"","type":"str","list":false},"_type":"ResponseSchema"},"description":"A schema for a response from a structured output parser.","base_classes":["ResponseSchema"],"display_name":"ResponseSchema","custom_fields":{},"output_types":[],"documentation":"https://python.langchain.com/docs/modules/model_io/output_parsers/structured"},"id":"ResponseSchema-5h2c8","value":null},"selected":false,"positionAbsolute":{"x":208.95930511608958,"y":1143.2299735204035},"dragging":false}],"edges":[{"source":"ChatOpenAI-cqGLq","sourceHandle":"ChatOpenAI|ChatOpenAI-cqGLq|BaseLanguageModel|BaseChatModel|ChatOpenAI|BaseLLM","target":"LLMChain-hPAAZ","targetHandle":"BaseLanguageModel|llm|LLMChain-hPAAZ","style":{"stroke":"#555"},"className":"","animated":false,"id":"reactflow__edge-ChatOpenAI-cqGLqChatOpenAI|ChatOpenAI-cqGLq|BaseLanguageModel|BaseChatModel|ChatOpenAI|BaseLLM-LLMChain-hPAAZBaseLanguageModel|llm|LLMChain-hPAAZ","selected":false},{"source":"PromptTemplate-pq4uZ","sourceHandle":"PromptTemplate|PromptTemplate-pq4uZ|StringPromptTemplate|PromptTemplate|BasePromptTemplate","target":"LLMChain-hPAAZ","targetHandle":"BasePromptTemplate|prompt|LLMChain-hPAAZ","style":{"stroke":"#555"},"className":"","animated":false,"id":"reactflow__edge-PromptTemplate-pq4uZPromptTemplate|PromptTemplate-pq4uZ|StringPromptTemplate|PromptTemplate|BasePromptTemplate-LLMChain-hPAAZBasePromptTemplate|prompt|LLMChain-hPAAZ","selected":false},{"source":"WebBaseLoader-UVsKp","sourceHandle":"WebBaseLoader|WebBaseLoader-UVsKp|Document","target":"PromptTemplate-pq4uZ","targetHandle":"Document;BaseOutputParser|issues|PromptTemplate-pq4uZ","style":{"stroke":"#555"},"className":"","animated":false,"id":"reactflow__edge-WebBaseLoader-UVsKpWebBaseLoader|WebBaseLoader-UVsKp|Document-PromptTemplate-pq4uZDocument;BaseOutputParser|issues|PromptTemplate-pq4uZ","selected":false},{"source":"StructuredOutputParser-CTrMG","sourceHandle":"StructuredOutputParser|StructuredOutputParser-CTrMG|StructuredOutputParser|BaseLLMOutputParser|BaseOutputParser","target":"PromptTemplate-pq4uZ","targetHandle":"Document;BaseOutputParser|format_instructions|PromptTemplate-pq4uZ","style":{"stroke":"#555"},"className":"","animated":false,"id":"reactflow__edge-StructuredOutputParser-CTrMGStructuredOutputParser|StructuredOutputParser-CTrMG|StructuredOutputParser|BaseLLMOutputParser|BaseOutputParser-PromptTemplate-pq4uZDocument;BaseOutputParser|format_instructions|PromptTemplate-pq4uZ","selected":false},{"source":"ResponseSchema-5h2c8","sourceHandle":"ResponseSchema|ResponseSchema-5h2c8|ResponseSchema","target":"StructuredOutputParser-CTrMG","targetHandle":"ResponseSchema|response_schemas|StructuredOutputParser-CTrMG","style":{"stroke":"#555"},"className":"","animated":false,"id":"reactflow__edge-ResponseSchema-5h2c8ResponseSchema|ResponseSchema-5h2c8|ResponseSchema-StructuredOutputParser-CTrMGResponseSchema|response_schemas|StructuredOutputParser-CTrMG","selected":false},{"source":"ResponseSchema-ZeO3d","sourceHandle":"ResponseSchema|ResponseSchema-ZeO3d|ResponseSchema","target":"StructuredOutputParser-CTrMG","targetHandle":"ResponseSchema|response_schemas|StructuredOutputParser-CTrMG","style":{"stroke":"#555"},"className":"","animated":false,"id":"reactflow__edge-ResponseSchema-ZeO3dResponseSchema|ResponseSchema-ZeO3d|ResponseSchema-StructuredOutputParser-CTrMGResponseSchema|response_schemas|StructuredOutputParser-CTrMG","selected":false},{"source":"ResponseSchema-YysF7","sourceHandle":"ResponseSchema|ResponseSchema-YysF7|ResponseSchema","target":"StructuredOutputParser-CTrMG","targetHandle":"ResponseSchema|response_schemas|StructuredOutputParser-CTrMG","style":{"stroke":"#555"},"className":"","animated":false,"id":"reactflow__edge-ResponseSchema-YysF7ResponseSchema|ResponseSchema-YysF7|ResponseSchema-StructuredOutputParser-CTrMGResponseSchema|response_schemas|StructuredOutputParser-CTrMG","selected":false}],"viewport":{"x":143.7288927262312,"y":65.00964337972812,"zoom":0.36883459148473813}},"id":"18df0520-51e4-4a67-b3eb-d3be0245ee33","user_id":"dc912b7a-d54a-49c7-b783-b51c20388859"}
+{
+    "id": "40984afa-d5c8-4106-9ac1-9a61fa93d0c0",
+    "data": {
+        "nodes": [
+            {
+                "width": 384,
+                "height": 657,
+                "id": "PromptTemplate-pP7tN",
+                "type": "genericNode",
+                "position": {
+                    "x": 1528.325062605035,
+                    "y": -90.85276748266875
+                },
+                "data": {
+                    "type": "PromptTemplate",
+                    "node": {
+                        "template": {
+                            "output_parser": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "output_parser",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "BaseOutputParser",
+                                "list": false
+                            },
+                            "input_variables": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "input_variables",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true,
+                                "value": [
+                                    "repo_url",
+                                    "number_of_issues",
+                                    "issues",
+                                    "format_instructions"
+                                ]
+                            },
+                            "partial_variables": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "partial_variables",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "dict",
+                                "list": false
+                            },
+                            "template": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "password": false,
+                                "name": "template",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "prompt",
+                                "list": false,
+                                "value": "In the text below, there will be a list of issues from the Langflow repo({repo_url}).\nThe task is to extract the title, author and last_updated for {number_of_issues} issues.\n\n{issues}\n\n{format_instructions}\n\n- If you can't find one of the information, just pass an empty string like ''. \n- If there's more than one issue, create a list of JSON objects.\n"
+                            },
+                            "template_format": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": "f-string",
+                                "password": false,
+                                "name": "template_format",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "validate_template": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": true,
+                                "password": false,
+                                "name": "validate_template",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "_type": "PromptTemplate",
+                            "repo_url": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "value": "",
+                                "password": false,
+                                "name": "repo_url",
+                                "display_name": "repo_url",
+                                "advanced": false,
+                                "input_types": [
+                                    "Document",
+                                    "BaseOutputParser"
+                                ],
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "number_of_issues": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "value": "",
+                                "password": false,
+                                "name": "number_of_issues",
+                                "display_name": "number_of_issues",
+                                "advanced": false,
+                                "input_types": [
+                                    "Document",
+                                    "BaseOutputParser"
+                                ],
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "issues": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "value": "",
+                                "password": false,
+                                "name": "issues",
+                                "display_name": "issues",
+                                "advanced": false,
+                                "input_types": [
+                                    "Document",
+                                    "BaseOutputParser"
+                                ],
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "format_instructions": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "value": "",
+                                "password": false,
+                                "name": "format_instructions",
+                                "display_name": "format_instructions",
+                                "advanced": false,
+                                "input_types": [
+                                    "Document",
+                                    "BaseOutputParser"
+                                ],
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            }
+                        },
+                        "description": "A prompt template for a language model.",
+                        "base_classes": [
+                            "StringPromptTemplate",
+                            "PromptTemplate",
+                            "BasePromptTemplate"
+                        ],
+                        "name": "",
+                        "display_name": "PromptTemplate",
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/prompts/prompt_templates/",
+                        "custom_fields": {
+                            "": [
+                                "repo_url",
+                                "number_of_issues",
+                                "issues",
+                                "format_instructions"
+                            ],
+                            "template": [
+                                "repo_url",
+                                "number_of_issues",
+                                "issues",
+                                "format_instructions"
+                            ]
+                        },
+                        "output_types": [],
+                        "field_formatters": {},
+                        "beta": false,
+                        "error": null
+                    },
+                    "id": "PromptTemplate-pP7tN",
+                    "value": null
+                },
+                "selected": false,
+                "dragging": false,
+                "positionAbsolute": {
+                    "x": 1528.325062605035,
+                    "y": -90.85276748266875
+                }
+            },
+            {
+                "width": 384,
+                "height": 629,
+                "id": "ChatOpenAI-qh190",
+                "type": "genericNode",
+                "position": {
+                    "x": 1498.7361464926273,
+                    "y": 691.9153700634232
+                },
+                "data": {
+                    "type": "ChatOpenAI",
+                    "node": {
+                        "template": {
+                            "callbacks": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "callbacks",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                                "list": true
+                            },
+                            "cache": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "cache",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "client": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "client",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "Any",
+                                "list": false
+                            },
+                            "max_retries": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 6,
+                                "password": false,
+                                "name": "max_retries",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "max_tokens": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": true,
+                                "name": "max_tokens",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false,
+                                "value": ""
+                            },
+                            "metadata": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "metadata",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "dict",
+                                "list": false
+                            },
+                            "model_kwargs": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "model_kwargs",
+                                "advanced": true,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "dict",
+                                "list": false
+                            },
+                            "model_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "gpt-3.5-turbo-0613",
+                                "password": false,
+                                "options": [
+                                    "gpt-3.5-turbo-0613",
+                                    "gpt-3.5-turbo",
+                                    "gpt-3.5-turbo-16k-0613",
+                                    "gpt-3.5-turbo-16k",
+                                    "gpt-4-0613",
+                                    "gpt-4-32k-0613",
+                                    "gpt-4",
+                                    "gpt-4-32k"
+                                ],
+                                "name": "model_name",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "n": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": 1,
+                                "password": false,
+                                "name": "n",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "int",
+                                "list": false
+                            },
+                            "openai_api_base": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_api_base",
+                                "display_name": "OpenAI API Base",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "\nThe base URL of the OpenAI API. Defaults to https://api.openai.com/v1.\n\nYou can change this to use other APIs like JinaChat, LocalAI and Prem.\n",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_api_key": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "",
+                                "password": true,
+                                "name": "openai_api_key",
+                                "display_name": "OpenAI API Key",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_organization": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_organization",
+                                "display_name": "OpenAI Organization",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "openai_proxy": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "openai_proxy",
+                                "display_name": "OpenAI Proxy",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "request_timeout": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "request_timeout",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "float",
+                                "list": false
+                            },
+                            "streaming": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "streaming",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "tags": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tags",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": true
+                            },
+                            "temperature": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": 0.7,
+                                "password": false,
+                                "name": "temperature",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "float",
+                                "list": false
+                            },
+                            "tiktoken_model_name": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "password": false,
+                                "name": "tiktoken_model_name",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "verbose": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": false,
+                                "value": false,
+                                "password": false,
+                                "name": "verbose",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "bool",
+                                "list": false
+                            },
+                            "_type": "ChatOpenAI"
+                        },
+                        "description": "`OpenAI` Chat large language models API.",
+                        "base_classes": [
+                            "BaseLanguageModel",
+                            "BaseChatModel",
+                            "ChatOpenAI",
+                            "BaseLLM"
+                        ],
+                        "display_name": "ChatOpenAI",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/openai"
+                    },
+                    "id": "ChatOpenAI-qh190",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 1498.7361464926273,
+                    "y": 691.9153700634232
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 387,
+                "id": "WebBaseLoader-N6X1C",
+                "type": "genericNode",
+                "position": {
+                    "x": 769.255740690712,
+                    "y": -66.92435295205902
+                },
+                "data": {
+                    "type": "WebBaseLoader",
+                    "node": {
+                        "template": {
+                            "metadata": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": [
+                                    {
+                                        "": ""
+                                    }
+                                ],
+                                "password": false,
+                                "name": "metadata",
+                                "display_name": "Metadata",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "dict",
+                                "list": false
+                            },
+                            "web_path": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "https://github.com/logspace-ai/langflow/issues?q=is:issue+is:open+sort:updated-desc",
+                                "password": false,
+                                "name": "web_path",
+                                "display_name": "Web Page",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "WebBaseLoader"
+                        },
+                        "description": "Load HTML pages using `urllib` and parse them with `BeautifulSoup'.",
+                        "base_classes": [
+                            "Document"
+                        ],
+                        "display_name": "WebBaseLoader",
+                        "custom_fields": {},
+                        "output_types": [
+                            "Document"
+                        ],
+                        "documentation": "https://python.langchain.com/docs/modules/data_connection/document_loaders/integrations/web_base"
+                    },
+                    "id": "WebBaseLoader-N6X1C",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 769.255740690712,
+                    "y": -66.92435295205902
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 203,
+                "id": "StructuredOutputParser-i6HJg",
+                "type": "genericNode",
+                "position": {
+                    "x": 784.4425371799673,
+                    "y": 369.3130308646057
+                },
+                "data": {
+                    "type": "StructuredOutputParser",
+                    "node": {
+                        "template": {
+                            "response_schemas": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "response_schemas",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "ResponseSchema",
+                                "list": true
+                            },
+                            "_type": "StructuredOutputParser"
+                        },
+                        "description": "",
+                        "base_classes": [
+                            "StructuredOutputParser",
+                            "BaseLLMOutputParser",
+                            "BaseOutputParser"
+                        ],
+                        "display_name": "StructuredOutputParser",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/output_parsers/structured"
+                    },
+                    "id": "StructuredOutputParser-i6HJg",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 784.4425371799673,
+                    "y": 369.3130308646057
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 473,
+                "id": "ResponseSchema-jpYlR",
+                "type": "genericNode",
+                "position": {
+                    "x": 216.1189209515943,
+                    "y": 204.9292111664579
+                },
+                "data": {
+                    "type": "ResponseSchema",
+                    "node": {
+                        "template": {
+                            "description": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "password": false,
+                                "name": "description",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": "tittle of the issue"
+                            },
+                            "name": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "name",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": "title"
+                            },
+                            "type": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "string",
+                                "password": false,
+                                "name": "type",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "ResponseSchema"
+                        },
+                        "description": "A schema for a response from a structured output parser.",
+                        "base_classes": [
+                            "ResponseSchema"
+                        ],
+                        "display_name": "ResponseSchema",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/output_parsers/structured"
+                    },
+                    "id": "ResponseSchema-jpYlR",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 216.1189209515943,
+                    "y": 204.9292111664579
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 473,
+                "id": "ResponseSchema-FSrUI",
+                "type": "genericNode",
+                "position": {
+                    "x": 202.35985494557065,
+                    "y": 672.782962772499
+                },
+                "data": {
+                    "type": "ResponseSchema",
+                    "node": {
+                        "template": {
+                            "description": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "password": false,
+                                "name": "description",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": "author of the issue"
+                            },
+                            "name": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "name",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": "author"
+                            },
+                            "type": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "string",
+                                "password": false,
+                                "name": "type",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "ResponseSchema"
+                        },
+                        "description": "A schema for a response from a structured output parser.",
+                        "base_classes": [
+                            "ResponseSchema"
+                        ],
+                        "display_name": "ResponseSchema",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/output_parsers/structured"
+                    },
+                    "id": "ResponseSchema-FSrUI",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 202.35985494557065,
+                    "y": 672.782962772499
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 473,
+                "id": "ResponseSchema-eBRgt",
+                "type": "genericNode",
+                "position": {
+                    "x": 208.95930511608958,
+                    "y": 1143.2299735204035
+                },
+                "data": {
+                    "type": "ResponseSchema",
+                    "node": {
+                        "template": {
+                            "description": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": true,
+                                "password": false,
+                                "name": "description",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": "last updated date"
+                            },
+                            "name": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "name",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false,
+                                "value": "last_updated"
+                            },
+                            "type": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "value": "string",
+                                "password": false,
+                                "name": "type",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "str",
+                                "list": false
+                            },
+                            "_type": "ResponseSchema"
+                        },
+                        "description": "A schema for a response from a structured output parser.",
+                        "base_classes": [
+                            "ResponseSchema"
+                        ],
+                        "display_name": "ResponseSchema",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "https://python.langchain.com/docs/modules/model_io/output_parsers/structured"
+                    },
+                    "id": "ResponseSchema-eBRgt",
+                    "value": null
+                },
+                "selected": false,
+                "positionAbsolute": {
+                    "x": 208.95930511608958,
+                    "y": 1143.2299735204035
+                },
+                "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 339,
+                "id": "LLMChain-WvwvC",
+                "type": "genericNode",
+                "position": {
+                    "x": 2231.3778875293547,
+                    "y": 512.034177268604
+                },
+                "data": {
+                    "type": "LLMChain",
+                    "node": {
+                        "template": {
+                            "code": {
+                                "dynamic": true,
+                                "required": true,
+                                "placeholder": "",
+                                "show": false,
+                                "multiline": true,
+                                "value": "from langflow import CustomComponent\nfrom langchain.chains import LLMChain\nfrom typing import Optional, Union, Callable\nfrom langflow.field_typing import PromptTemplate, BaseLanguageModel, BaseMemory, Chain\n\n\nclass LLMChainComponent(CustomComponent):\n    display_name = \"LLMChain\"\n    description = \"Chain to run queries against LLMs\"\n\n    def build_config(self):\n        return {\n            \"prompt\": {\"display_name\": \"Prompt\"},\n            \"llm\": {\"display_name\": \"LLM\"},\n            \"memory\": {\"display_name\": \"Memory\"},\n            \"code\": {\"show\": False},\n        }\n\n    def build(\n        self,\n        prompt: PromptTemplate,\n        llm: BaseLanguageModel,\n        memory: Optional[BaseMemory] = None,\n    ) -> Union[Chain, Callable]:\n        return LLMChain(prompt=prompt, llm=llm, memory=memory)\n",
+                                "password": false,
+                                "name": "code",
+                                "advanced": false,
+                                "type": "code",
+                                "list": false
+                            },
+                            "_type": "CustomComponent",
+                            "llm": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "llm",
+                                "display_name": "LLM",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "BaseLanguageModel",
+                                "list": false
+                            },
+                            "memory": {
+                                "required": false,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "memory",
+                                "display_name": "Memory",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "BaseMemory",
+                                "list": false
+                            },
+                            "prompt": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "prompt",
+                                "display_name": "Prompt",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "PromptTemplate",
+                                "list": false
+                            }
+                        },
+                        "description": "Chain to run queries against LLMs",
+                        "base_classes": [
+                            "Chain",
+                            "Callable"
+                        ],
+                        "display_name": "LLMChain",
+                        "custom_fields": {
+                            "llm": null,
+                            "memory": null,
+                            "prompt": null
+                        },
+                        "output_types": [
+                            "LLMChain"
+                        ],
+                        "documentation": "",
+                        "beta": true,
+                        "error": null
+                    },
+                    "id": "LLMChain-WvwvC"
+                },
+                "positionAbsolute": {
+                    "x": 2231.3778875293547,
+                    "y": 512.034177268604
+                }
+            }
+        ],
+        "edges": [
+            {
+                "source": "WebBaseLoader-N6X1C",
+                "sourceHandle": "{œbaseClassesœ:[œDocumentœ],œdataTypeœ:œWebBaseLoaderœ,œidœ:œWebBaseLoader-N6X1Cœ}",
+                "target": "PromptTemplate-pP7tN",
+                "targetHandle": "{œfieldNameœ:œissuesœ,œidœ:œPromptTemplate-pP7tNœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ],œtypeœ:œstrœ}",
+                "style": {
+                    "stroke": "#555"
+                },
+                "className": "stroke-gray-900  stroke-connection",
+                "animated": false,
+                "id": "reactflow__edge-WebBaseLoader-N6X1C{œbaseClassesœ:[œDocumentœ],œdataTypeœ:œWebBaseLoaderœ,œidœ:œWebBaseLoader-N6X1Cœ}-PromptTemplate-pP7tN{œfieldNameœ:œissuesœ,œidœ:œPromptTemplate-pP7tNœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ],œtypeœ:œstrœ}",
+                "selected": false,
+                "data": {
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "Document"
+                        ],
+                        "dataType": "WebBaseLoader",
+                        "id": "WebBaseLoader-N6X1C"
+                    },
+                    "targetHandle": {
+                        "fieldName": "issues",
+                        "id": "PromptTemplate-pP7tN",
+                        "inputTypes": [
+                            "Document",
+                            "BaseOutputParser"
+                        ],
+                        "type": "str"
+                    }
+                }
+            },
+            {
+                "source": "StructuredOutputParser-i6HJg",
+                "sourceHandle": "{œbaseClassesœ:[œStructuredOutputParserœ,œBaseLLMOutputParserœ,œBaseOutputParserœ],œdataTypeœ:œStructuredOutputParserœ,œidœ:œStructuredOutputParser-i6HJgœ}",
+                "target": "PromptTemplate-pP7tN",
+                "targetHandle": "{œfieldNameœ:œformat_instructionsœ,œidœ:œPromptTemplate-pP7tNœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ],œtypeœ:œstrœ}",
+                "style": {
+                    "stroke": "#555"
+                },
+                "className": "stroke-gray-900  stroke-connection",
+                "animated": false,
+                "id": "reactflow__edge-StructuredOutputParser-i6HJg{œbaseClassesœ:[œStructuredOutputParserœ,œBaseLLMOutputParserœ,œBaseOutputParserœ],œdataTypeœ:œStructuredOutputParserœ,œidœ:œStructuredOutputParser-i6HJgœ}-PromptTemplate-pP7tN{œfieldNameœ:œformat_instructionsœ,œidœ:œPromptTemplate-pP7tNœ,œinputTypesœ:[œDocumentœ,œBaseOutputParserœ],œtypeœ:œstrœ}",
+                "selected": false,
+                "data": {
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "StructuredOutputParser",
+                            "BaseLLMOutputParser",
+                            "BaseOutputParser"
+                        ],
+                        "dataType": "StructuredOutputParser",
+                        "id": "StructuredOutputParser-i6HJg"
+                    },
+                    "targetHandle": {
+                        "fieldName": "format_instructions",
+                        "id": "PromptTemplate-pP7tN",
+                        "inputTypes": [
+                            "Document",
+                            "BaseOutputParser"
+                        ],
+                        "type": "str"
+                    }
+                }
+            },
+            {
+                "source": "ResponseSchema-eBRgt",
+                "sourceHandle": "{œbaseClassesœ:[œResponseSchemaœ],œdataTypeœ:œResponseSchemaœ,œidœ:œResponseSchema-eBRgtœ}",
+                "target": "StructuredOutputParser-i6HJg",
+                "targetHandle": "{œfieldNameœ:œresponse_schemasœ,œidœ:œStructuredOutputParser-i6HJgœ,œinputTypesœ:null,œtypeœ:œResponseSchemaœ}",
+                "style": {
+                    "stroke": "#555"
+                },
+                "className": "stroke-gray-900  stroke-connection",
+                "animated": false,
+                "id": "reactflow__edge-ResponseSchema-eBRgt{œbaseClassesœ:[œResponseSchemaœ],œdataTypeœ:œResponseSchemaœ,œidœ:œResponseSchema-eBRgtœ}-StructuredOutputParser-i6HJg{œfieldNameœ:œresponse_schemasœ,œidœ:œStructuredOutputParser-i6HJgœ,œinputTypesœ:null,œtypeœ:œResponseSchemaœ}",
+                "selected": false,
+                "data": {
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "ResponseSchema"
+                        ],
+                        "dataType": "ResponseSchema",
+                        "id": "ResponseSchema-eBRgt"
+                    },
+                    "targetHandle": {
+                        "fieldName": "response_schemas",
+                        "id": "StructuredOutputParser-i6HJg",
+                        "inputTypes": null,
+                        "type": "ResponseSchema"
+                    }
+                }
+            },
+            {
+                "source": "ResponseSchema-FSrUI",
+                "sourceHandle": "{œbaseClassesœ:[œResponseSchemaœ],œdataTypeœ:œResponseSchemaœ,œidœ:œResponseSchema-FSrUIœ}",
+                "target": "StructuredOutputParser-i6HJg",
+                "targetHandle": "{œfieldNameœ:œresponse_schemasœ,œidœ:œStructuredOutputParser-i6HJgœ,œinputTypesœ:null,œtypeœ:œResponseSchemaœ}",
+                "style": {
+                    "stroke": "#555"
+                },
+                "className": "stroke-gray-900  stroke-connection",
+                "animated": false,
+                "id": "reactflow__edge-ResponseSchema-FSrUI{œbaseClassesœ:[œResponseSchemaœ],œdataTypeœ:œResponseSchemaœ,œidœ:œResponseSchema-FSrUIœ}-StructuredOutputParser-i6HJg{œfieldNameœ:œresponse_schemasœ,œidœ:œStructuredOutputParser-i6HJgœ,œinputTypesœ:null,œtypeœ:œResponseSchemaœ}",
+                "selected": false,
+                "data": {
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "ResponseSchema"
+                        ],
+                        "dataType": "ResponseSchema",
+                        "id": "ResponseSchema-FSrUI"
+                    },
+                    "targetHandle": {
+                        "fieldName": "response_schemas",
+                        "id": "StructuredOutputParser-i6HJg",
+                        "inputTypes": null,
+                        "type": "ResponseSchema"
+                    }
+                }
+            },
+            {
+                "source": "ResponseSchema-jpYlR",
+                "sourceHandle": "{œbaseClassesœ:[œResponseSchemaœ],œdataTypeœ:œResponseSchemaœ,œidœ:œResponseSchema-jpYlRœ}",
+                "target": "StructuredOutputParser-i6HJg",
+                "targetHandle": "{œfieldNameœ:œresponse_schemasœ,œidœ:œStructuredOutputParser-i6HJgœ,œinputTypesœ:null,œtypeœ:œResponseSchemaœ}",
+                "style": {
+                    "stroke": "#555"
+                },
+                "className": "stroke-gray-900  stroke-connection",
+                "animated": false,
+                "id": "reactflow__edge-ResponseSchema-jpYlR{œbaseClassesœ:[œResponseSchemaœ],œdataTypeœ:œResponseSchemaœ,œidœ:œResponseSchema-jpYlRœ}-StructuredOutputParser-i6HJg{œfieldNameœ:œresponse_schemasœ,œidœ:œStructuredOutputParser-i6HJgœ,œinputTypesœ:null,œtypeœ:œResponseSchemaœ}",
+                "selected": false,
+                "data": {
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "ResponseSchema"
+                        ],
+                        "dataType": "ResponseSchema",
+                        "id": "ResponseSchema-jpYlR"
+                    },
+                    "targetHandle": {
+                        "fieldName": "response_schemas",
+                        "id": "StructuredOutputParser-i6HJg",
+                        "inputTypes": null,
+                        "type": "ResponseSchema"
+                    }
+                }
+            },
+            {
+                "source": "PromptTemplate-pP7tN",
+                "sourceHandle": "{œbaseClassesœ:[œStringPromptTemplateœ,œPromptTemplateœ,œBasePromptTemplateœ],œdataTypeœ:œPromptTemplateœ,œidœ:œPromptTemplate-pP7tNœ}",
+                "target": "LLMChain-WvwvC",
+                "targetHandle": "{œfieldNameœ:œpromptœ,œidœ:œLLMChain-WvwvCœ,œinputTypesœ:null,œtypeœ:œPromptTemplateœ}",
+                "data": {
+                    "targetHandle": {
+                        "fieldName": "prompt",
+                        "id": "LLMChain-WvwvC",
+                        "inputTypes": null,
+                        "type": "PromptTemplate"
+                    },
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "StringPromptTemplate",
+                            "PromptTemplate",
+                            "BasePromptTemplate"
+                        ],
+                        "dataType": "PromptTemplate",
+                        "id": "PromptTemplate-pP7tN"
+                    }
+                },
+                "style": {
+                    "stroke": "#555"
+                },
+                "className": "stroke-foreground  stroke-connection",
+                "animated": false,
+                "id": "reactflow__edge-PromptTemplate-pP7tN{œbaseClassesœ:[œStringPromptTemplateœ,œPromptTemplateœ,œBasePromptTemplateœ],œdataTypeœ:œPromptTemplateœ,œidœ:œPromptTemplate-pP7tNœ}-LLMChain-WvwvC{œfieldNameœ:œpromptœ,œidœ:œLLMChain-WvwvCœ,œinputTypesœ:null,œtypeœ:œPromptTemplateœ}"
+            },
+            {
+                "source": "ChatOpenAI-qh190",
+                "sourceHandle": "{œbaseClassesœ:[œBaseLanguageModelœ,œBaseChatModelœ,œChatOpenAIœ,œBaseLLMœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-qh190œ}",
+                "target": "LLMChain-WvwvC",
+                "targetHandle": "{œfieldNameœ:œllmœ,œidœ:œLLMChain-WvwvCœ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}",
+                "data": {
+                    "targetHandle": {
+                        "fieldName": "llm",
+                        "id": "LLMChain-WvwvC",
+                        "inputTypes": null,
+                        "type": "BaseLanguageModel"
+                    },
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "BaseLanguageModel",
+                            "BaseChatModel",
+                            "ChatOpenAI",
+                            "BaseLLM"
+                        ],
+                        "dataType": "ChatOpenAI",
+                        "id": "ChatOpenAI-qh190"
+                    }
+                },
+                "style": {
+                    "stroke": "#555"
+                },
+                "className": "stroke-foreground  stroke-connection",
+                "animated": false,
+                "id": "reactflow__edge-ChatOpenAI-qh190{œbaseClassesœ:[œBaseLanguageModelœ,œBaseChatModelœ,œChatOpenAIœ,œBaseLLMœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-qh190œ}-LLMChain-WvwvC{œfieldNameœ:œllmœ,œidœ:œLLMChain-WvwvCœ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}"
+            }
+        ],
+        "viewport": {
+            "x": -23.341286557521812,
+            "y": 178.2757460204641,
+            "zoom": 0.385116878391678
+        }
+    },
+    "description": "Gets Issues from Langflow repo and output them as JSON objects.",
+    "name": "Github Issue Parser"
+}

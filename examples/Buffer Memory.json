@@ -1,17 +1,15 @@
 {
-  "description": "A Chain that uses a ConversationBufferMemory",
-  "name": "Buffer Memory",
-  "id": "5426219a-a85d-4d0c-96d8-f83fa40a8b5c",
+  "id": "d051baeb-8577-46bf-bdbd-d33ce84700ed",
   "data": {
     "nodes": [
       {
         "width": 384,
-        "height": 273,
-        "id": "dndnode_48",
+        "height": 577,
+        "id": "ConversationBufferMemory-MMHD1",
         "type": "genericNode",
         "position": {
-          "x": 739.8999754662251,
-          "y": 334.3621287703047
+          "x": 813.9739216748036,
+          "y": 674.0718922095974
         },
         "data": {
           "type": "ConversationBufferMemory",
@@ -20,57 +18,14 @@
               "chat_memory": {
                 "required": false,
                 "placeholder": "",
-                "show": false,
+                "show": true,
                 "multiline": false,
                 "password": false,
                 "name": "chat_memory",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "BaseChatMessageHistory",
-                "list": false
-              },
-              "output_key": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "output_key",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "input_key": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "input_key",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "return_messages": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "return_messages",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "human_prefix": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": "Human",
-                "password": false,
-                "name": "human_prefix",
-                "advanced": false,
-                "type": "str",
                 "list": false
               },
               "ai_prefix": {
@@ -82,6 +37,36 @@
                 "password": false,
                 "name": "ai_prefix",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "human_prefix": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": "Human",
+                "password": false,
+                "name": "human_prefix",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "input_key": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "",
+                "password": false,
+                "name": "input_key",
+                "advanced": false,
+                "dynamic": false,
+                "info": "The variable to be used as Chat Input when more than one variable is available.",
                 "type": "str",
                 "list": false
               },
@@ -90,101 +75,93 @@
                 "placeholder": "",
                 "show": true,
                 "multiline": false,
-                "value": "history",
+                "value": "chat_history",
                 "password": false,
                 "name": "memory_key",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "str",
+                "list": false
+              },
+              "output_key": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "",
+                "password": false,
+                "name": "output_key",
+                "advanced": false,
+                "dynamic": false,
+                "info": "The variable to be used as Chat Output (e.g. answer in a ConversationalRetrievalChain)",
+                "type": "str",
+                "list": false
+              },
+              "return_messages": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "return_messages",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "bool",
                 "list": false
               },
               "_type": "ConversationBufferMemory"
             },
             "description": "Buffer for storing conversation memory.",
             "base_classes": [
-              "BaseMemory",
+              "ConversationBufferMemory",
               "BaseChatMemory",
-              "ConversationBufferMemory"
-            ]
+              "BaseMemory"
+            ],
+            "display_name": "ConversationBufferMemory",
+            "custom_fields": {},
+            "output_types": [],
+            "documentation": "https://python.langchain.com/docs/modules/memory/how_to/buffer",
+            "beta": false,
+            "error": null
           },
-          "id": "dndnode_48",
-          "value": null
+          "id": "ConversationBufferMemory-MMHD1"
+        },
+        "positionAbsolute": {
+          "x": 813.9739216748036,
+          "y": 674.0718922095974
         },
         "selected": false,
-        "positionAbsolute": {
-          "x": 739.8999754662251,
-          "y": 334.3621287703047
-        },
         "dragging": false
       },
       {
         "width": 384,
-        "height": 287,
-        "id": "dndnode_49",
+        "height": 311,
+        "id": "ConversationChain-yRXHU",
         "type": "genericNode",
         "position": {
-          "x": 1364.824439016022,
-          "y": 466.4103762723428
+          "x": 1324.2361201682975,
+          "y": 488.94233102416376
         },
         "data": {
           "type": "ConversationChain",
           "node": {
             "template": {
-              "memory": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "memory",
-                "advanced": false,
-                "type": "BaseMemory",
-                "list": false
-              },
-              "callbacks": {
-                "required": false,
+              "code": {
+                "dynamic": true,
+                "required": true,
                 "placeholder": "",
                 "show": false,
-                "multiline": false,
+                "multiline": true,
+                "value": "from langflow import CustomComponent\nfrom langchain.chains import ConversationChain\nfrom typing import Optional, Union, Callable\nfrom langflow.field_typing import BaseLanguageModel, BaseMemory, Chain\n\n\nclass ConversationChainComponent(CustomComponent):\n    display_name = \"ConversationChain\"\n    description = \"Chain to have a conversation and load context from memory.\"\n\n    def build_config(self):\n        return {\n            \"prompt\": {\"display_name\": \"Prompt\"},\n            \"llm\": {\"display_name\": \"LLM\"},\n            \"memory\": {\n                \"display_name\": \"Memory\",\n                \"info\": \"Memory to load context from. If none is provided, a ConversationBufferMemory will be used.\",\n            },\n            \"code\": {\"show\": False},\n        }\n\n    def build(\n        self,\n        llm: BaseLanguageModel,\n        memory: Optional[BaseMemory] = None,\n    ) -> Union[Chain, Callable]:\n        if memory is None:\n            return ConversationChain(llm=llm)\n        return ConversationChain(llm=llm, memory=memory)\n",
                 "password": false,
-                "name": "callbacks",
+                "name": "code",
                 "advanced": false,
-                "type": "langchain.callbacks.base.BaseCallbackHandler",
-                "list": true
-              },
-              "verbose": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "verbose",
-                "advanced": true,
-                "type": "bool",
+                "type": "code",
                 "list": false
               },
-              "prompt": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": {
-                  "input_variables": [
-                    "history",
-                    "input"
-                  ],
-                  "output_parser": null,
-                  "partial_variables": {},
-                  "template": "The following is a friendly conversation between a human and an AI. The AI is talkative and provides lots of specific details from its context. If the AI does not know the answer to a question, it truthfully says it does not know.\n\nCurrent conversation:\n{history}\nHuman: {input}\nAI:",
-                  "template_format": "f-string",
-                  "validate_template": true,
-                  "_type": "prompt"
-                },
-                "password": false,
-                "name": "prompt",
-                "advanced": false,
-                "type": "BasePromptTemplate",
-                "list": false
-              },
+              "_type": "CustomComponent",
               "llm": {
                 "required": true,
                 "placeholder": "",
@@ -192,78 +169,67 @@
                 "multiline": false,
                 "password": false,
                 "name": "llm",
+                "display_name": "LLM",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "BaseLanguageModel",
                 "list": false
               },
-              "output_key": {
-                "required": true,
+              "memory": {
+                "required": false,
                 "placeholder": "",
                 "show": true,
                 "multiline": false,
-                "value": "response",
                 "password": false,
-                "name": "output_key",
-                "advanced": true,
-                "type": "str",
+                "name": "memory",
+                "display_name": "Memory",
+                "advanced": false,
+                "dynamic": false,
+                "info": "Memory to load context from. If none is provided, a ConversationBufferMemory will be used.",
+                "type": "BaseMemory",
                 "list": false
-              },
-              "input_key": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "input",
-                "password": false,
-                "name": "input_key",
-                "advanced": true,
-                "type": "str",
-                "list": false
-              },
-              "_type": "ConversationChain"
+              }
             },
             "description": "Chain to have a conversation and load context from memory.",
             "base_classes": [
-              "LLMChain",
               "Chain",
+              "Callable"
+            ],
+            "display_name": "ConversationChain",
+            "custom_fields": {
+              "llm": null,
+              "memory": null
+            },
+            "output_types": [
               "ConversationChain"
-            ]
+            ],
+            "documentation": "",
+            "beta": true,
+            "error": null
           },
-          "id": "dndnode_49",
-          "value": null
+          "id": "ConversationChain-yRXHU"
+        },
+        "positionAbsolute": {
+          "x": 1324.2361201682975,
+          "y": 488.94233102416376
         },
         "selected": false,
-        "positionAbsolute": {
-          "x": 1364.824439016022,
-          "y": 466.4103762723428
-        },
         "dragging": false
       },
       {
         "width": 384,
-        "height": 597,
-        "id": "dndnode_50",
+        "height": 629,
+        "id": "ChatOpenAI-zkcj3",
         "type": "genericNode",
         "position": {
-          "x": 735.8178700857987,
-          "y": 706.9245756642823
+          "x": 808.3563054680628,
+          "y": 27.409027598065727
         },
         "data": {
           "type": "ChatOpenAI",
           "node": {
             "template": {
-              "verbose": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": false,
-                "password": false,
-                "name": "verbose",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
               "callbacks": {
                 "required": false,
                 "placeholder": "",
@@ -272,8 +238,23 @@
                 "password": false,
                 "name": "callbacks",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "langchain.callbacks.base.BaseCallbackHandler",
                 "list": true
+              },
+              "cache": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "cache",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "bool",
+                "list": false
               },
               "client": {
                 "required": false,
@@ -283,36 +264,49 @@
                 "password": false,
                 "name": "client",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "Any",
                 "list": false
               },
-              "model_name": {
+              "max_retries": {
                 "required": false,
                 "placeholder": "",
-                "show": true,
+                "show": false,
                 "multiline": false,
-                "value": "gpt-4",
+                "value": 6,
                 "password": false,
-                "options": [
-                  "gpt-3.5-turbo",
-                  "gpt-4",
-                  "gpt-4-32k"
-                ],
-                "name": "model_name",
+                "name": "max_retries",
                 "advanced": false,
-                "type": "str",
-                "list": true
+                "dynamic": false,
+                "info": "",
+                "type": "int",
+                "list": false
               },
-              "temperature": {
+              "max_tokens": {
                 "required": false,
                 "placeholder": "",
                 "show": true,
                 "multiline": false,
-                "value": 0.7,
-                "password": false,
-                "name": "temperature",
+                "password": true,
+                "name": "max_tokens",
                 "advanced": false,
-                "type": "float",
+                "dynamic": false,
+                "info": "",
+                "type": "int",
+                "list": false
+              },
+              "metadata": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "metadata",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "dict",
                 "list": false
               },
               "model_kwargs": {
@@ -323,7 +317,61 @@
                 "password": false,
                 "name": "model_kwargs",
                 "advanced": true,
-                "type": "code",
+                "dynamic": false,
+                "info": "",
+                "type": "dict",
+                "list": false
+              },
+              "model_name": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "gpt-3.5-turbo-0613",
+                "password": false,
+                "options": [
+                  "gpt-3.5-turbo-0613",
+                  "gpt-3.5-turbo",
+                  "gpt-3.5-turbo-16k-0613",
+                  "gpt-3.5-turbo-16k",
+                  "gpt-4-0613",
+                  "gpt-4-32k-0613",
+                  "gpt-4",
+                  "gpt-4-32k"
+                ],
+                "name": "model_name",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "str",
+                "list": true
+              },
+              "n": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": 1,
+                "password": false,
+                "name": "n",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "int",
+                "list": false
+              },
+              "openai_api_base": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "openai_api_base",
+                "display_name": "OpenAI API Base",
+                "advanced": false,
+                "dynamic": false,
+                "info": "\nThe base URL of the OpenAI API. Defaults to https://api.openai.com/v1.\n\nYou can change this to use other APIs like JinaChat, LocalAI and Prem.\n",
+                "type": "str",
                 "list": false
               },
               "openai_api_key": {
@@ -336,21 +384,10 @@
                 "name": "openai_api_key",
                 "display_name": "OpenAI API Key",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "str",
                 "list": false
-              },
-              "openai_api_base": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": true,
-                "name": "openai_api_base",
-                "display_name": "OpenAI API Base",
-                "advanced": false,
-                "type": "str",
-                "list": false,
-                "value": ""
               },
               "openai_organization": {
                 "required": false,
@@ -361,6 +398,8 @@
                 "name": "openai_organization",
                 "display_name": "OpenAI Organization",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "str",
                 "list": false
               },
@@ -373,6 +412,8 @@
                 "name": "openai_proxy",
                 "display_name": "OpenAI Proxy",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "str",
                 "list": false
               },
@@ -384,20 +425,9 @@
                 "password": false,
                 "name": "request_timeout",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "float",
-                "list": false,
-                "value": 60
-              },
-              "max_retries": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 6,
-                "password": false,
-                "name": "max_retries",
-                "advanced": false,
-                "type": "int",
                 "list": false
               },
               "streaming": {
@@ -409,76 +439,156 @@
                 "password": false,
                 "name": "streaming",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "bool",
                 "list": false
               },
-              "n": {
+              "tags": {
                 "required": false,
                 "placeholder": "",
                 "show": false,
                 "multiline": false,
-                "value": 1,
                 "password": false,
-                "name": "n",
+                "name": "tags",
                 "advanced": false,
-                "type": "int",
-                "list": false
+                "dynamic": false,
+                "info": "",
+                "type": "str",
+                "list": true
               },
-              "max_tokens": {
+              "temperature": {
                 "required": false,
                 "placeholder": "",
                 "show": true,
                 "multiline": false,
-                "password": true,
-                "name": "max_tokens",
+                "value": 0.7,
+                "password": false,
+                "name": "temperature",
                 "advanced": false,
-                "type": "int",
+                "dynamic": false,
+                "info": "",
+                "type": "float",
+                "list": false
+              },
+              "tiktoken_model_name": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "tiktoken_model_name",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "verbose": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": false,
+                "password": false,
+                "name": "verbose",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "bool",
                 "list": false
               },
               "_type": "ChatOpenAI"
             },
-            "description": "Wrapper around OpenAI Chat large language models.",
+            "description": "`OpenAI` Chat large language models API.",
             "base_classes": [
               "BaseChatModel",
+              "BaseLanguageModel",
               "ChatOpenAI",
-              "BaseLanguageModel"
-            ]
+              "BaseLLM"
+            ],
+            "display_name": "ChatOpenAI",
+            "custom_fields": {},
+            "output_types": [],
+            "documentation": "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/openai",
+            "beta": false,
+            "error": null
           },
-          "id": "dndnode_50",
-          "value": null
+          "id": "ChatOpenAI-zkcj3"
         },
-        "selected": false,
         "positionAbsolute": {
-          "x": 735.8178700857987,
-          "y": 706.9245756642823
-        },
-        "dragging": false
+          "x": 808.3563054680628,
+          "y": 27.409027598065727
+        }
       }
     ],
     "edges": [
       {
-        "source": "dndnode_48",
-        "sourceHandle": "ConversationBufferMemory|dndnode_48|BaseMemory|BaseChatMemory|ConversationBufferMemory",
-        "target": "dndnode_49",
-        "targetHandle": "BaseMemory|memory|dndnode_49",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_48ConversationBufferMemory|dndnode_48|BaseMemory|BaseChatMemory|ConversationBufferMemory-dndnode_49BaseMemory|memory|dndnode_49",
-        "selected": false
+        "source": "ChatOpenAI-zkcj3",
+        "sourceHandle": "{œbaseClassesœ:[œBaseChatModelœ,œBaseLanguageModelœ,œChatOpenAIœ,œBaseLLMœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-zkcj3œ}",
+        "target": "ConversationChain-yRXHU",
+        "targetHandle": "{œfieldNameœ:œllmœ,œidœ:œConversationChain-yRXHUœ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}",
+        "data": {
+          "targetHandle": {
+            "fieldName": "llm",
+            "id": "ConversationChain-yRXHU",
+            "inputTypes": null,
+            "type": "BaseLanguageModel"
+          },
+          "sourceHandle": {
+            "baseClasses": [
+              "BaseChatModel",
+              "BaseLanguageModel",
+              "ChatOpenAI",
+              "BaseLLM"
+            ],
+            "dataType": "ChatOpenAI",
+            "id": "ChatOpenAI-zkcj3"
+          }
+        },
+        "style": {
+          "stroke": "#555"
+        },
+        "className": "stroke-foreground  stroke-connection",
+        "animated": false,
+        "id": "reactflow__edge-ChatOpenAI-zkcj3{œbaseClassesœ:[œBaseChatModelœ,œBaseLanguageModelœ,œChatOpenAIœ,œBaseLLMœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-zkcj3œ}-ConversationChain-yRXHU{œfieldNameœ:œllmœ,œidœ:œConversationChain-yRXHUœ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}"
       },
       {
-        "source": "dndnode_50",
-        "sourceHandle": "ChatOpenAI|dndnode_50|BaseChatModel|ChatOpenAI|BaseLanguageModel",
-        "target": "dndnode_49",
-        "targetHandle": "BaseLanguageModel|llm|dndnode_49",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_50ChatOpenAI|dndnode_50|BaseChatModel|ChatOpenAI|BaseLanguageModel-dndnode_49BaseLanguageModel|llm|dndnode_49",
-        "selected": false
+        "source": "ConversationBufferMemory-MMHD1",
+        "sourceHandle": "{œbaseClassesœ:[œConversationBufferMemoryœ,œBaseChatMemoryœ,œBaseMemoryœ],œdataTypeœ:œConversationBufferMemoryœ,œidœ:œConversationBufferMemory-MMHD1œ}",
+        "target": "ConversationChain-yRXHU",
+        "targetHandle": "{œfieldNameœ:œmemoryœ,œidœ:œConversationChain-yRXHUœ,œinputTypesœ:null,œtypeœ:œBaseMemoryœ}",
+        "data": {
+          "targetHandle": {
+            "fieldName": "memory",
+            "id": "ConversationChain-yRXHU",
+            "inputTypes": null,
+            "type": "BaseMemory"
+          },
+          "sourceHandle": {
+            "baseClasses": [
+              "ConversationBufferMemory",
+              "BaseChatMemory",
+              "BaseMemory"
+            ],
+            "dataType": "ConversationBufferMemory",
+            "id": "ConversationBufferMemory-MMHD1"
+          }
+        },
+        "style": {
+          "stroke": "#555"
+        },
+        "className": "stroke-foreground  stroke-connection",
+        "animated": false,
+        "id": "reactflow__edge-ConversationBufferMemory-MMHD1{œbaseClassesœ:[œConversationBufferMemoryœ,œBaseChatMemoryœ,œBaseMemoryœ],œdataTypeœ:œConversationBufferMemoryœ,œidœ:œConversationBufferMemory-MMHD1œ}-ConversationChain-yRXHU{œfieldNameœ:œmemoryœ,œidœ:œConversationChain-yRXHUœ,œinputTypesœ:null,œtypeœ:œBaseMemoryœ}"
       }
     ],
     "viewport": {
-      "x": -294.08439029367605,
-      "y": -256.02349752295527,
-      "zoom": 0.8235910172675734
+      "x": -135.39122898603205,
+      "y": 115.21449761238358,
+      "zoom": 0.5200568439218307
     }
-  }
+  },
+  "description": "A Chain that uses a ConversationBufferMemory",
+  "name": "Buffer Memory"
 }

@@ -1,17 +1,77 @@
 {
-  "description": "Query an API spec to get information about the endpoints, parameters, and responses.",
-  "name": "JSON Agent",
-  "id": "e364ff2d-fa4f-41fa-8412-f4a91cbe1d44",
+  "id": "3ba3d163-c4c8-40b2-b7e5-ccec4aecc31f",
   "data": {
     "nodes": [
       {
         "width": 384,
-        "height": 227,
-        "id": "dndnode_13",
+        "height": 291,
+        "id": "JsonAgent-XYfTc",
         "type": "genericNode",
         "position": {
-          "x": 1187.2084622072437,
-          "y": 116.13738146259979
+          "x": 1645.2533674832625,
+          "y": -173.20983116572305
+        },
+        "data": {
+          "type": "JsonAgent",
+          "node": {
+            "template": {
+              "llm": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "llm",
+                "display_name": "LLM",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "BaseLanguageModel",
+                "list": false
+              },
+              "toolkit": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "toolkit",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "BaseToolkit",
+                "list": false
+              },
+              "_type": "json_agent"
+            },
+            "description": "Construct a json agent from an LLM and tools.",
+            "base_classes": [
+              "AgentExecutor"
+            ],
+            "display_name": "JsonAgent",
+            "custom_fields": {},
+            "output_types": [],
+            "documentation": "https://python.langchain.com/docs/modules/agents/toolkits/openapi",
+            "beta": false,
+            "error": null
+          },
+          "id": "JsonAgent-XYfTc"
+        },
+        "positionAbsolute": {
+          "x": 1645.2533674832625,
+          "y": -173.20983116572305
+        },
+        "selected": false,
+        "dragging": false
+      },
+      {
+        "width": 384,
+        "height": 243,
+        "id": "JsonToolkit-xGIbb",
+        "type": "genericNode",
+        "position": {
+          "x": 1186.0375506003625,
+          "y": 72.9857208513447
         },
         "data": {
           "type": "JsonToolkit",
@@ -25,6 +85,8 @@
                 "password": false,
                 "name": "spec",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "JsonSpec",
                 "list": false
               },
@@ -33,420 +95,38 @@
             "description": "Toolkit for interacting with a JSON spec.",
             "base_classes": [
               "BaseToolkit",
-              "JsonToolkit"
-            ]
+              "JsonToolkit",
+              "Tool"
+            ],
+            "display_name": "JsonToolkit",
+            "custom_fields": {},
+            "output_types": [],
+            "documentation": "",
+            "beta": false,
+            "error": null
           },
-          "id": "dndnode_13",
-          "value": null
+          "id": "JsonToolkit-xGIbb"
+        },
+        "positionAbsolute": {
+          "x": 1186.0375506003625,
+          "y": 72.9857208513447
         },
         "selected": false,
-        "positionAbsolute": {
-          "x": 1187.2084622072437,
-          "y": 116.13738146259979
-        },
         "dragging": false
       },
       {
         "width": 384,
-        "height": 267,
-        "id": "dndnode_15",
+        "height": 327,
+        "id": "JsonSpec-MahH4",
         "type": "genericNode",
         "position": {
-          "x": 1659.6395547893094,
-          "y": 397.52506741326164
-        },
-        "data": {
-          "type": "JsonAgent",
-          "node": {
-            "template": {
-              "toolkit": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "toolkit",
-                "advanced": false,
-                "type": "BaseToolkit",
-                "list": false
-              },
-              "llm": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "llm",
-                "display_name": "LLM",
-                "advanced": false,
-                "type": "BaseLanguageModel",
-                "list": false
-              },
-              "_type": "json_agent"
-            },
-            "description": "Construct a json agent from an LLM and tools.",
-            "base_classes": [
-              "AgentExecutor"
-            ]
-          },
-          "id": "dndnode_15",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 1659.6395547893094,
-          "y": 397.52506741326164
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 597,
-        "id": "dndnode_17",
-        "type": "genericNode",
-        "position": {
-          "x": 664.5046837368179,
-          "y": 351.4165918614485
-        },
-        "data": {
-          "type": "OpenAI",
-          "node": {
-            "template": {
-              "cache": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "cache",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "verbose": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "verbose",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "callbacks": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "callbacks",
-                "advanced": false,
-                "type": "langchain.callbacks.base.BaseCallbackHandler",
-                "list": true
-              },
-              "client": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "client",
-                "advanced": false,
-                "type": "Any",
-                "list": false
-              },
-              "model_name": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "text-davinci-003",
-                "password": false,
-                "options": [
-                  "text-davinci-003",
-                  "text-davinci-002",
-                  "text-curie-001",
-                  "text-babbage-001",
-                  "text-ada-001"
-                ],
-                "name": "model_name",
-                "advanced": false,
-                "type": "str",
-                "list": true
-              },
-              "temperature": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 0.7,
-                "password": false,
-                "name": "temperature",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "max_tokens": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": 256,
-                "password": true,
-                "name": "max_tokens",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "top_p": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "top_p",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "frequency_penalty": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 0,
-                "password": false,
-                "name": "frequency_penalty",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "presence_penalty": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 0,
-                "password": false,
-                "name": "presence_penalty",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "n": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "n",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "best_of": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 1,
-                "password": false,
-                "name": "best_of",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "model_kwargs": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": false,
-                "name": "model_kwargs",
-                "advanced": true,
-                "type": "code",
-                "list": false
-              },
-              "openai_api_key": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "",
-                "password": true,
-                "name": "openai_api_key",
-                "display_name": "OpenAI API Key",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "openai_api_base": {
-                "required": false,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "password": true,
-                "name": "openai_api_base",
-                "display_name": "OpenAI API Base",
-                "advanced": false,
-                "type": "str",
-                "list": false,
-                "value": ""
-              },
-              "openai_organization": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "openai_organization",
-                "display_name": "OpenAI Organization",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "openai_proxy": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "openai_proxy",
-                "display_name": "OpenAI Proxy",
-                "advanced": false,
-                "type": "str",
-                "list": false
-              },
-              "batch_size": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 20,
-                "password": false,
-                "name": "batch_size",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "request_timeout": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "request_timeout",
-                "advanced": false,
-                "type": "float",
-                "list": false
-              },
-              "logit_bias": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "password": false,
-                "name": "logit_bias",
-                "advanced": false,
-                "type": "code",
-                "list": false
-              },
-              "max_retries": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": 6,
-                "password": false,
-                "name": "max_retries",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
-              "streaming": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": false,
-                "password": false,
-                "name": "streaming",
-                "advanced": false,
-                "type": "bool",
-                "list": false
-              },
-              "allowed_special": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": [],
-                "password": false,
-                "name": "allowed_special",
-                "advanced": false,
-                "type": "Literal'all'",
-                "list": true
-              },
-              "disallowed_special": {
-                "required": false,
-                "placeholder": "",
-                "show": false,
-                "multiline": false,
-                "value": "all",
-                "password": false,
-                "name": "disallowed_special",
-                "advanced": false,
-                "type": "Literal'all'",
-                "list": false
-              },
-              "_type": "OpenAI"
-            },
-            "description": "Generic OpenAI class that uses model name.",
-            "base_classes": [
-              "BaseLLM",
-              "BaseLanguageModel",
-              "OpenAI",
-              "BaseOpenAI"
-            ]
-          },
-          "id": "dndnode_17",
-          "value": null
-        },
-        "selected": false,
-        "positionAbsolute": {
-          "x": 664.5046837368179,
-          "y": 351.4165918614485
-        },
-        "dragging": false
-      },
-      {
-        "width": 384,
-        "height": 323,
-        "id": "dndnode_126653ac-f17f-4266-8b19-510eed024b17",
-        "type": "genericNode",
-        "position": {
-          "x": 644.1239078947345,
-          "y": -74.06644565448788
+          "x": 669.2014981390005,
+          "y": -54.47722451919397
         },
         "data": {
           "type": "JsonSpec",
           "node": {
             "template": {
-              "max_value_length": {
-                "required": true,
-                "placeholder": "",
-                "show": true,
-                "multiline": false,
-                "value": "",
-                "password": false,
-                "name": "max_value_length",
-                "advanced": false,
-                "type": "int",
-                "list": false
-              },
               "path": {
                 "required": true,
                 "placeholder": "",
@@ -461,6 +141,8 @@
                 "password": false,
                 "name": "path",
                 "advanced": false,
+                "dynamic": false,
+                "info": "",
                 "type": "file",
                 "list": false,
                 "fileTypes": [
@@ -468,63 +150,449 @@
                   "yaml",
                   "yml"
                 ],
-                "content": null
+                "file_path": null
+              },
+              "max_value_length": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "",
+                "password": false,
+                "name": "max_value_length",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "int",
+                "list": false
               },
               "_type": "JsonSpec"
             },
             "description": "",
             "base_classes": [
               "Tool",
+              "BaseTool",
               "JsonSpec"
-            ]
+            ],
+            "display_name": "JsonSpec",
+            "custom_fields": {},
+            "output_types": [],
+            "documentation": "",
+            "beta": false,
+            "error": null
           },
-          "id": "dndnode_126653ac-f17f-4266-8b19-510eed024b17",
-          "value": null
+          "id": "JsonSpec-MahH4"
         },
         "selected": false,
         "positionAbsolute": {
-          "x": 644.1239078947345,
-          "y": -74.06644565448788
+          "x": 669.2014981390005,
+          "y": -54.47722451919397
+        },
+        "dragging": false
+      },
+      {
+        "width": 384,
+        "height": 629,
+        "id": "ChatOpenAI-v911K",
+        "type": "genericNode",
+        "position": {
+          "x": 1186.0375506003627,
+          "y": -702.2683578406986
+        },
+        "data": {
+          "type": "ChatOpenAI",
+          "node": {
+            "template": {
+              "callbacks": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "callbacks",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                "list": true
+              },
+              "cache": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "cache",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "bool",
+                "list": false
+              },
+              "client": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "client",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "Any",
+                "list": false
+              },
+              "max_retries": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": 6,
+                "password": false,
+                "name": "max_retries",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "int",
+                "list": false
+              },
+              "max_tokens": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": true,
+                "name": "max_tokens",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "int",
+                "list": false
+              },
+              "metadata": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "metadata",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "dict",
+                "list": false
+              },
+              "model_kwargs": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "model_kwargs",
+                "advanced": true,
+                "dynamic": false,
+                "info": "",
+                "type": "dict",
+                "list": false
+              },
+              "model_name": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "gpt-3.5-turbo-0613",
+                "password": false,
+                "options": [
+                  "gpt-3.5-turbo-0613",
+                  "gpt-3.5-turbo",
+                  "gpt-3.5-turbo-16k-0613",
+                  "gpt-3.5-turbo-16k",
+                  "gpt-4-0613",
+                  "gpt-4-32k-0613",
+                  "gpt-4",
+                  "gpt-4-32k"
+                ],
+                "name": "model_name",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "str",
+                "list": true
+              },
+              "n": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": 1,
+                "password": false,
+                "name": "n",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "int",
+                "list": false
+              },
+              "openai_api_base": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "openai_api_base",
+                "display_name": "OpenAI API Base",
+                "advanced": false,
+                "dynamic": false,
+                "info": "\nThe base URL of the OpenAI API. Defaults to https://api.openai.com/v1.\n\nYou can change this to use other APIs like JinaChat, LocalAI and Prem.\n",
+                "type": "str",
+                "list": false
+              },
+              "openai_api_key": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "",
+                "password": true,
+                "name": "openai_api_key",
+                "display_name": "OpenAI API Key",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "openai_organization": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "openai_organization",
+                "display_name": "OpenAI Organization",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "openai_proxy": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "openai_proxy",
+                "display_name": "OpenAI Proxy",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "request_timeout": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "request_timeout",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "float",
+                "list": false
+              },
+              "streaming": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": false,
+                "password": false,
+                "name": "streaming",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "bool",
+                "list": false
+              },
+              "tags": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "tags",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "str",
+                "list": true
+              },
+              "temperature": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": 0.7,
+                "password": false,
+                "name": "temperature",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "float",
+                "list": false
+              },
+              "tiktoken_model_name": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "tiktoken_model_name",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "verbose": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": false,
+                "password": false,
+                "name": "verbose",
+                "advanced": false,
+                "dynamic": false,
+                "info": "",
+                "type": "bool",
+                "list": false
+              },
+              "_type": "ChatOpenAI"
+            },
+            "description": "`OpenAI` Chat large language models API.",
+            "base_classes": [
+              "ChatOpenAI",
+              "BaseLanguageModel",
+              "BaseChatModel",
+              "BaseLLM"
+            ],
+            "display_name": "ChatOpenAI",
+            "custom_fields": {},
+            "output_types": [],
+            "documentation": "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/openai",
+            "beta": false,
+            "error": null
+          },
+          "id": "ChatOpenAI-v911K"
+        },
+        "selected": true,
+        "positionAbsolute": {
+          "x": 1186.0375506003627,
+          "y": -702.2683578406986
         },
         "dragging": false
       }
     ],
     "edges": [
       {
-        "source": "dndnode_13",
-        "sourceHandle": "JsonToolkit|dndnode_13|BaseToolkit|JsonToolkit",
-        "target": "dndnode_15",
-        "targetHandle": "BaseToolkit|toolkit|dndnode_15",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_13JsonToolkit|dndnode_13|BaseToolkit|JsonToolkit-dndnode_15BaseToolkit|toolkit|dndnode_15",
-        "selected": false
-      },
-      {
-        "source": "dndnode_17",
-        "sourceHandle": "OpenAI|dndnode_17|BaseLLM|BaseLanguageModel|OpenAI|BaseOpenAI",
-        "target": "dndnode_15",
-        "targetHandle": "BaseLanguageModel|llm|dndnode_15",
-        "className": "animate-pulse",
-        "id": "reactflow__edge-dndnode_17OpenAI|dndnode_17|BaseLLM|BaseLanguageModel|OpenAI|BaseOpenAI-dndnode_15BaseLanguageModel|llm|dndnode_15",
-        "selected": false
-      },
-      {
-        "source": "dndnode_126653ac-f17f-4266-8b19-510eed024b17",
-        "sourceHandle": "JsonSpec|dndnode_126653ac-f17f-4266-8b19-510eed024b17|Tool|JsonSpec",
-        "target": "dndnode_13",
-        "targetHandle": "JsonSpec|spec|dndnode_13",
-        "style": {
-          "stroke": "#222222"
+        "source": "JsonSpec-MahH4",
+        "sourceHandle": "{œbaseClassesœ:[œToolœ,œBaseToolœ,œJsonSpecœ],œdataTypeœ:œJsonSpecœ,œidœ:œJsonSpec-MahH4œ}",
+        "target": "JsonToolkit-xGIbb",
+        "targetHandle": "{œfieldNameœ:œspecœ,œidœ:œJsonToolkit-xGIbbœ,œinputTypesœ:null,œtypeœ:œJsonSpecœ}",
+        "data": {
+          "targetHandle": {
+            "fieldName": "spec",
+            "id": "JsonToolkit-xGIbb",
+            "inputTypes": null,
+            "type": "JsonSpec"
+          },
+          "sourceHandle": {
+            "baseClasses": [
+              "Tool",
+              "BaseTool",
+              "JsonSpec"
+            ],
+            "dataType": "JsonSpec",
+            "id": "JsonSpec-MahH4"
+          }
         },
+        "style": {
+          "stroke": "#555"
+        },
+        "className": "stroke-foreground  stroke-connection",
         "animated": false,
-        "id": "reactflow__edge-dndnode_126653ac-f17f-4266-8b19-510eed024b17JsonSpec|dndnode_126653ac-f17f-4266-8b19-510eed024b17|Tool|JsonSpec-dndnode_13JsonSpec|spec|dndnode_13",
-        "selected": false
+        "id": "reactflow__edge-JsonSpec-MahH4{œbaseClassesœ:[œToolœ,œBaseToolœ,œJsonSpecœ],œdataTypeœ:œJsonSpecœ,œidœ:œJsonSpec-MahH4œ}-JsonToolkit-xGIbb{œfieldNameœ:œspecœ,œidœ:œJsonToolkit-xGIbbœ,œinputTypesœ:null,œtypeœ:œJsonSpecœ}"
+      },
+      {
+        "source": "JsonToolkit-xGIbb",
+        "sourceHandle": "{œbaseClassesœ:[œBaseToolkitœ,œJsonToolkitœ,œToolœ],œdataTypeœ:œJsonToolkitœ,œidœ:œJsonToolkit-xGIbbœ}",
+        "target": "JsonAgent-XYfTc",
+        "targetHandle": "{œfieldNameœ:œtoolkitœ,œidœ:œJsonAgent-XYfTcœ,œinputTypesœ:null,œtypeœ:œBaseToolkitœ}",
+        "data": {
+          "targetHandle": {
+            "fieldName": "toolkit",
+            "id": "JsonAgent-XYfTc",
+            "inputTypes": null,
+            "type": "BaseToolkit"
+          },
+          "sourceHandle": {
+            "baseClasses": [
+              "BaseToolkit",
+              "JsonToolkit",
+              "Tool"
+            ],
+            "dataType": "JsonToolkit",
+            "id": "JsonToolkit-xGIbb"
+          }
+        },
+        "style": {
+          "stroke": "#555"
+        },
+        "className": "stroke-foreground  stroke-connection",
+        "animated": false,
+        "id": "reactflow__edge-JsonToolkit-xGIbb{œbaseClassesœ:[œBaseToolkitœ,œJsonToolkitœ,œToolœ],œdataTypeœ:œJsonToolkitœ,œidœ:œJsonToolkit-xGIbbœ}-JsonAgent-XYfTc{œfieldNameœ:œtoolkitœ,œidœ:œJsonAgent-XYfTcœ,œinputTypesœ:null,œtypeœ:œBaseToolkitœ}"
+      },
+      {
+        "source": "ChatOpenAI-v911K",
+        "sourceHandle": "{œbaseClassesœ:[œChatOpenAIœ,œBaseLanguageModelœ,œBaseChatModelœ,œBaseLLMœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-v911Kœ}",
+        "target": "JsonAgent-XYfTc",
+        "targetHandle": "{œfieldNameœ:œllmœ,œidœ:œJsonAgent-XYfTcœ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}",
+        "data": {
+          "targetHandle": {
+            "fieldName": "llm",
+            "id": "JsonAgent-XYfTc",
+            "inputTypes": null,
+            "type": "BaseLanguageModel"
+          },
+          "sourceHandle": {
+            "baseClasses": [
+              "ChatOpenAI",
+              "BaseLanguageModel",
+              "BaseChatModel",
+              "BaseLLM"
+            ],
+            "dataType": "ChatOpenAI",
+            "id": "ChatOpenAI-v911K"
+          }
+        },
+        "style": {
+          "stroke": "#555"
+        },
+        "className": "stroke-foreground  stroke-connection",
+        "animated": false,
+        "id": "reactflow__edge-ChatOpenAI-v911K{œbaseClassesœ:[œChatOpenAIœ,œBaseLanguageModelœ,œBaseChatModelœ,œBaseLLMœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-v911Kœ}-JsonAgent-XYfTc{œfieldNameœ:œllmœ,œidœ:œJsonAgent-XYfTcœ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}"
       }
     ],
     "viewport": {
-      "x": -258.1938704405271,
-      "y": 118.65185298284183,
-      "zoom": 0.697371833175204
+      "x": -236.26204703754217,
+      "y": 623.6686989603851,
+      "zoom": 0.5727154647790916
     }
-  }
+  },
+  "description": "Query an API spec to get information about the endpoints, parameters, and responses.",
+  "name": "JSON Agent"
 }
