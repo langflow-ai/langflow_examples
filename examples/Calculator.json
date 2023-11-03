@@ -1,57 +1,15 @@
 {
-    "name": "Calculator",
-    "description": "Simple getting started guide for constructing a calculator with LangChain and LangFlow",
+    "id": "810d31e8-a90b-41e1-a1e2-f05d64816419",
     "data": {
         "nodes": [
             {
                 "width": 384,
-                "height": 247,
-                "id": "Calculator-TY0pD",
+                "height": 429,
+                "id": "AgentInitializer-k6f23",
                 "type": "genericNode",
                 "position": {
-                    "x": 586.2337066098984,
-                    "y": 100.91360911087611
-                },
-                "data": {
-                    "type": "Calculator",
-                    "node": {
-                        "template": {
-                            "llm": {
-                                "required": true,
-                                "placeholder": "",
-                                "show": true,
-                                "multiline": false,
-                                "password": false,
-                                "name": "llm",
-                                "advanced": false,
-                                "type": "BaseLanguageModel",
-                                "list": false
-                            },
-                            "_type": "Calculator"
-                        },
-                        "description": "Useful for when you need to answer questions about math.",
-                        "base_classes": [
-                            "Tool"
-                        ]
-                    },
-                    "id": "Calculator-TY0pD",
-                    "value": null
-                },
-                "selected": false,
-                "positionAbsolute": {
-                    "x": 586.2337066098984,
-                    "y": 100.91360911087611
-                },
-                "dragging": false
-            },
-            {
-                "width": 384,
-                "height": 387,
-                "id": "AgentInitializer-Mttew",
-                "type": "genericNode",
-                "position": {
-                    "x": 1135.9804160888425,
-                    "y": 230.29999999999995
+                    "x": 1015.204144902402,
+                    "y": 193.60847457627113
                 },
                 "data": {
                     "type": "AgentInitializer",
@@ -119,20 +77,20 @@
                         ],
                         "display_name": "AgentInitializer"
                     },
-                    "id": "AgentInitializer-Mttew",
+                    "id": "AgentInitializer-k6f23",
                     "value": null
                 },
                 "selected": false,
                 "positionAbsolute": {
-                    "x": 1135.9804160888425,
-                    "y": 230.29999999999995
+                    "x": 1015.204144902402,
+                    "y": 193.60847457627113
                 },
                 "dragging": false
             },
             {
                 "width": 384,
-                "height": 611,
-                "id": "ChatOpenAI-5aAwl",
+                "height": 649,
+                "id": "ChatOpenAI-eCapo",
                 "type": "genericNode",
                 "position": {
                     "x": 125.98041608884262,
@@ -351,7 +309,7 @@
                         ],
                         "display_name": "ChatOpenAI"
                     },
-                    "id": "ChatOpenAI-5aAwl",
+                    "id": "ChatOpenAI-eCapo",
                     "value": null
                 },
                 "selected": false,
@@ -360,55 +318,213 @@
                     "y": 188.29999999999995
                 },
                 "dragging": false
+            },
+            {
+                "width": 384,
+                "height": 263,
+                "id": "Calculator-1t8c5",
+                "type": "genericNode",
+                "position": {
+                    "x": 603.5956703261305,
+                    "y": 795.4607240469636
+                },
+                "data": {
+                    "type": "Calculator",
+                    "node": {
+                        "template": {
+                            "llm": {
+                                "required": true,
+                                "placeholder": "",
+                                "show": true,
+                                "multiline": false,
+                                "password": false,
+                                "name": "llm",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "type": "BaseLanguageModel",
+                                "list": false
+                            },
+                            "_type": "Calculator"
+                        },
+                        "description": "Useful for when you need to answer questions about math.",
+                        "base_classes": [
+                            "Tool",
+                            "BaseTool"
+                        ],
+                        "display_name": "Calculator",
+                        "custom_fields": {},
+                        "output_types": [],
+                        "documentation": "",
+                        "beta": false,
+                        "error": null
+                    },
+                    "id": "Calculator-1t8c5"
+                },
+                "positionAbsolute": {
+                    "x": 603.5956703261305,
+                    "y": 795.4607240469636
+                },
+                "selected": false,
+                "dragging": false
             }
         ],
         "edges": [
             {
-                "source": "Calculator-TY0pD",
-                "sourceHandle": "Calculator|Calculator-TY0pD|Tool",
-                "target": "AgentInitializer-Mttew",
-                "targetHandle": "Tool|tools|AgentInitializer-Mttew",
+                "source": "Calculator-ExqKF",
+                "sourceHandle": "{œbaseClassesœ:[œToolœ],œdataTypeœ:œCalculatorœ,œidœ:œCalculator-ExqKFœ}",
+                "target": "AgentInitializer-k6f23",
+                "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgentInitializer-k6f23œ,œinputTypesœ:null,œtypeœ:œToolœ}",
                 "style": {
-                    "stroke": "#555555"
+                    "stroke": "#555"
                 },
-                "className": "",
+                "className": "stroke-gray-900  stroke-connection",
                 "animated": false,
-                "id": "reactflow__edge-Calculator-TY0pDCalculator|Calculator-TY0pD|Tool-AgentInitializer-MttewTool|tools|AgentInitializer-Mttew",
-                "selected": false
+                "id": "reactflow__edge-Calculator-ExqKF{œbaseClassesœ:[œToolœ],œdataTypeœ:œCalculatorœ,œidœ:œCalculator-ExqKFœ}-AgentInitializer-k6f23{œfieldNameœ:œtoolsœ,œidœ:œAgentInitializer-k6f23œ,œinputTypesœ:null,œtypeœ:œToolœ}",
+                "selected": false,
+                "data": {
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "Tool"
+                        ],
+                        "dataType": "Calculator",
+                        "id": "Calculator-ExqKF"
+                    },
+                    "targetHandle": {
+                        "fieldName": "tools",
+                        "id": "AgentInitializer-k6f23",
+                        "inputTypes": null,
+                        "type": "Tool"
+                    }
+                }
             },
             {
-                "source": "ChatOpenAI-5aAwl",
-                "sourceHandle": "ChatOpenAI|ChatOpenAI-5aAwl|Serializable|BaseLanguageModel|ChatOpenAI|BaseChatModel",
-                "target": "Calculator-TY0pD",
-                "targetHandle": "BaseLanguageModel|llm|Calculator-TY0pD",
+                "source": "ChatOpenAI-eCapo",
+                "sourceHandle": "{œbaseClassesœ:[œSerializableœ,œBaseLanguageModelœ,œChatOpenAIœ,œBaseChatModelœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-eCapoœ}",
+                "target": "Calculator-ExqKF",
+                "targetHandle": "{œfieldNameœ:œllmœ,œidœ:œCalculator-ExqKFœ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}",
                 "style": {
-                    "stroke": "#555555"
+                    "stroke": "#555"
                 },
-                "className": "",
+                "className": "stroke-gray-900  stroke-connection",
                 "animated": false,
-                "id": "reactflow__edge-ChatOpenAI-5aAwlChatOpenAI|ChatOpenAI-5aAwl|BaseChatModel|Serializable|ChatOpenAI|BaseLanguageModel-Calculator-TY0pDBaseLanguageModel|llm|Calculator-TY0pD",
-                "selected": false
+                "id": "reactflow__edge-ChatOpenAI-eCapo{œbaseClassesœ:[œSerializableœ,œBaseLanguageModelœ,œChatOpenAIœ,œBaseChatModelœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-eCapoœ}-Calculator-ExqKF{œfieldNameœ:œllmœ,œidœ:œCalculator-ExqKFœ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}",
+                "selected": false,
+                "data": {
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "Serializable",
+                            "BaseLanguageModel",
+                            "ChatOpenAI",
+                            "BaseChatModel"
+                        ],
+                        "dataType": "ChatOpenAI",
+                        "id": "ChatOpenAI-eCapo"
+                    },
+                    "targetHandle": {
+                        "fieldName": "llm",
+                        "id": "Calculator-ExqKF",
+                        "inputTypes": null,
+                        "type": "BaseLanguageModel"
+                    }
+                }
             },
             {
-                "source": "ChatOpenAI-5aAwl",
-                "sourceHandle": "ChatOpenAI|ChatOpenAI-5aAwl|Serializable|BaseLanguageModel|ChatOpenAI|BaseChatModel",
-                "target": "AgentInitializer-Mttew",
-                "targetHandle": "BaseLanguageModel|llm|AgentInitializer-Mttew",
+                "source": "ChatOpenAI-eCapo",
+                "sourceHandle": "{œbaseClassesœ:[œSerializableœ,œBaseLanguageModelœ,œChatOpenAIœ,œBaseChatModelœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-eCapoœ}",
+                "target": "AgentInitializer-k6f23",
+                "targetHandle": "{œfieldNameœ:œllmœ,œidœ:œAgentInitializer-k6f23œ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}",
                 "style": {
-                    "stroke": "#555555"
+                    "stroke": "#555"
                 },
-                "className": "",
+                "className": "stroke-gray-900  stroke-connection",
                 "animated": false,
-                "id": "reactflow__edge-ChatOpenAI-5aAwlChatOpenAI|ChatOpenAI-5aAwl|BaseChatModel|Serializable|ChatOpenAI|BaseLanguageModel-AgentInitializer-MttewBaseLanguageModel|llm|AgentInitializer-Mttew",
-                "selected": false
+                "id": "reactflow__edge-ChatOpenAI-eCapo{œbaseClassesœ:[œSerializableœ,œBaseLanguageModelœ,œChatOpenAIœ,œBaseChatModelœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-eCapoœ}-AgentInitializer-k6f23{œfieldNameœ:œllmœ,œidœ:œAgentInitializer-k6f23œ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}",
+                "selected": false,
+                "data": {
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "Serializable",
+                            "BaseLanguageModel",
+                            "ChatOpenAI",
+                            "BaseChatModel"
+                        ],
+                        "dataType": "ChatOpenAI",
+                        "id": "ChatOpenAI-eCapo"
+                    },
+                    "targetHandle": {
+                        "fieldName": "llm",
+                        "id": "AgentInitializer-k6f23",
+                        "inputTypes": null,
+                        "type": "BaseLanguageModel"
+                    }
+                }
+            },
+            {
+                "source": "ChatOpenAI-eCapo",
+                "sourceHandle": "{œbaseClassesœ:[œSerializableœ,œBaseLanguageModelœ,œChatOpenAIœ,œBaseChatModelœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-eCapoœ}",
+                "target": "Calculator-1t8c5",
+                "targetHandle": "{œfieldNameœ:œllmœ,œidœ:œCalculator-1t8c5œ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}",
+                "data": {
+                    "targetHandle": {
+                        "fieldName": "llm",
+                        "id": "Calculator-1t8c5",
+                        "inputTypes": null,
+                        "type": "BaseLanguageModel"
+                    },
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "Serializable",
+                            "BaseLanguageModel",
+                            "ChatOpenAI",
+                            "BaseChatModel"
+                        ],
+                        "dataType": "ChatOpenAI",
+                        "id": "ChatOpenAI-eCapo"
+                    }
+                },
+                "style": {
+                    "stroke": "#555"
+                },
+                "className": "stroke-foreground  stroke-connection",
+                "animated": false,
+                "id": "reactflow__edge-ChatOpenAI-eCapo{œbaseClassesœ:[œSerializableœ,œBaseLanguageModelœ,œChatOpenAIœ,œBaseChatModelœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-eCapoœ}-Calculator-1t8c5{œfieldNameœ:œllmœ,œidœ:œCalculator-1t8c5œ,œinputTypesœ:null,œtypeœ:œBaseLanguageModelœ}"
+            },
+            {
+                "source": "Calculator-1t8c5",
+                "sourceHandle": "{œbaseClassesœ:[œToolœ,œBaseToolœ],œdataTypeœ:œCalculatorœ,œidœ:œCalculator-1t8c5œ}",
+                "target": "AgentInitializer-k6f23",
+                "targetHandle": "{œfieldNameœ:œtoolsœ,œidœ:œAgentInitializer-k6f23œ,œinputTypesœ:null,œtypeœ:œToolœ}",
+                "data": {
+                    "targetHandle": {
+                        "fieldName": "tools",
+                        "id": "AgentInitializer-k6f23",
+                        "inputTypes": null,
+                        "type": "Tool"
+                    },
+                    "sourceHandle": {
+                        "baseClasses": [
+                            "Tool",
+                            "BaseTool"
+                        ],
+                        "dataType": "Calculator",
+                        "id": "Calculator-1t8c5"
+                    }
+                },
+                "style": {
+                    "stroke": "#555"
+                },
+                "className": "stroke-foreground  stroke-connection",
+                "animated": false,
+                "id": "reactflow__edge-Calculator-1t8c5{œbaseClassesœ:[œToolœ,œBaseToolœ],œdataTypeœ:œCalculatorœ,œidœ:œCalculator-1t8c5œ}-AgentInitializer-k6f23{œfieldNameœ:œtoolsœ,œidœ:œAgentInitializer-k6f23œ,œinputTypesœ:null,œtypeœ:œToolœ}"
             }
         ],
         "viewport": {
-            "x": 148.036432053203,
-            "y": 67.39592859107427,
-            "zoom": 0.5175978215565387
+            "x": -40.35014415243097,
+            "y": 123.33035478588698,
+            "zoom": 0.6196766537179242
         }
     },
-    "id": "3e086fbd-69ea-4c5b-933f-3a45363b6f51",
-    "style": null
+    "description": "Simple getting started guide for constructing a calculator with LangChain and LangFlow",
+    "name": "Calculator"
 }
