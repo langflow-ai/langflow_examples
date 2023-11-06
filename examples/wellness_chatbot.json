@@ -1,0 +1,785 @@
+{
+  "name": "Wellness Chatbot",
+  "description": "The Wellness Chatbot is a compassionate digital assistant designed to offer emotional support and encourage personal reflection. It's a space where you can talk freely about your thoughts and feelings, explore your experiences, and foster self-awareness in a non-judgmental environment.",
+  "data": {
+    "nodes": [
+      {
+        "width": 384,
+        "height": 359,
+        "id": "ChatOpenAI-qkoZS",
+        "type": "genericNode",
+        "position": { "x": 288.1347349147187, "y": -412.29984606466303 },
+        "data": {
+          "type": "ChatOpenAI",
+          "node": {
+            "template": {
+              "callbacks": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "callbacks",
+                "advanced": false,
+                "info": "",
+                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                "list": true
+              },
+              "cache": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "cache",
+                "advanced": false,
+                "info": "",
+                "type": "bool",
+                "list": false
+              },
+              "client": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "client",
+                "advanced": false,
+                "info": "",
+                "type": "Any",
+                "list": false
+              },
+              "max_retries": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": 6,
+                "password": false,
+                "name": "max_retries",
+                "advanced": false,
+                "info": "",
+                "type": "int",
+                "list": false
+              },
+              "max_tokens": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": true,
+                "name": "max_tokens",
+                "advanced": true,
+                "info": "",
+                "type": "int",
+                "list": false,
+                "value": ""
+              },
+              "model_kwargs": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "model_kwargs",
+                "advanced": true,
+                "info": "",
+                "type": "code",
+                "list": false
+              },
+              "model_name": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "gpt-3.5-turbo",
+                "password": false,
+                "options": [
+                  "gpt-3.5-turbo-0613",
+                  "gpt-3.5-turbo",
+                  "gpt-3.5-turbo-16k-0613",
+                  "gpt-3.5-turbo-16k",
+                  "gpt-4-0613",
+                  "gpt-4-32k-0613",
+                  "gpt-4",
+                  "gpt-4-32k"
+                ],
+                "name": "model_name",
+                "advanced": true,
+                "info": "",
+                "type": "str",
+                "list": true
+              },
+              "n": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": 1,
+                "password": false,
+                "name": "n",
+                "advanced": false,
+                "info": "",
+                "type": "int",
+                "list": false
+              },
+              "openai_api_base": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "openai_api_base",
+                "display_name": "OpenAI API Base",
+                "advanced": true,
+                "info": "\nThe base URL of the OpenAI API. Defaults to https://api.openai.com/v1.\n\nYou can change this to use other APIs like JinaChat, LocalAI and Prem.\n",
+                "type": "str",
+                "list": false
+              },
+              "openai_api_key": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "",
+                "password": true,
+                "name": "openai_api_key",
+                "display_name": "OpenAI API Key",
+                "advanced": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "openai_organization": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "openai_organization",
+                "display_name": "OpenAI Organization",
+                "advanced": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "openai_proxy": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "openai_proxy",
+                "display_name": "OpenAI Proxy",
+                "advanced": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "request_timeout": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "request_timeout",
+                "advanced": false,
+                "info": "",
+                "type": "float",
+                "list": false,
+                "value": 60
+              },
+              "streaming": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": false,
+                "password": false,
+                "name": "streaming",
+                "advanced": false,
+                "info": "",
+                "type": "bool",
+                "list": false
+              },
+              "tags": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "tags",
+                "advanced": false,
+                "info": "",
+                "type": "str",
+                "list": true
+              },
+              "temperature": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": 0.7,
+                "password": false,
+                "name": "temperature",
+                "advanced": false,
+                "info": "",
+                "type": "float",
+                "list": false
+              },
+              "tiktoken_model_name": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "tiktoken_model_name",
+                "advanced": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "verbose": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": false,
+                "password": false,
+                "name": "verbose",
+                "advanced": false,
+                "info": "",
+                "type": "bool",
+                "list": false
+              },
+              "_type": "ChatOpenAI"
+            },
+            "description": "Wrapper around OpenAI Chat large language models.",
+            "base_classes": [
+              "BaseChatModel",
+              "ChatOpenAI",
+              "BaseLanguageModel",
+              "BaseLLM"
+            ],
+            "display_name": "ChatOpenAI",
+            "documentation": "https://python.langchain.com/docs/modules/model_io/models/chat/integrations/openai"
+          },
+          "id": "ChatOpenAI-qkoZS",
+          "value": null
+        },
+        "selected": false,
+        "dragging": false,
+        "positionAbsolute": { "x": 288.1347349147187, "y": -412.29984606466303 }
+      },
+      {
+        "width": 384,
+        "height": 227,
+        "id": "ConversationBufferMemory-NEflc",
+        "type": "genericNode",
+        "position": { "x": 287.49431970291937, "y": -26.926523786088367 },
+        "data": {
+          "type": "ConversationBufferMemory",
+          "node": {
+            "template": {
+              "chat_memory": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "chat_memory",
+                "advanced": false,
+                "info": "",
+                "type": "BaseChatMessageHistory",
+                "list": false
+              },
+              "ai_prefix": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": "AI",
+                "password": false,
+                "name": "ai_prefix",
+                "advanced": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "human_prefix": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": "Human",
+                "password": false,
+                "name": "human_prefix",
+                "advanced": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "input_key": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "",
+                "password": false,
+                "name": "input_key",
+                "advanced": true,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "memory_key": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "history",
+                "password": false,
+                "name": "memory_key",
+                "advanced": true,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "output_key": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "",
+                "password": false,
+                "name": "output_key",
+                "advanced": true,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "return_messages": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "return_messages",
+                "advanced": true,
+                "info": "",
+                "type": "bool",
+                "list": false
+              },
+              "_type": "ConversationBufferMemory"
+            },
+            "description": "Buffer for storing conversation memory.",
+            "base_classes": [
+              "ConversationBufferMemory",
+              "BaseMemory",
+              "BaseChatMemory"
+            ],
+            "display_name": "ConversationBufferMemory",
+            "documentation": "https://python.langchain.com/docs/modules/memory/how_to/buffer"
+          },
+          "id": "ConversationBufferMemory-NEflc",
+          "value": null
+        },
+        "selected": false,
+        "positionAbsolute": {
+          "x": 287.49431970291937,
+          "y": -26.926523786088367
+        },
+        "dragging": false
+      },
+      {
+        "width": 384,
+        "height": 265,
+        "id": "PromptTemplate-hAZgl",
+        "type": "genericNode",
+        "position": { "x": 296.4439689579892, "y": 208.5610212609111 },
+        "data": {
+          "type": "PromptTemplate",
+          "node": {
+            "template": {
+              "output_parser": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "output_parser",
+                "advanced": false,
+                "info": "",
+                "type": "BaseOutputParser",
+                "list": false
+              },
+              "input_variables": {
+                "required": true,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "input_variables",
+                "advanced": false,
+                "info": "",
+                "type": "str",
+                "list": true,
+                "value": ["history", "text"]
+              },
+              "partial_variables": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "partial_variables",
+                "advanced": false,
+                "info": "",
+                "type": "code",
+                "list": false
+              },
+              "template": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": true,
+                "password": false,
+                "name": "template",
+                "advanced": false,
+                "info": "",
+                "type": "prompt",
+                "list": false,
+                "value": "Wellness Chatbot System Prompt:\n\nThe Wellness Chatbot serves as a supportive assistant, facilitating conversations that aim to encourage reflection, emotional understanding, and personal growth. The Wellness Chatbot responds with empathy, emphasizing support and understanding. It offers resources and guidance while always respecting the user’s autonomy, ensuring a positive and ethical interaction.\n\nIn all interactions, the Chatbot adheres to the following ethical guidelines:\n\nAutonomy and Consent:\n\nThe Chatbot regularly checks in with the user to confirm their willingness to continue the conversation.\nProvides clear options for users to change the subject or end the conversation at any point.\nTransparency:\n\nAt the start, the Chatbot explains its function, limitations, and the general nature of its processing abilities.\nMakes it clear that it is not a human or a licensed therapist.\nNon-maleficence:\n\nIs programmed to avoid topics if the user expresses discomfort, unless the user wishes to continue.\nImmediately redirects the conversation away from potentially harmful subjects when detected.\nBeneficence:\n\nAims to provide a positive impact, offering affirmations and support.\nEncourages self-efficacy and personal empowerment.\nJustice:\n\nEnsures all users have equal access to the full range of its supportive features.\nDoes not discriminate based on user inputs reflecting their personal identities.\nProfessional Boundaries:\n\nClearly communicates its identity as a Chatbot.\nAdvises users on the availability of human professionals for clinical support.\nIntervention Protocols:\n\nIf the Chatbot detects language indicative of imminent harm to self or others, it will:\nProvide immediate, straightforward information on how to access emergency services.\nOffer to connect the user with crisis helplines or suggest contacting someone they trust.\nCease all other functions until it has confirmation the user is pursuing appropriate help.\nCultural Competence:\n\nThe Chatbot incorporates a wide range of culturally sensitive responses.\nRespects cultural expressions of distress and well-being.\nResponsiveness to Vulnerability:\n\nThe Chatbot is programmed to respond gently to users who may be in vulnerable situations.\nIt avoids pushing for information that the user seems hesitant to provide.\nIn operation, the system's priority is the well-being of its users, aiming to provide a safe space for personal exploration while maintaining the highest ethical standards.\n\nIn Conversation:\n\n{history}\nHuman: {text}\nWellness Chatbot:"
+              },
+              "template_format": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": "f-string",
+                "password": false,
+                "name": "template_format",
+                "advanced": false,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "validate_template": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": true,
+                "password": false,
+                "name": "validate_template",
+                "advanced": false,
+                "info": "",
+                "type": "bool",
+                "list": false
+              },
+              "_type": "PromptTemplate"
+            },
+            "description": "Schema to represent a prompt for an LLM.",
+            "base_classes": [
+              "BasePromptTemplate",
+              "StringPromptTemplate",
+              "PromptTemplate"
+            ],
+            "name": "",
+            "display_name": "PromptTemplate",
+            "documentation": "https://python.langchain.com/docs/modules/model_io/prompts/prompt_templates/",
+            "custom_fields": {
+              "": ["history", "text"],
+              "template": ["history", "text"]
+            },
+            "output_types": [],
+            "field_formatters": {},
+            "beta": false,
+            "error": null
+          },
+          "id": "PromptTemplate-hAZgl"
+        },
+        "selected": false,
+        "positionAbsolute": { "x": 296.4439689579892, "y": 208.5610212609111 },
+        "dragging": false
+      },
+      {
+        "width": 384,
+        "height": 307,
+        "id": "LLMChain-5UbFH",
+        "type": "genericNode",
+        "position": { "x": 842.0549188510101, "y": -86.49903306453277 },
+        "data": {
+          "type": "LLMChain",
+          "node": {
+            "template": {
+              "callbacks": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "callbacks",
+                "advanced": false,
+                "info": "",
+                "type": "langchain.callbacks.base.BaseCallbackHandler",
+                "list": true
+              },
+              "llm": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "llm",
+                "advanced": false,
+                "info": "",
+                "type": "BaseLanguageModel",
+                "list": false
+              },
+              "memory": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "memory",
+                "advanced": false,
+                "info": "",
+                "type": "BaseMemory",
+                "list": false
+              },
+              "output_parser": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "output_parser",
+                "advanced": false,
+                "info": "",
+                "type": "BaseLLMOutputParser",
+                "list": false
+              },
+              "prompt": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "password": false,
+                "name": "prompt",
+                "advanced": false,
+                "info": "",
+                "type": "BasePromptTemplate",
+                "list": false
+              },
+              "llm_kwargs": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "llm_kwargs",
+                "advanced": false,
+                "info": "",
+                "type": "code",
+                "list": false
+              },
+              "output_key": {
+                "required": true,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": "text",
+                "password": false,
+                "name": "output_key",
+                "advanced": true,
+                "info": "",
+                "type": "str",
+                "list": false
+              },
+              "return_final_only": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "value": true,
+                "password": false,
+                "name": "return_final_only",
+                "advanced": false,
+                "info": "",
+                "type": "bool",
+                "list": false
+              },
+              "tags": {
+                "required": false,
+                "placeholder": "",
+                "show": false,
+                "multiline": false,
+                "password": false,
+                "name": "tags",
+                "advanced": false,
+                "info": "",
+                "type": "str",
+                "list": true
+              },
+              "verbose": {
+                "required": false,
+                "placeholder": "",
+                "show": true,
+                "multiline": false,
+                "value": false,
+                "password": false,
+                "name": "verbose",
+                "advanced": true,
+                "info": "",
+                "type": "bool",
+                "list": false
+              },
+              "_type": "LLMChain"
+            },
+            "description": "Chain to run queries against LLMs.",
+            "base_classes": ["Chain", "LLMChain", "function"],
+            "display_name": "LLMChain",
+            "custom_fields": { "llm": null, "memory": null, "prompt": null },
+            "output_types": ["LLMChain"],
+            "documentation": "https://python.langchain.com/docs/modules/chains/foundational/llm_chain",
+            "beta": true,
+            "error": null
+          },
+          "id": "LLMChain-5UbFH"
+        },
+        "positionAbsolute": { "x": 842.0549188510101, "y": -86.49903306453277 },
+        "selected": false,
+        "dragging": false
+      }
+    ],
+    "edges": [
+      {
+        "source": "ConversationBufferMemory-NEflc",
+        "sourceHandle": "{œbaseClassesœ:[œConversationBufferMemoryœ,œBaseChatMemoryœ,œBaseMemoryœ],œdataTypeœ:œConversationBufferMemoryœ,œidœ:œConversationBufferMemory-frtJGœ}|ConversationBufferMemory-NEflc|ConversationBufferMemory|BaseMemory|BaseChatMemory",
+        "target": "LLMChain-5UbFH",
+        "targetHandle": "|LLMChain-5UbFH",
+        "data": {
+          "targetHandle": {
+            "fieldName": "memory",
+            "id": "LLMChain-Pvm9x",
+            "inputTypes": null,
+            "type": "BaseMemory"
+          },
+          "sourceHandle": {
+            "baseClasses": [
+              "ConversationBufferMemory",
+              "BaseChatMemory",
+              "BaseMemory"
+            ],
+            "dataType": "ConversationBufferMemory",
+            "id": "ConversationBufferMemory-frtJG"
+          }
+        },
+        "style": { "stroke": "#555555" },
+        "className": "",
+        "animated": false,
+        "id": "reactflow__edge-ConversationBufferMemory-NEflc{œbaseClassesœ:[œConversationBufferMemoryœ,œBaseChatMemoryœ,œBaseMemoryœ],œdataTypeœ:œConversationBufferMemoryœ,œidœ:œConversationBufferMemory-frtJGœ}|ConversationBufferMemory-NEflc|ConversationBufferMemory|BaseChatMemory-LLMChain-5UbFH|LLMChain-5UbFH",
+        "selected": false
+      },
+      {
+        "source": "PromptTemplate-hAZgl",
+        "sourceHandle": "{œbaseClassesœ:[œStringPromptTemplateœ,œPromptTemplateœ,œBasePromptTemplateœ],œdataTypeœ:œPromptTemplateœ,œidœ:œPromptTemplate-mrNIGœ}|PromptTemplate-hAZgl|BasePromptTemplate|StringPromptTemplate|PromptTemplate",
+        "target": "LLMChain-5UbFH",
+        "targetHandle": "|LLMChain-5UbFH",
+        "data": {
+          "targetHandle": {
+            "fieldName": "prompt",
+            "id": "LLMChain-Pvm9x",
+            "inputTypes": null,
+            "type": "PromptTemplate"
+          },
+          "sourceHandle": {
+            "baseClasses": [
+              "StringPromptTemplate",
+              "PromptTemplate",
+              "BasePromptTemplate"
+            ],
+            "dataType": "PromptTemplate",
+            "id": "PromptTemplate-mrNIG"
+          }
+        },
+        "style": { "stroke": "#555555" },
+        "className": "",
+        "animated": false,
+        "id": "reactflow__edge-PromptTemplate-hAZgl{œbaseClassesœ:[œStringPromptTemplateœ,œPromptTemplateœ,œBasePromptTemplateœ],œdataTypeœ:œPromptTemplateœ,œidœ:œPromptTemplate-mrNIGœ}|PromptTemplate-hAZgl|StringPromptTemplate|PromptTemplate-LLMChain-5UbFH|LLMChain-5UbFH",
+        "selected": false
+      },
+      {
+        "source": "ChatOpenAI-qkoZS",
+        "sourceHandle": "{œbaseClassesœ:[œChatOpenAIœ,œBaseChatModelœ,œBaseLanguageModelœ,œBaseLLMœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-qdmsIœ}|ChatOpenAI-qkoZS|BaseChatModel|ChatOpenAI|BaseLanguageModel|BaseLLM",
+        "target": "LLMChain-5UbFH",
+        "targetHandle": "|LLMChain-5UbFH",
+        "data": {
+          "targetHandle": {
+            "fieldName": "llm",
+            "id": "LLMChain-Pvm9x",
+            "inputTypes": null,
+            "type": "BaseLanguageModel"
+          },
+          "sourceHandle": {
+            "baseClasses": [
+              "ChatOpenAI",
+              "BaseChatModel",
+              "BaseLanguageModel",
+              "BaseLLM"
+            ],
+            "dataType": "ChatOpenAI",
+            "id": "ChatOpenAI-qdmsI"
+          }
+        },
+        "style": { "stroke": "#555555" },
+        "className": "",
+        "animated": false,
+        "id": "reactflow__edge-ChatOpenAI-qkoZS{œbaseClassesœ:[œChatOpenAIœ,œBaseChatModelœ,œBaseLanguageModelœ,œBaseLLMœ],œdataTypeœ:œChatOpenAIœ,œidœ:œChatOpenAI-qdmsIœ}|ChatOpenAI-qkoZS|ChatOpenAI|BaseLanguageModel|BaseLLM-LLMChain-5UbFH|LLMChain-5UbFH",
+        "selected": false
+      },
+      {
+        "source": "ChatOpenAI-qkoZS",
+        "sourceHandle": "ChatOpenAI|ChatOpenAI-qkoZS|BaseChatModel|ChatOpenAI|BaseLanguageModel|BaseLLM",
+        "target": "LLMChain-5UbFH",
+        "targetHandle": "BaseLanguageModel|llm|LLMChain-5UbFH",
+        "style": { "stroke": "inherit" },
+        "className": "stroke-gray-900 dark:stroke-gray-200",
+        "animated": false,
+        "id": "reactflow__edge-ChatOpenAI-qkoZSChatOpenAI|ChatOpenAI-qkoZS|BaseChatModel|ChatOpenAI|BaseLanguageModel|BaseLLM-LLMChain-5UbFHBaseLanguageModel|llm|LLMChain-5UbFH",
+        "selected": false
+      },
+      {
+        "source": "ConversationBufferMemory-NEflc",
+        "sourceHandle": "ConversationBufferMemory|ConversationBufferMemory-NEflc|ConversationBufferMemory|BaseMemory|BaseChatMemory",
+        "target": "LLMChain-5UbFH",
+        "targetHandle": "BaseMemory|memory|LLMChain-5UbFH",
+        "style": { "stroke": "inherit" },
+        "className": "stroke-gray-900 dark:stroke-gray-200",
+        "animated": false,
+        "id": "reactflow__edge-ConversationBufferMemory-NEflcConversationBufferMemory|ConversationBufferMemory-NEflc|ConversationBufferMemory|BaseMemory|BaseChatMemory-LLMChain-5UbFHBaseMemory|memory|LLMChain-5UbFH",
+        "selected": false
+      },
+      {
+        "source": "PromptTemplate-hAZgl",
+        "sourceHandle": "PromptTemplate|PromptTemplate-hAZgl|BasePromptTemplate|StringPromptTemplate|PromptTemplate",
+        "target": "LLMChain-5UbFH",
+        "targetHandle": "BasePromptTemplate|prompt|LLMChain-5UbFH",
+        "style": { "stroke": "inherit" },
+        "className": "stroke-gray-900 dark:stroke-gray-200",
+        "animated": false,
+        "id": "reactflow__edge-PromptTemplate-hAZglPromptTemplate|PromptTemplate-hAZgl|BasePromptTemplate|StringPromptTemplate|PromptTemplate-LLMChain-5UbFHBasePromptTemplate|prompt|LLMChain-5UbFH",
+        "selected": false
+      }
+    ],
+    "viewport": {
+      "x": 299.9621138441106,
+      "y": 322.3310512519921,
+      "zoom": 0.5768400195199003
+    }
+  },
+  "id": "6fe39a4f-979b-4082-8f8f-32d020f82104",
+  "style": null
+}
