@@ -1,0 +1,124 @@
+{
+    "data": {
+        "edges": [],
+        "nodes": [
+            {
+                "data": {
+                    "id": "CustomComponent-qdeiU",
+                    "type": "CustomComponent",
+                    "node": {
+                        "template": {
+                            "chains": {
+                                "type": "Chain",
+                                "required": true,
+                                "placeholder": "",
+                                "list": true,
+                                "show": true,
+                                "multiline": false,
+                                "fileTypes": [],
+                                "file_path": "",
+                                "password": false,
+                                "name": "chains",
+                                "display_name": "Chains",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": ""
+                            },
+                            "code": {
+                                "type": "code",
+                                "required": true,
+                                "placeholder": "",
+                                "list": false,
+                                "show": true,
+                                "multiline": true,
+                                "value": "from langflow import CustomComponent\r\nfrom langchain.chains import SequentialChain, LLMChain\r\nfrom typing import List, Any\r\nfrom typing import Callable, Optional, Union\r\nfrom langflow.field_typing import (\r\n    BaseLanguageModel,\r\n    BaseMemory,\r\n    BasePromptTemplate,\r\n    Chain,\r\n)\r\n\r\nclass DynamicSequentialChainComponent(CustomComponent):\r\n    display_name = \"LLMChain COMBINATOR\"\r\n    description = \"This component can combin LLMChains together sequentially\"\r\n    def build_config(self):\r\n        return {\r\n            \"chains\": {\"display_name\": \"Chains\", \"is_list\": True},\r\n            \"input_variables\": {\"display_name\": \"Input Variables\", \"is_list\": True},\r\n            \"output_variables\": {\"display_name\": \"Output Variables\", \"is_list\": True}\r\n        }\r\n\r\n    def build(self, chains: List[Chain], input_variables: List[str], output_variables: List[str]) -> Union[Chain, Callable]:\r\n        # Validate that the chains list is not empty\r\n        if not chains:\r\n            raise ValueError(\"No chains provided. At least one chain is required.\")\r\n\r\n        # Create a SequentialChain with the provided chains and variables\r\n        sequential_chain = SequentialChain(chains=chains, input_variables=input_variables, output_variables=output_variables)\r\n\r\n        return sequential_chain\r\n",
+                                "fileTypes": [],
+                                "file_path": "",
+                                "password": false,
+                                "name": "code",
+                                "advanced": false,
+                                "dynamic": true,
+                                "info": ""
+                            },
+                            "input_variables": {
+                                "type": "str",
+                                "required": true,
+                                "placeholder": "",
+                                "list": true,
+                                "show": true,
+                                "multiline": false,
+                                "fileTypes": [],
+                                "file_path": "",
+                                "password": false,
+                                "name": "input_variables",
+                                "display_name": "Input Variables",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "value": [
+                                    "target_audience",
+                                    "slogan_number"
+                                ]
+                            },
+                            "output_variables": {
+                                "type": "str",
+                                "required": true,
+                                "placeholder": "",
+                                "list": true,
+                                "show": true,
+                                "multiline": false,
+                                "fileTypes": [],
+                                "file_path": "",
+                                "password": false,
+                                "name": "output_variables",
+                                "display_name": "Output Variables",
+                                "advanced": false,
+                                "dynamic": false,
+                                "info": "",
+                                "value": [
+                                    "text"
+                                ]
+                            },
+                            "_type": "CustomComponent"
+                        },
+                        "description": "This component can combine LLMChains together sequentially",
+                        "base_classes": [
+                            "Chain",
+                            "Callable"
+                        ],
+                        "display_name": "Chain Sequential Combinator",
+                        "documentation": "",
+                        "custom_fields": {
+                            "chains": null,
+                            "input_variables": null,
+                            "output_variables": null
+                        },
+                        "output_types": [
+                            "Chain",
+                            "Callable"
+                        ],
+                        "field_formatters": {},
+                        "beta": true,
+                        "official": false
+                    }
+                },
+                "id": "CustomComponent-qdeiU",
+                "position": {
+                    "x": 0,
+                    "y": 0
+                },
+                "type": "genericNode"
+            }
+        ],
+        "viewport": {
+            "x": 1,
+            "y": 1,
+            "zoom": 1
+        }
+    },
+    "description": "This component can combine LLMChains together sequentially",
+    "name": "Chain Sequential Combinator",
+    "id": "CustomComponent-qdeiU",
+    "is_component": true,
+    "last_tested_version": "0.6.3"
+}
